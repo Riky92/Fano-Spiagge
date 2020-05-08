@@ -1,0 +1,36 @@
+.boxForm{
+	position: absolute;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	z-index: 1;
+	margin: 200px 0px;
+	color: white;
+	padding: 9px;
+	height: 250px;
+	/* width: 250px; */
+	width: 100%;
+}
+
+.loginContainer{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.trasparent{
+	background-color: transparent;
+}
+
+.white{
+	color: white;
+	font-weight: bold;
+}
+
+.optionList{
+	background-color: transparent;
+}
+
+.disabled{
+	opacity: 0.5;
+}

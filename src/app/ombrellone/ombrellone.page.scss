@@ -1,0 +1,68 @@
+.containerWeek{
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 100%;
+	align-items: center;
+	height: 60px;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.containerDay{
+	height: 40px;
+  width: 40px;
+  display: flex;
+  margin: 10px 5px;
+  justify-content: center;
+  align-items: center;
+	&.active{
+		color: white;
+		background-color: #428cff;
+		border-radius: 50%;
+	}
+	.day{
+		font-size: 18px;
+	}
+}
+
+.column{
+	display: flex;
+	flex-direction: column;
+}
+
+.dayWeek{
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+}
+
+.labelWeekContainer{
+	display: flex;
+	margin-top: 40px;
+	width: 100%;
+	justify-content: center;
+}
+
+.containerSections{
+	margin-top: 20px;
+}
+
+.containerImage{
+	position: relative;
+	.descImage{
+		position: absolute;
+    margin: auto;
+    z-index: 1;
+    line-height: 25px;
+		font-weight: bold;
+		background: rgba(0, 0, 0, 0.5);
+		bottom: 0;
+    padding: 10px;
+	}
+
+	.desc{
+		color: white;
+		font-size: 18px;
+		font-style: italic;
+	}
+}

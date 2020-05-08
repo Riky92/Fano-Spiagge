@@ -1,0 +1,28 @@
+<ion-content>
+	<div class="loginContainer">
+		<div class="boxForm">
+			<form [formGroup]="form" (submit)="submitForm(form)">
+				<ion-item color="transparent" class="white">
+					<ion-label color="white">Spiaggia</ion-label>
+					<select formControlName="spiaggia" class="optionList">
+						<option *ngFor="let spiaggia of spiagge" [value]="spiaggia.id">{{spiaggia.descrizione}}</option>
+					</select>
+				</ion-item>
+
+				<ion-item color="transparent" class="white">
+					<ion-label color="white">Ombrellone</ion-label>
+					<select formControlName="ombrellone" class="optionList">
+						<option *ngFor="let ombrellone of ombrelloni" [value]="ombrellone.codice">{{ombrellone.codice}}</option>
+					</select>
+				</ion-item>
+
+				<ion-row>
+					<ion-col>
+						<ion-button type="submit" color="primary" expand="block" [disabled]="form.invalid" [ngClass]="{'disabled': form.invalid}">Inizia</ion-button>
+					</ion-col>
+				</ion-row>
+			</form>
+		</div>
+		<img src="/assets/spiagge/fano.jpg" class="full">
+	</div>
+</ion-content>

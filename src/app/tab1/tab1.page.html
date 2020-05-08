@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary" class="central">
+    <ion-title>
+      Fano Spiagge
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngFor="let spiaggia of spiagge">
+		<div class="containerSpiaggia" (click)="goToSpiaggia(spiaggia)">
+			<img src="/assets/spiagge/{{spiaggia.id}}.jpg" class="fullWidth">
+			<div class="containerDescription">
+				<span class="desc">{{spiaggia.descrizione}}</span>
+			</div>
+		</div>
+	</ng-container>
+</ion-content>

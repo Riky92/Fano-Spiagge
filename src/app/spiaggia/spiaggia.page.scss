@@ -1,0 +1,25 @@
+.containerQuestion{
+	position: relative;
+	.descContainer{
+		position: absolute;
+    margin: auto;
+    z-index: 1;
+    line-height: 25px;
+		font-weight: bold;
+		background: rgba(0, 0, 0, 0.5);
+		bottom: 0;
+    padding: 10px;
+	}
+}
+
+.imageStyle{
+	// filter: blur(3px);
+}
+
+.desc{
+	color: white;
+	font-style: italic;
+	font-size: 18px;
+	font-weight: bold;
+}
+

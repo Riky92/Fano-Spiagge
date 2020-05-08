@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary" class="central">
+		<ion-title>{{spiaggia.descrizione}}</ion-title>
+		<ion-buttons slot="start">
+      <ion-button  (click)="comeBack()">
+				<ion-icon name="arrow-back" mode="ios"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<img src="/assets/spiagge/{{spiaggia.id}}.jpg" class="fullWidth">
+	<div class="containerQuestion" (click)="goToReservation()">
+		<img src="/assets/spiagge/spiaggia.jpg" class="imageStyle">
+		<div class="descContainer">
+			<span class="desc">Vuoi prenotare un ombrellone / gazebo presso {{spiaggia.descrizione}} ? </span>
+		</div>
+	</div>
+	<div class="containerQuestion" (click)="openDialogOmbrellone()">
+		<img src="/assets/spiagge/ombrellone.jpg" class="imageStyle">
+		<div class="descContainer">
+			<span class="desc">Possiedi un ombrellone / gazebo presso {{spiaggia.descrizione}} ? </span>
+		</div>
+	</div>
+</ion-content>

@@ -1,0 +1,30 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+.containerSpiaggia{
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	.containerDescription{
+		position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    height: 40px;
+    bottom: 0;
+    align-items: center;
+		.desc{
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+		}
+	}
+}
+
+.imageSpiaggia{
+	width: 100%;
+}
+

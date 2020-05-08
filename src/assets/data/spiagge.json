@@ -1,0 +1,26 @@
+[
+	{
+		"id": "bagni-arzilla",
+		"descrizione": "Bagni Cafè Arzilla"
+	},
+	{
+		"id": "bagni-carlo",
+		"descrizione": "Bagni Carlo"
+	},
+	{
+		"id": "bagni-gabriele",
+		"descrizione": "Bagni Gabriele"
+	},
+	{
+		"id": "bagni-maurizio",
+		"descrizione": "Bagni Maurizio"
+	},
+	{
+		"id": "bagni-peppe",
+		"descrizione": "Bagni Peppe"
+	},
+	{
+		"id": "bagni-sergio",
+		"descrizione": "Bagni Sergio"
+	}
+]

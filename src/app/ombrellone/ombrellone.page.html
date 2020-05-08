@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary" class="central">
+		<ion-title>Ombrellone {{ombrellone.codice}}</ion-title>
+		<ion-buttons slot="start">
+      <ion-button  (click)="comeBack()">
+				<ion-icon name="arrow-back" mode="ios"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="containerWeek">
+		<ng-container *ngFor="let cal of calendarOneWeek">
+			<div class="column">
+				<div class="dayWeek">{{cal.dayWeek}}</div>
+				<div class="containerDay" [ngClass]="{'active': activeDay === cal}" (click)="activeDay = cal">
+					<span class="day">{{cal.day}}</span>
+				</div>
+			</div>
+		</ng-container>
+	</div>
+	<ion-row size="12" *ngIf="activeDay" class="labelWeekContainer">
+		{{activeDay.labelWeek}}
+	</ion-row>
+	<div class="containerSections">
+		<div class="containerImage">
+			<img src="/assets/spiagge/mattino.jpeg" class="fullWidth" (click)="prenota('mattino')">
+			<div class="descImage">
+				<span class="desc">Prenota la fascia oraria 06-13. Sono ancora disponibili 5 posti</span>
+			</div>
+		</div>
+		<div class="containerImage">
+			<img src="/assets/spiagge/pomeriggio.jpeg" class="fullWidth" (click)="prenota('pomeriggio')">
+			<div class="descImage">
+				<span class="desc">Prenota la fascia oraria 13-20. Sono ancora disponibili 5 posti</span>
+			</div>
+		</div>
+	</div>
+</ion-content>
