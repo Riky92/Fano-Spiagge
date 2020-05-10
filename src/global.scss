@@ -195,3 +195,17 @@
 	background-color: rgba(0, 0, 0, 0);
 	color: white;
 }
+
+.item{
+	&.active{
+		font-weight: bold;
+	}
+	&.disabled{
+		opacity: 0.4 !important
+	}
+
+}
+
+.text-center{
+	text-align: center !important;
+}

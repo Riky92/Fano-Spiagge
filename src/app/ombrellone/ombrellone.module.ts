@@ -8,15 +8,18 @@ import { OmbrellonePageRoutingModule } from './ombrellone-routing.module';
 
 import { OmbrellonePage } from './ombrellone.page';
 import { SpiaggeService } from '../services/spiagge.service';
+import { MatDialogModule} from '@angular/material/dialog';
+import { PrenotazioniService } from '../services/prenotazioni.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+		FormsModule,
+		MatDialogModule,
 		IonicModule,
     OmbrellonePageRoutingModule
   ],
 	declarations: [OmbrellonePage],
-	providers: [SpiaggeService]
+	providers: [SpiaggeService, PrenotazioniService]
 })
 export class OmbrellonePageModule {}

@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { PrenotazioniPageRoutingModule } from './prenotazioni-routing.module';
 
 import { PrenotazioniPage } from './prenotazioni.page';
+import { PrenotazioniService } from '../services/prenotazioni.service';
+import { SpiaggeService } from '../services/spiagge.service';
 
 @NgModule({
   imports: [
@@ -15,6 +17,7 @@ import { PrenotazioniPage } from './prenotazioni.page';
     IonicModule,
     PrenotazioniPageRoutingModule
   ],
-  declarations: [PrenotazioniPage]
+	declarations: [PrenotazioniPage],
+	providers: [PrenotazioniService, SpiaggeService]
 })
 export class PrenotazioniPageModule {}

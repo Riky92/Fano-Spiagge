@@ -5,5 +5,76 @@
 </ion-header>
 
 <ion-content>
+	<div class="containerWeek">
+		<ng-container *ngFor="let cal of calendarOneWeek">
+			<div class="column">
+				<div class="dayWeek">{{cal.dayWeek}}</div>
+				<div class="containerDay" [ngClass]="{'active': activeDay === cal}" (click)="changeDay(cal)">
+					<span class="day">{{cal.day}}</span>
+				</div>
+			</div>
+		</ng-container>
+	</div>
+	<ion-row size="12" *ngIf="activeDay" class="labelWeekContainer">
+		{{activeDay.labelWeek}}
+	</ion-row>
+	<ion-card class="noPadding">
+		<ion-card-content>
+			<ng-container *ngIf="!prenotazioniByDay; else prenotazioni">
+				<div class="noPrenotazioni">
+					Non hai ancora effettuato nessuna prenotazione per questa data
+				</div>
+			</ng-container>
+			<ng-template #prenotazioni>
+				<img src="/assets/spiagge/{{prenotazioniByDay.codSpiaggia}}.jpg" class="fullWidth">
+				<h1 class="titleCard">{{prenotazioniByDay.descSpiaggia}}</h1>
+				<div class="row">
+					<img src="/assets/services/umbrella.svg" class="sizeIcon">
+					<span>{{prenotazioniByDay.ombrellone}}</span>
+				</div>
+				<div class="row">
+					<img src="/assets/services/calendar.png" class="sizeIcon">
+					<span>{{prenotazioniByDay.dataPrenotazione}}</span>
+				</div>
+				<div class="row">
+					<img src="/assets/services/lettino.svg" class="sizeIcon">
+					<span>{{prenotazioniByDay.nlettini}}</span>
+				</div>
+				<div class="row">
+					<img src="/assets/services/sdraio.svg" class="sizeIcon">
+					<span>{{prenotazioniByDay.nsdraie}}</span>
+				</div>
+				<div class="row">
+					<img src="/assets/services/money.svg" class="sizeIcon">
+					<span>{{prenotazioniByDay.prezzo}} €</span>
+				</div>
+			</ng-template>
+		</ion-card-content>
+	</ion-card>
 
 </ion-content>
+
+<ion-footer>
+	<ion-toolbar color="primary">
+		<ion-buttons>
+			<ion-grid>
+				<ion-row size="12" class="text-center">
+					<ion-col class="item disabled" size="6">
+						<ion-button (click)="navigateToSpiagge()">
+							<img src="/assets/services/spiagge.svg">
+						</ion-button>
+						<br>
+						<span class="menuItem">Spiagge</span>
+					</ion-col>
+					<ion-col size="6" class="item active" (click)="navigateToPrenotazioni()">
+						<ion-button>
+							<ion-icon name="book-outline"></ion-icon>
+						</ion-button>
+						<br>
+						<span class="menuItem">Prenotazioni</span>
+					</ion-col>
+				</ion-row>
+		</ion-grid>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-footer>

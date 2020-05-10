@@ -12,8 +12,32 @@
 	}
 }
 
+.containerServices{
+	display: inline-flex;
+	width: 100%;
+	flex-wrap: wrap;
+	.boxService{
+		border: 1px solid grey;
+		height: 100px;
+		width: 100px;
+		.iconService{
+			padding: 20px;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+		}
+	}
+}
+
 .imageStyle{
-	// filter: blur(3px);
+	height: 100%;
+	width: 100%;
+}
+
+.tariffeContainer{
+	margin: 20px;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 .desc{
@@ -21,5 +45,106 @@
 	font-style: italic;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+.title{
+	font-size: 16px;
+	justify-content: center;
+	display: flex;
+	margin: 10px 0;
+	width: 100%;
+	font-weight: bold;
+}
+
+.rowTariffa{
+	display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.containerWeek{
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 100%;
+	align-items: center;
+	height: 60px;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.containerDay{
+	height: 40px;
+  width: 40px;
+  display: flex;
+  margin: 10px 5px;
+  justify-content: center;
+  align-items: center;
+	&.active{
+		color: white;
+		background-color: #428cff;
+		border-radius: 50%;
+	}
+	.day{
+		font-size: 18px;
+	}
+}
+
+.dayWeek{
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+}
+
+.labelWeekContainer{
+	display: flex;
+	margin-top: 40px;
+	width: 100%;
+	justify-content: center;
+}
+
+.spiaggiaContainer{
+	margin: 20px 0;
+	position: relative;
+	.ombrelloniContainer{
+		position: absolute;
+    z-index: 1;
+    overflow-x: scroll;
+    height: 168px;
+    width: 640px;
+    bottom: 0;
+    padding: 20px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+	}
+	.description{
+		position: absolute;
+		top: 0;
+		color: white;
+		font-weight: bold;
+    height: 40px;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+	}
+}
+
+.circle{
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	background-color: green;
+	margin: 10px;
+}
+
+.descSpiaggia{
+	margin: 10px 0;
+	font-size: 16px;
+	line-height: 25px;
 }
 

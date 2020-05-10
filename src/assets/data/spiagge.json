@@ -1,26 +1,160 @@
 [
 	{
 		"id": "bagni-arzilla",
-		"descrizione": "Bagni Cafè Arzilla"
+		"title": "Bagni Cafè Arzilla",
+		"tipo": "sabbia",
+		"via":"Via del Moletto, 3",
+		"descrizione": "Bella spiaggia di sabbia dorata bagnata da un mare cristallino e con fondali che digradano dolcemente verso il largo, ideale per il bagno",
+		"servizi":
+		[
+			{"cod": "bar", "descrizione": "Bar"},
+			{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
+			{"cod": "wifi", "descrizione": "Wi-Fi"},
+			{"cod": "ping-pong", "descrizione": "Ping-Pong"},
+			{"cod": "capanno", "descrizione": "Capanno"},
+			{"cod": "piscina", "descrizione": "Piscina", "value": "2"}
+		],
+		"tariffe":
+			[
+				{"cod": "sdraio1", "desc": "1 sdraio", "prezzo": "10"},
+				{"cod": "lettino1", "desc": "1 lettino", "prezzo": "15"},
+				{"cod": "sdraio2", "desc": "2 sdraie", "prezzo": "18"},
+				{"cod": "lettino1_sdraio1", "desc": "1 lettino e 1 sdraio", "prezzo": "20"},
+				{"cod": "lettino2", "desc": "2 lettini", "prezzo": "25"},
+				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
+				{"cod": "lettino2_sdraio1", "desc": "2 lettini e 1 sdraio", "prezzo": "27"},
+				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
+			]
+
 	},
 	{
 		"id": "bagni-carlo",
-		"descrizione": "Bagni Carlo"
+		"title": "Bagni Carlo",
+		"tipo": "sassi",
+		"via":"Viale Adriatico, 14",
+		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
+		"servizi":
+			[
+				{"cod": "bar", "descrizione": "Bar"},
+				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
+				{"cod": "wifi", "descrizione": "Wi-Fi"},
+				{"cod": "ping-pong", "descrizione": "Ping-Pong"},
+				{"cod": "piscina", "descrizione": "Piscina", "value": "2"}
+			],
+		"tariffe":
+		[
+			{"cod": "sdraio1", "desc": "1 sdraio", "prezzo": "10"},
+			{"cod": "lettino1", "desc": "1 lettino", "prezzo": "15"},
+			{"cod": "sdraio2", "desc": "2 sdraie", "prezzo": "18"},
+			{"cod": "lettino1_sdraio1", "desc": "1 lettino e 1 sdraio", "prezzo": "20"},
+			{"cod": "lettino2", "desc": "2 lettini", "prezzo": "25"},
+			{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
+			{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
+			{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
+		]
 	},
 	{
 		"id": "bagni-gabriele",
-		"descrizione": "Bagni Gabriele"
+		"title": "Bagni Gabriele",
+		"tipo": "sassi",
+		"via":"Via del Moletto, 3",
+		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
+		"servizi":
+			[
+				{"cod": "bar", "descrizione": "Bar"},
+				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
+				{"cod": "wifi", "descrizione": "Wi-Fi"},
+				{"cod": "ping-pong", "descrizione": "Ping-Pong"},
+				{"cod": "piscina", "descrizione": "Piscina", "value": "2"}
+			],
+		"tariffe":
+			[
+				{"cod": "sdraio1", "desc": "1 sdraio", "prezzo": "10"},
+				{"cod": "lettino1", "desc": "1 lettino", "prezzo": "15"},
+				{"cod": "sdraio2", "desc": "2 sdraie", "prezzo": "18"},
+				{"cod": "lettino1_sdraio1", "desc": "1 lettino e 1 sdraio", "prezzo": "20"},
+				{"cod": "lettino2", "desc": "2 lettini", "prezzo": "25"},
+				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
+				{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
+				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
+			]
 	},
 	{
 		"id": "bagni-maurizio",
-		"descrizione": "Bagni Maurizio"
+		"title": "Bagni Maurizio",
+		"tipo": "sassi",
+		"via":"Via del Moletto, 3",
+		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
+		"servizi":
+			[
+				{"cod": "bar", "descrizione": "Bar"},
+				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
+				{"cod": "wifi", "descrizione": "Wi-Fi"},
+				{"cod": "ping-pong", "descrizione": "Ping-Pong"},
+				{"cod": "piscina", "descrizione": "Piscina", "value": "2"}
+			],
+		"tariffe":
+			[
+				{"cod": "sdraio1", "desc": "1 sdraio", "prezzo": "10"},
+				{"cod": "lettino1", "desc": "1 lettino", "prezzo": "15"},
+				{"cod": "sdraio2", "desc": "2 sdraie", "prezzo": "18"},
+				{"cod": "lettino1_sdraio1", "desc": "1 lettino e 1 sdraio", "prezzo": "20"},
+				{"cod": "lettino2", "desc": "2 lettini", "prezzo": "25"},
+				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
+				{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
+				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
+			]
 	},
 	{
 		"id": "bagni-peppe",
-		"descrizione": "Bagni Peppe"
+		"title": "Bagni Peppe",
+		"tipo": "sassi",
+		"via":"Via del Moletto, 3",
+		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
+		"servizi":
+			[
+				{"cod": "bar", "descrizione": "Bar"},
+				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
+				{"cod": "wifi", "descrizione": "Wi-Fi"},
+				{"cod": "ping-pong", "descrizione": "Ping-Pong"},
+				{"cod": "piscina", "descrizione": "Piscina", "value": "2"}
+			],
+		"tariffe":
+			[
+				{"cod": "sdraio1", "desc": "1 sdraio", "prezzo": "10"},
+				{"cod": "lettino1", "desc": "1 lettino", "prezzo": "15"},
+				{"cod": "sdraio2", "desc": "2 sdraie", "prezzo": "18"},
+				{"cod": "lettino1_sdraio1", "desc": "1 lettino e 1 sdraio", "prezzo": "20"},
+				{"cod": "lettino2", "desc": "2 lettini", "prezzo": "25"},
+				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
+				{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
+				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
+			]
 	},
 	{
 		"id": "bagni-sergio",
-		"descrizione": "Bagni Sergio"
+		"title": "Bagni Sergio",
+		"tipo": "sassi",
+		"via":"Via del Moletto, 3",
+		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
+		"servizi":
+			[
+				{"cod": "bar", "descrizione": "Bar"},
+				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
+				{"cod": "wifi", "descrizione": "Wi-Fi"},
+				{"cod": "ping-pong", "descrizione": "Ping-Pong"},
+				{"cod": "piscina", "descrizione": "Piscina", "value": "2"}
+			],
+		"tariffe":
+			[
+				{"cod": "sdraio1", "desc": "1 sdraio", "prezzo": "10"},
+				{"cod": "lettino1", "desc": "1 lettino", "prezzo": "15"},
+				{"cod": "sdraio2", "desc": "2 sdraie", "prezzo": "18"},
+				{"cod": "lettino1_sdraio1", "desc": "1 lettino e 1 sdraio", "prezzo": "20"},
+				{"cod": "lettino2", "desc": "2 lettini", "prezzo": "25"},
+				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
+				{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
+				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
+			]
 	}
 ]

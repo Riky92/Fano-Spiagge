@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary" class="central">
-		<ion-title>Ombrellone {{ombrellone.codice}}</ion-title>
+		<ion-title>Ombrelloni {{spiaggia.title}}</ion-title>
 		<ion-buttons slot="start">
       <ion-button  (click)="comeBack()">
 				<ion-icon name="arrow-back" mode="ios"></ion-icon>
@@ -23,18 +23,67 @@
 	<ion-row size="12" *ngIf="activeDay" class="labelWeekContainer">
 		{{activeDay.labelWeek}}
 	</ion-row>
-	<div class="containerSections">
-		<div class="containerImage">
-			<img src="/assets/spiagge/mattino.jpeg" class="fullWidth" (click)="prenota('mattino')">
-			<div class="descImage">
-				<span class="desc">Prenota la fascia oraria 06-13. Sono ancora disponibili 5 posti</span>
+	<div class="spiaggiaContainer">
+		<div class="description">Prenota l'ombrellone</div>
+		<div class="ombrelloniContainer">
+			<ng-container *ngFor="let ombrellone of ombrelloni">
+				<div class="column">
+					<span class="circle" [ngClass]="{'selected': ombrelloneSelected === ombrellone.codice}" (click)="changeOmbrellone(ombrellone)"></span>
+					<span class="ombrellone" [ngClass]="{'selected': ombrelloneSelected === ombrellone.codice}">{{ombrellone.codice}}</span>
+				</div>
+			</ng-container>
+		</div>
+		<img src="/assets/spiagge/spiaggia.jpg" class="imageStyle">
+	</div>
+	<div class="containerAttrezzatura">
+		<div class="containerTariffa">
+			Lettini
+		</div>
+		<div class="row">
+			<div class="flex1">
+				<img src="/assets/services/lettino.svg" class="size">
+			</div>
+			<div class="flex1">
+				<div class="containerBoxButtons">
+					<button [disabled]="disabledMinusLettini()" class="boxButton segno" [ngClass]="{'disabled': disabledMinusLettini()}" (click)="removeLettini()">
+						<ion-icon color="danger" class="sizeSign" name="remove-outline"></ion-icon>
+					</button>
+					<div class="boxButton value">
+						<span>{{countLettini}}</span>
+					</div>
+					<button color="transparent" [disabled]="disabledPlusLettini()" class="boxButton segno" [ngClass]="{'disabled': disabledPlusLettini()}" (click)="addLettini()">
+						<ion-icon class="flex1" color="success" class="sizeSign" name="add-outline"></ion-icon>
+					</button>
+				</div>
 			</div>
 		</div>
-		<div class="containerImage">
-			<img src="/assets/spiagge/pomeriggio.jpeg" class="fullWidth" (click)="prenota('pomeriggio')">
-			<div class="descImage">
-				<span class="desc">Prenota la fascia oraria 13-20. Sono ancora disponibili 5 posti</span>
+		<div class="containerTariffa">
+			Sdraie
+		</div>
+		<div class="row">
+			<div class="flex1">
+				<img src="/assets/services/sdraio.svg" class="size">
+			</div>
+			<div class="flex1">
+				<div class="containerBoxButtons">
+					<button [disabled]="disabledMinusSdraie()" class="boxButton segno" [ngClass]="{'disabled': disabledMinusSdraie()}" (click)="removeSdraie()">
+						<ion-icon color="danger" class="sizeSign" name="remove-outline"></ion-icon>
+					</button>
+					<div class="boxButton value">
+						<span>{{countSdraie}}</span>
+					</div>
+					<button color="transparent" [disabled]="disabledPlusSdraie()" class="boxButton segno" [ngClass]="{'disabled': disabledPlusSdraie()}" (click)="addSdraie()">
+						<ion-icon class="flex1" color="success" class="sizeSign" name="add-outline"></ion-icon>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
+	<div *ngIf="showTariffa()" class="containerTariffa">
+		la tariffa giornialiera è di <span class="tariffa">{{getTariffaGiornaliera()}} €</span>
+	</div>
 </ion-content>
+
+<ion-footer>
+	<ion-button type="submit" color="primary" expand="block" [disabled]="!enableButton()" [ngClass]="{'disabled':!enableButton()}"(click)="openRiepilogo()">Riepilogo Prenotazione</ion-button>
+</ion-footer>

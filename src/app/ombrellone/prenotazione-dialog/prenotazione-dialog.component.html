@@ -1,0 +1,30 @@
+<div class="prenotazioneContainer">
+	<div class="closeContainer">
+		<img src="/assets/icon/close.svg" (click)="close()">
+	</div>
+	<h1 class="title">Prenotazione</h1>
+	<div class="row">
+		<img src="/assets/services/umbrella.svg" class="sizeIcon">
+		<span>{{data.ombrellone}}</span>
+	</div>
+	<div class="row">
+		<img src="/assets/services/calendar.png" class="sizeIcon">
+		<span>{{data.dataPrenotazione}}</span>
+	</div>
+	<div class="row">
+		<img src="/assets/services/lettino.svg" class="sizeIcon">
+		<span>{{data.nlettini}}</span>
+	</div>
+	<div class="row">
+		<img src="/assets/services/sdraio.svg" class="sizeIcon">
+		<span>{{data.nsdraie}}</span>
+	</div>
+	<div class="row">
+		<img src="/assets/services/money.svg" class="sizeIcon">
+		<span>{{data.prezzo}} €</span>
+	</div>
+	<div class="buttonContainer">
+		<button type="submit" class="buttonConferma" (click)="conferma()">CONFERMA</button>
+	</div>
+</div>
+

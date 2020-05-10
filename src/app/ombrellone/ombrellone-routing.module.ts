@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { OmbrellonePage } from './ombrellone.page';
+import { PrenotazioneDialogComponent} from './prenotazione-dialog/prenotazione-dialog.component';
+import { MatDialog} from '@angular/material/dialog';
 
 const routes: Routes = [
   {
@@ -11,7 +13,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
+	entryComponents: [PrenotazioneDialogComponent],
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+	exports: [RouterModule],
+	providers: [MatDialog]
 })
 export class OmbrellonePageRoutingModule {}

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary" class="central">
-		<ion-title>{{spiaggia.descrizione}}</ion-title>
+		<ion-title>{{spiaggia.title}}</ion-title>
 		<ion-buttons slot="start">
       <ion-button  (click)="comeBack()">
 				<ion-icon name="arrow-back" mode="ios"></ion-icon>
@@ -11,16 +11,33 @@
 
 <ion-content>
 	<img src="/assets/spiagge/{{spiaggia.id}}.jpg" class="fullWidth">
-	<div class="containerQuestion" (click)="goToReservation()">
-		<img src="/assets/spiagge/spiaggia.jpg" class="imageStyle">
-		<div class="descContainer">
-			<span class="desc">Vuoi prenotare un ombrellone / gazebo presso {{spiaggia.descrizione}} ? </span>
-		</div>
-	</div>
-	<div class="containerQuestion" (click)="openDialogOmbrellone()">
-		<img src="/assets/spiagge/ombrellone.jpg" class="imageStyle">
-		<div class="descContainer">
-			<span class="desc">Possiedi un ombrellone / gazebo presso {{spiaggia.descrizione}} ? </span>
-		</div>
-	</div>
+	<ion-card>
+		<ion-card-header>
+			<ion-card-title>{{spiaggia.title}}</ion-card-title>
+			<ion-card-subtitle>{{spiaggia.via}}</ion-card-subtitle>
+		</ion-card-header>
+		<ion-card-content>
+			<div class="descSpiaggia">{{spiaggia.descrizione}}</div>
+			<div class="title">Servizi offerti</div>
+			<div class="containerServices">
+				<ng-container *ngFor="let service of spiaggia.servizi">
+					<div class="boxService">
+						<img src="/assets/services/{{service.cod}}.svg" class="iconService">
+					</div>
+				</ng-container>
+			</div>
+			<div class="tariffeContainer">
+				<div class="title">Tariffe giornaliere</div>
+				<ng-container *ngFor="let tariffa of spiaggia.tariffe">
+					<div class="rowTariffa">
+						<span>{{tariffa.desc}}</span>
+						<span>{{tariffa.prezzo}} €</span>
+					</div>
+				</ng-container>
+			</div>
+		</ion-card-content>
+	</ion-card>
 </ion-content>
+<ion-footer>
+	<ion-button type="submit" color="primary" expand="block" (click)="goToOmbrellone()">Prenota ombrellone</ion-button>
+</ion-footer>

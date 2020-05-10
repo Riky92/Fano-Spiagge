@@ -8,6 +8,49 @@
 	padding: 10px;
 }
 
+.column{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.dayWeek{
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+}
+
+// .labelWeekContainer{
+// 	display: flex;
+// 	margin-top: 40px;
+// 	width: 100%;
+// 	justify-content: center;
+// }
+
+// .containerSections{
+// 	margin-top: 20px;
+// }
+
+// .containerImage{
+// 	position: relative;
+// 	.descImage{
+// 		position: absolute;
+//     margin: auto;
+//     z-index: 1;
+//     line-height: 25px;
+// 		font-weight: bold;
+// 		background: rgba(0, 0, 0, 0.5);
+// 		bottom: 0;
+//     padding: 10px;
+// 	}
+
+// 	.desc{
+// 		color: white;
+// 		font-size: 18px;
+// 		font-style: italic;
+// 	}
+// }
+
 .containerDay{
 	height: 40px;
   width: 40px;
@@ -25,11 +68,6 @@
 	}
 }
 
-.column{
-	display: flex;
-	flex-direction: column;
-}
-
 .dayWeek{
 	font-size: 14px;
 	display: flex;
@@ -43,26 +81,122 @@
 	justify-content: center;
 }
 
-.containerSections{
-	margin-top: 20px;
+.spiaggiaContainer{
+	margin: 20px 0;
+	position: relative;
+	.ombrelloniContainer{
+		position: absolute;
+    z-index: 1;
+    overflow-x: scroll;
+    height: 168px;
+    width: 750px;
+    bottom: 0;
+    padding: 20px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+	}
+	.description{
+		position: absolute;
+		top: 0;
+		color: white;
+		font-weight: bold;
+    height: 40px;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+	}
 }
 
-.containerImage{
-	position: relative;
-	.descImage{
-		position: absolute;
-    margin: auto;
-    z-index: 1;
-    line-height: 25px;
-		font-weight: bold;
-		background: rgba(0, 0, 0, 0.5);
-		bottom: 0;
-    padding: 10px;
+.circle{
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: green;
+	margin: 10px;
+	&.selected{
+		background-color: gray;
 	}
+}
 
-	.desc{
-		color: white;
-		font-size: 18px;
-		font-style: italic;
+.ombrellone{
+	font-size: 8px;
+	color:  green;
+	&.selected{
+		color: gray;
 	}
+}
+
+.descSpiaggia{
+	margin: 10px 0;
+	font-size: 16px;
+	line-height: 25px;
+}
+
+.containerAttrezzatura{
+	width: 100%;
+	.row{
+		justify-content: space-around;
+		align-items: center;
+		margin: 15px;
+		display: flex;
+		.flex1{
+			flex: 1;
+		}
+	}
+}
+
+.size{
+	height: 100px;
+	width: 100px;
+}
+
+.containerBoxButtons{
+	display: inline-flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+.boxButton{
+	height: 60px;
+  width: 60px;
+	&.segno{
+		background-color:#8080803d;
+		border-radius: 5px;
+	}
+	&.value{
+		font-size: 16px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		font-size: 16px;
+	}
+}
+
+.sizeSign{
+	height: 30px;
+	width: 30px;
+	margin: 10px;
+	font-weight: bold;
+}
+
+.disabled{
+	opacity: 0.3;
+}
+
+.tariffa{
+	font-weight: bold;
+	padding-left: 2px;
+}
+
+.containerTariffa{
+	margin: 10px 0;
+	display: flex;
+	justify-content: center;
+
 }

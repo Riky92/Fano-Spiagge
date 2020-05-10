@@ -1,0 +1,78 @@
+
+
+.labelWeekContainer{
+	display: flex;
+	margin-top: 40px;
+	width: 100%;
+	justify-content: center;
+}
+
+.containerWeek{
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 100%;
+	align-items: center;
+	height: 60px;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.column{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.dayWeek{
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+}
+
+.containerDay{
+	height: 40px;
+  width: 40px;
+  display: flex;
+  margin: 10px 5px;
+  justify-content: center;
+  align-items: center;
+	&.active{
+		color: white;
+		background-color: #428cff;
+		border-radius: 50%;
+	}
+	.day{
+		font-size: 18px;
+	}
+}
+
+.noPadding{
+	padding: 0;
+}
+
+.titleCard{
+	margin: 10px 0;
+	justify-content: center;
+	width: 100%;
+	display: flex;
+}
+
+.row{
+	display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+
+.sizeIcon{
+	height: 50px;
+	width: 50px;
+}
+
+.noPrenotazioni{
+	font-size: 18px;
+
+}

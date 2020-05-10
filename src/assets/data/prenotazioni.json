@@ -1,0 +1,57 @@
+[
+	{
+		"id": "1",
+		"codSpiaggia": "bagni-arzilla",
+		"descSpiaggia": "Bagni Cafè Arzilla",
+		"ombrellone": "6B",
+		"dataPrenotazione": "10/5/2020",
+		"nlettini": 1,
+		"nsdraie": 1,
+		"prezzo": 20,
+		"user": "mencucir"
+	},
+	{
+		"id": "2",
+		"codSpiaggia": "bagni-carlo",
+		"descSpiaggia": "Bagni Carlo",
+		"ombrellone": "7A",
+		"dataPrenotazione": "11/5/2020",
+		"nlettini": 1,
+		"nsdraie": 0,
+		"prezzo": 15,
+		"user": "mencucir"
+	},
+	{
+		"id": "3",
+		"codSpiaggia": "bagni-gabriele",
+		"descSpiaggia": "Bagni Gabriele",
+		"ombrellone": "10A",
+		"dataPrenotazione": "12/5/2020",
+		"nlettini": 0,
+		"nsdraie": 1,
+		"prezzo": 10,
+		"user": "mencucir"
+	},
+	{
+		"id": "4",
+		"codSpiaggia": "bagni-maurizio",
+		"descSpiaggia": "Bagni Maurizio",
+		"ombrellone": "9C",
+		"dataPrenotazione": "12/5/2020",
+		"nlettini": 0,
+		"nsdraie": 1,
+		"prezzo": 10,
+		"user": "mencucir"
+	},
+	{
+		"id": "5",
+		"codSpiaggia": "bagni-sergio",
+		"descSpiaggia": "Bagni Sergio",
+		"ombrellone": "2C",
+		"dataPrenotazione": "13/5/2020",
+		"nlettini": 2,
+		"nsdraie": 1,
+		"prezzo": 25,
+		"user": "mencucir"
+	}
+]

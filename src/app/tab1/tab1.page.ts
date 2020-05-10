@@ -4,6 +4,7 @@ import { SpiaggeService } from '../services/spiagge.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { Spiaggia } from '../model/spiaggia';
 import { Storage} from '@ionic/storage';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class Tab1Page implements OnInit{
 
 	constructor(
 		private spiaggeService: SpiaggeService,
-		private router: Router
+		private router: Router,
+		private navController: NavController
 		) {}
 
 
@@ -40,6 +42,14 @@ export class Tab1Page implements OnInit{
     }
     this.router.navigate(['/spiaggia'], spaggiaData);
 
+	}
+
+	navigateToSpiagge(){
+		this.navController.navigateRoot('/tab1');
+	}
+
+	navigateToPrenotazioni(){
+		this.navController.navigateRoot('/prenotazioni');
 	}
 
 }
