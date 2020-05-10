@@ -29,7 +29,7 @@ export class AppComponent {
 	}
 
 	checkData(){
-		this.storage.get('data').then( result => {
+		this.storage.get('user').then( result => {
 			if (result != null) {
 				console.log('Data: '+ JSON.stringify(result));
 				this.navController.navigateRoot('tab1');
@@ -38,6 +38,6 @@ export class AppComponent {
 				console.log('error: '+ e);
 				this.navController.navigateRoot('login');
 				// Handle errors here
-			});
+		});
 	}
 }

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.fanospiagge.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Fano Spiagge</name>
+    <name>FanoSpiagge</name>
     <description>Un applicazione che supporta le prenotazioni per le spiagge</description>
     <author email="riccardo.mencucci92@gmail.com" href="http://kdmediteck.com/">Riccardo mencucci</author>
     <content src="index.html" />

@@ -38,12 +38,8 @@ export class LoginPage implements OnInit {
 		});
 	}
 
-	submitForm(form){
-		console.log('form: ', form.value);
-		this.storage.set('data',{
-			spiaggia: form.value.spiaggia,
-			ombrellone: form.value.ombrellone
-		});
+	init(){
+		this.storage.set('user', 'mencuccir');
 		this.navController.navigateRoot('tab1');
 	}
 
