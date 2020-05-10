@@ -21,7 +21,8 @@ export class PrenotazioniService {
     private plt: Platform,
     private sqlitePorter: SQLitePorter,
     private sqlite: SQLite,
-    private http: HttpService) {
+    private http: HttpService,
+    private httpClient: HttpClient) {
       this.plt.ready().then(() => {
         const conn = this.sqlite.create({
           name: 'prenotazioni.db',
@@ -37,7 +38,7 @@ export class PrenotazioniService {
   }
 
   seedDatabase() {
-    this.http.get('assets/db/prenotazioni.sql', { responseType: 'text'})
+    this.httpClient.get('assets/db/prenotazioni.sql', { responseType: 'text'})
     .subscribe(sql => {
       this.sqlitePorter.importSqlToDb(this.database, sql)
         .then(_ => {

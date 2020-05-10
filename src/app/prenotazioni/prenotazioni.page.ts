@@ -27,9 +27,9 @@ export class PrenotazioniPage implements OnInit {
 	activeDay;
 
   ngOnInit() {
-		this.initCalendar();
-		this.getPrenotazioniMock();
-		// this.getSpiagge();
+		// this.initCalendar();
+		// this.getPrenotazioniMock();
+		this.getPrenotazioni();
 	}
 
 	getPrenotazioni(){
@@ -39,6 +39,8 @@ export class PrenotazioniPage implements OnInit {
 					this.prenotazioni = responsePrenotazioni;
 					this.initCalendar();
 					console.log('prenotazioni: ', this.prenotazioni);
+					this.prenotazioniByDay = this.prenotazioni.find( prenotazione => prenotazione.dataPrenotazione === this.activeDay.labelPrenotazione);
+					console.log('prenotazioniByDay:',  this.prenotazioniByDay);
 				});
 			}
 		})

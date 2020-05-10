@@ -84,6 +84,8 @@
 	</div>
 </ion-content>
 
-<ion-footer padding>
-	<ion-button type="submit" color="primary" expand="block" [disabled]="!enableButton()" [ngClass]="{'disabled':!enableButton()}"(click)="openRiepilogo()">Riepilogo Prenotazione</ion-button>
+<ion-footer color="transparent">
+	<div class="padd-10">
+		<ion-button type="submit" color="primary" expand="block" [disabled]="!enableButton()" [ngClass]="{'disabled':!enableButton()}"(click)="openRiepilogo()">Riepilogo Prenotazione</ion-button>
+	</div>
 </ion-footer>
