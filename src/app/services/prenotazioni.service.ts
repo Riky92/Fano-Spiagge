@@ -30,7 +30,8 @@ export class PrenotazioniService {
         })
         console.log('connection', conn)
         conn.then((db: SQLiteObject) => {
-            this.database = db;
+						this.database = db;
+						console.log('database: ', this.database);
             this.seedDatabase();
 
         });
@@ -87,7 +88,7 @@ export class PrenotazioniService {
   addPrenotazione(spiaggia,ombrellone, dataPrenotazione, nlettini, nsdraie, prezzo, user) {
     const prenotazione = [spiaggia, ombrellone,dataPrenotazione, nlettini, nsdraie, prezzo, user];
     return this.database.executeSql(
-      'INSERT INTO prenotazioni (spiaggia, ombrellone, dataPrenotazione, nlettini, nsdraie, prezzo, user) VALUES (?, ?, ?, ?, ?, ?)',
+      'INSERT INTO prenotazioni (spiaggia, ombrellone, dataPrenotazione, nlettini, nsdraie, prezzo, user) VALUES (?, ?, ?, ?, ?, ?, ?)',
        prenotazione)
       .then(data => {
       this.loadPrenotazioni();
