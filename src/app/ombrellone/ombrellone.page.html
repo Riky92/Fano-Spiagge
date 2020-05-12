@@ -12,9 +12,9 @@
 <ion-content>
 	<div class="containerWeek">
 		<ng-container *ngFor="let cal of calendarOneWeek">
-			<div class="column">
+			<div class="column week">
 				<div class="dayWeek">{{cal.dayWeek}}</div>
-				<div class="containerDay" [ngClass]="{'active': activeDay === cal}" (click)="activeDay = cal">
+				<div class="containerDay" [ngClass]="{'active': activeDay === cal}" (click)="changeDay(cal)">
 					<span class="day">{{cal.day}}</span>
 				</div>
 			</div>
@@ -28,8 +28,19 @@
 		<div class="ombrelloniContainer">
 			<ng-container *ngFor="let ombrellone of ombrelloni">
 				<div class="column">
-					<span class="circle" [ngClass]="{'selected': ombrelloneSelected === ombrellone.codice}" (click)="changeOmbrellone(ombrellone)"></span>
-					<span class="ombrellone" [ngClass]="{'selected': ombrelloneSelected === ombrellone.codice}">{{ombrellone.codice}}</span>
+					<span class="circle"
+					[ngClass]=
+					"{'selected': ombrelloneSelected === ombrellone.codice,
+						'libero': ombrellone.libero,
+						'occupato': !ombrellone.libero
+					}"
+					(click)="changeOmbrellone(ombrellone)"></span>
+					<span class="ombrellone"
+					[ngClass]=
+					"{'selected': ombrelloneSelected === ombrellone.codice,
+						'libero': ombrellone.libero,
+						'occupato': !ombrellone.libero
+					}">{{ombrellone.codice}}</span>
 				</div>
 			</ng-container>
 		</div>

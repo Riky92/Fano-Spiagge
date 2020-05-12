@@ -11,7 +11,17 @@
 		<div class="containerSpiaggia" (click)="goToSpiaggia(spiaggia)">
 			<img src="/assets/spiagge/{{spiaggia.id}}.jpg" class="fullWidth">
 			<div class="containerDescription">
-				<span class="desc">{{spiaggia.title}}</span>
+				<div class="row title">
+					{{spiaggia.title}}
+				</div>
+				<div class="row via">
+					<ion-icon name="location-outline" color="white"></ion-icon>
+					{{spiaggia.via}}
+				</div>
+			</div>
+			<div class="containerTipologia">
+				<img src="/assets/icon/waves.svg">
+				<span class="padd-l-2">{{spiaggia.tipo}}</span>
 			</div>
 		</div>
 	</ng-container>

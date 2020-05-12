@@ -2,7 +2,7 @@
 	{
 		"id": "bagni-arzilla",
 		"title": "Bagni Cafè Arzilla",
-		"tipo": "sabbia",
+		"tipo": "sabbia dorata",
 		"via":"Via del Moletto, 3",
 		"descrizione": "Bella spiaggia di sabbia dorata bagnata da un mare cristallino e con fondali che digradano dolcemente verso il largo, ideale per il bagno",
 		"servizi":
@@ -30,7 +30,7 @@
 	{
 		"id": "bagni-carlo",
 		"title": "Bagni Carlo",
-		"tipo": "sassi",
+		"tipo": "sassonia",
 		"via":"Viale Adriatico, 14",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
 		"servizi":
@@ -56,8 +56,8 @@
 	{
 		"id": "bagni-gabriele",
 		"title": "Bagni Gabriele",
-		"tipo": "sassi",
-		"via":"Via del Moletto, 3",
+		"tipo": "sassonia",
+		"via":"Viale Adriatico, 16",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
 		"servizi":
 			[
@@ -82,8 +82,8 @@
 	{
 		"id": "bagni-maurizio",
 		"title": "Bagni Maurizio",
-		"tipo": "sassi",
-		"via":"Via del Moletto, 3",
+		"tipo": "sassonia",
+		"via":"Viale Adriatico, 18",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
 		"servizi":
 			[
@@ -108,8 +108,8 @@
 	{
 		"id": "bagni-peppe",
 		"title": "Bagni Peppe",
-		"tipo": "sassi",
-		"via":"Via del Moletto, 3",
+		"tipo": "sassonia",
+		"via":"Viale Adriatico, 20",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
 		"servizi":
 			[
@@ -134,8 +134,8 @@
 	{
 		"id": "bagni-sergio",
 		"title": "Bagni Sergio",
-		"tipo": "sassi",
-		"via":"Via del Moletto, 3",
+		"tipo": "sassonia",
+		"via":"Viale Adriatico, 22",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
 		"servizi":
 			[

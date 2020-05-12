@@ -2,301 +2,361 @@
 	{
 		"codice": "1A",
 		"fila": "1",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "2A",
 		"fila": "2",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "3A",
 		"fila": "3",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "4A",
 		"fila": "4",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "5A",
 		"fila": "5",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "6A",
 		"fila": "6",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "7A",
 		"fila": "7",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "8A",
 		"fila": "8",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "9A",
 		"fila": "9",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "10A",
 		"fila": "10",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "11A",
 		"fila": "11",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "12A",
 		"fila": "12",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "13A",
 		"fila": "13",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "14A",
 		"fila": "14",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "15A",
 		"fila": "15",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "16A",
 		"fila": "16",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "17A",
 		"fila": "17",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "18A",
 		"fila": "18",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "19A",
 		"fila": "19",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "20A",
 		"fila": "20",
-		"lettera": "A"
+		"lettera": "A",
+		"libero": true
 	},
 	{
 		"codice": "1B",
 		"fila": "1",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "2B",
 		"fila": "2",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "3B",
 		"fila": "3",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "4B",
 		"fila": "4",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "5B",
 		"fila": "5",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "6B",
 		"fila": "6",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "7B",
 		"fila": "7",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "8B",
 		"fila": "8",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "9B",
 		"fila": "9",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "10B",
 		"fila": "10",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "11B",
 		"fila": "11",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "12B",
 		"fila": "12",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "13B",
 		"fila": "13",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "14B",
 		"fila": "14",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "15B",
 		"fila": "15",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "16B",
 		"fila": "16",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "17B",
 		"fila": "17",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "18B",
 		"fila": "18",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "19B",
 		"fila": "19",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "20B",
 		"fila": "20",
-		"lettera": "B"
+		"lettera": "B",
+		"libero": true
 	},
 	{
 		"codice": "1C",
 		"fila": "1",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "2C",
 		"fila": "2",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "3C",
 		"fila": "3",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "4C",
 		"fila": "4",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "5C",
 		"fila": "5",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "6C",
 		"fila": "6",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "7C",
 		"fila": "7",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "8C",
 		"fila": "8",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "9C",
 		"fila": "9",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "10C",
 		"fila": "10",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "11C",
 		"fila": "11",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "12C",
 		"fila": "12",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "13C",
 		"fila": "13",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "14C",
 		"fila": "14",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "15C",
 		"fila": "15",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "16C",
 		"fila": "16",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "17C",
 		"fila": "17",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "18C",
 		"fila": "18",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "19C",
 		"fila": "19",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	},
 	{
 		"codice": "20C",
 		"fila": "20",
-		"lettera": "C"
+		"lettera": "C",
+		"libero": true
 	}
 ]

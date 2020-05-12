@@ -2,7 +2,7 @@
 
 .labelWeekContainer{
 	display: flex;
-	margin-top: 20px;
+	margin-top: 30px;
 	width: 100%;
 	justify-content: center;
 }
@@ -21,6 +21,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	&.week{
+		width: 14%;
+	}
 }
 
 .dayWeek{

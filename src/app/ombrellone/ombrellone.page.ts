@@ -10,7 +10,8 @@ import { Spiaggia } from '../model/spiaggia';
 import { MatDialog} from '@angular/material/dialog';
 import { PrenotazioneDialogComponent} from './prenotazione-dialog/prenotazione-dialog.component';
 import { Prenotazione } from '../model/prenotazione';
-import { PrenotazioniService } from '../services/prenotazioni.service';
+import { PrenotazioniService } from '../services/prenotazioni2.service';
+import { PrenotazioniProvider } from '../providers/prenotazioni.provider';
 
 
 @Component({
@@ -42,6 +43,7 @@ export class OmbrellonePage implements OnInit {
 		private router: Router,
 		private spiaggiaService: SpiaggeService,
 		private prenotazioniService: PrenotazioniService,
+		private prenotazioniProvider: PrenotazioniProvider,
 		private navController: NavController,
 		private dialog: MatDialog
 
@@ -51,27 +53,43 @@ export class OmbrellonePage implements OnInit {
 		this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
 				this.spiaggia = this.router.getCurrentNavigation().extras.state.spiaggia;
+				this.initCalendar();
 				this.spiaggiaService.getOmbrelloni().subscribe( response => {
 					this.ombrelloni = response;
-					this.getPrenotazioni();
-					this.initCalendar();
+					this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
+						this.prenotazioni = responsePrenotazioni;
+						this.disegnaOmbrelloniOccupati(this.getOmbrelloniOccupatiGiornalieri())
+					});
 				});
       }
     });
 	}
 
-	getPrenotazioni(){
-		this.prenotazioniService.getDatabaseState().subscribe( isReady => {
-			if( isReady){
-				this.prenotazioniService.getPrenotazioni().subscribe( responsePrenotazioni => {
-					this.prenotazioni = responsePrenotazioni;
-				});
-			}
-		})
-	}
-
 	comeBack(){
 		this.navController.back();
+	}
+
+	changeDay(day){
+		this.activeDay = day;
+		this.disegnaOmbrelloniOccupati(this.getOmbrelloniOccupatiGiornalieri())
+	}
+
+	getOmbrelloniOccupatiGiornalieri(){
+		const prenotazioni = this.prenotazioni.filter( prenotazione => prenotazione.codSpiaggia === this.spiaggia.id &&
+												prenotazione.dataPrenotazione === this.activeDay.labelPrenotazione);
+		return prenotazioni.map(prenot=> prenot.ombrellone);
+	}
+
+	disegnaOmbrelloniOccupati(ombrelloniOccupati){
+		this.ombrelloni.forEach( ombrellone => {
+			ombrellone.libero = true;
+			// tslint:disable-next-line:prefer-for-of
+			for( let i = 0; i < ombrelloniOccupati.length; i++){
+				if(ombrellone.codice ===  ombrelloniOccupati[i]){
+					ombrellone.libero = false;
+				}
+			}
+		});
 	}
 
 	initCalendar(){
@@ -202,12 +220,14 @@ export class OmbrellonePage implements OnInit {
 
 	openRiepilogo(){
 		const prenotazione = {
-			spiaggia: this.spiaggia.title,
+			codSpiaggia: this.spiaggia.id,
+			descSpiaggia: this.spiaggia.title,
 			ombrellone: this.ombrelloneSelected,
 			dataPrenotazione: this.activeDay.labelPrenotazione,
 			nlettini: this.countLettini,
 			nsdraie : this.countSdraie,
-			prezzo: this.getTariffaGiornaliera()
+			prezzo: this.getTariffaGiornaliera(),
+			user: 'mencuccir'
 		};
 		const dialogRef = this.dialog.open(PrenotazioneDialogComponent, {
 			data: prenotazione,
@@ -220,10 +240,7 @@ export class OmbrellonePage implements OnInit {
 	}
 
 	doPrenotazione(prenotazione){
-		this.navController.navigateRoot('/prenotazioni')
-		this.prenotazioniService.addPrenotazione(
-			prenotazione.spiaggia,prenotazione.ombrellone, prenotazione.dataPrenotazione,
-			prenotazione.nlettini, prenotazione.nsdraie, prenotazione.prezzo, 'mencuccir').then(data => {
+		this.prenotazioniService.addPrenotazione(prenotazione).then(data => {
 				this.navController.navigateRoot('/prenotazioni');
 			});
 

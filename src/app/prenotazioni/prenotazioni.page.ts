@@ -4,6 +4,7 @@ import { Prenotazione } from '../model/prenotazione';
 import { NavController } from '@ionic/angular';
 import { SpiaggeService } from '../services/spiagge.service';
 import { Spiaggia } from '../model/spiaggia';
+import { PrenotazioniProvider } from '../providers/prenotazioni.provider';
 
 @Component({
   selector: 'app-prenotazioni',
@@ -14,6 +15,7 @@ export class PrenotazioniPage implements OnInit {
 
 	constructor(
 		private prenotazioniService: PrenotazioniService,
+		private prenotazioniProvider: PrenotazioniProvider,
 		private spiaggeService: SpiaggeService,
 		private navController: NavController) { }
 
@@ -33,17 +35,13 @@ export class PrenotazioniPage implements OnInit {
 	}
 
 	getPrenotazioni(){
-		this.prenotazioniService.getDatabaseState().subscribe( isReady => {
-			if( isReady){
-				this.prenotazioniService.getPrenotazioni().subscribe( responsePrenotazioni => {
-					this.prenotazioni = responsePrenotazioni;
-					this.initCalendar();
-					console.log('prenotazioni: ', this.prenotazioni);
-					this.prenotazioniByDay = this.prenotazioni.find( prenotazione => prenotazione.dataPrenotazione === this.activeDay.labelPrenotazione);
-					console.log('prenotazioniByDay:',  this.prenotazioniByDay);
-				});
-			}
-		})
+		this.initCalendar();
+		this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
+			this.prenotazioni = responsePrenotazioni;
+			console.log('prenotazioni: ', this.prenotazioni);
+			this.prenotazioniByDay = this.prenotazioni.find( prenotazione => prenotazione.dataPrenotazione === this.activeDay.labelPrenotazione);
+			console.log('prenotazioniByDay:',  this.prenotazioniByDay);
+		});
 	}
 
 	getSpiagge(){
@@ -55,7 +53,8 @@ export class PrenotazioniPage implements OnInit {
 		return this.prenotazioniService.getPrenotazioniMock().subscribe( response => {
 			this.prenotazioni = response;
 			console.log('prenotazioni: ', this.prenotazioni);
-			this.prenotazioniByDay = this.prenotazioni.find( prenotazione => prenotazione.dataPrenotazione === this.activeDay.labelPrenotazione);
+			this.prenotazioniByDay = this.prenotazioni.find(
+			prenotazione => prenotazione.dataPrenotazione === this.activeDay.labelPrenotazione && prenotazione.user === 'mencuccir');
 			console.log('prenotazioniByDay:',  this.prenotazioniByDay);
 		});
 	}
@@ -78,7 +77,6 @@ export class PrenotazioniPage implements OnInit {
 				labelPrenotazione: date.toLocaleDateString(),
 
 				});
-			console.log(typeof(date.getUTCMonth()))
 		}
 
 		this.activeDay = this.calendarOneWeek[0];

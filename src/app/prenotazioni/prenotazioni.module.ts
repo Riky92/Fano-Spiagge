@@ -9,6 +9,7 @@ import { PrenotazioniPageRoutingModule } from './prenotazioni-routing.module';
 import { PrenotazioniPage } from './prenotazioni.page';
 import { PrenotazioniService } from '../services/prenotazioni.service';
 import { SpiaggeService } from '../services/spiagge.service';
+import { PrenotazioniProvider } from '../providers/prenotazioni.provider';
 
 @NgModule({
   imports: [
@@ -18,6 +19,10 @@ import { SpiaggeService } from '../services/spiagge.service';
     PrenotazioniPageRoutingModule
   ],
 	declarations: [PrenotazioniPage],
-	providers: [PrenotazioniService, SpiaggeService]
+	providers: [
+		PrenotazioniService,
+		PrenotazioniProvider,
+		SpiaggeService,
+	]
 })
 export class PrenotazioniPageModule {}

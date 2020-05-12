@@ -9,7 +9,8 @@ import { OmbrellonePageRoutingModule } from './ombrellone-routing.module';
 import { OmbrellonePage } from './ombrellone.page';
 import { SpiaggeService } from '../services/spiagge.service';
 import { MatDialogModule} from '@angular/material/dialog';
-import { PrenotazioniService } from '../services/prenotazioni.service';
+import { PrenotazioniService } from '../services/prenotazioni2.service';
+import { PrenotazioniProvider } from '../providers/prenotazioni.provider';
 
 @NgModule({
   imports: [
@@ -20,6 +21,11 @@ import { PrenotazioniService } from '../services/prenotazioni.service';
     OmbrellonePageRoutingModule
   ],
 	declarations: [OmbrellonePage],
-	providers: [SpiaggeService, PrenotazioniService]
+	providers: [
+		SpiaggeService,
+		PrenotazioniService,
+		PrenotazioniProvider,
+		PrenotazioniService
+	]
 })
 export class OmbrellonePageModule {}

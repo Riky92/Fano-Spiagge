@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar color="primary" class="central">
-    <ion-title>Prenotazioni</ion-title>
+    <ion-title>Le mie prenotazioni</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 	<div class="containerWeek">
 		<ng-container *ngFor="let cal of calendarOneWeek">
-			<div class="column">
+			<div class="column week">
 				<div class="dayWeek">{{cal.dayWeek}}</div>
 				<div class="containerDay" [ngClass]="{'active': activeDay === cal}" (click)="changeDay(cal)">
 					<span class="day">{{cal.day}}</span>
