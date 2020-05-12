@@ -135,8 +135,8 @@
 }
 
 .size{
-	height: 100px;
-	width: 100px;
+	height: 60px;
+	width: 60px;
 }
 
 .containerBoxButtons{
@@ -146,8 +146,8 @@
 	align-items: center;
 }
 .boxButton{
-	height: 60px;
-  width: 60px;
+	height: 50px;
+  width: 50px;
 	&.segno{
 		background-color:#8080803d;
 		border-radius: 5px;
@@ -157,7 +157,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 100%;
 		font-size: 16px;
 	}
 }
@@ -165,7 +164,6 @@
 .sizeSign{
 	height: 30px;
 	width: 30px;
-	margin: 5px;
 	font-weight: bold;
 }
 
