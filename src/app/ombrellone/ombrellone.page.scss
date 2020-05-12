@@ -130,6 +130,10 @@
 		display: flex;
 		.flex1{
 			flex: 1;
+			&.icon{
+				display: flex;
+				justify-content: center;
+			}
 		}
 	}
 }
