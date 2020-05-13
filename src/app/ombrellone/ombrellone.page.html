@@ -23,8 +23,14 @@
 	<ion-row size="12" *ngIf="activeDay" class="labelWeekContainer">
 		{{activeDay.labelWeek}}
 	</ion-row>
+	<div class="containerLegenda">
+		<ng-container *ngFor="let item of legenda">
+			<span class="circle {{item.cssClass}}" [ngStyle]="{'background-color': item.color}"></span>
+			<span class="ombrellone {{item.cssClass}}">{{item.desc}}</span>
+		</ng-container>
+	</div>
 	<div class="spiaggiaContainer">
-		<div class="description">Prenota l'ombrellone</div>
+		<div class="description">Scegli la posizione del tuo ombrellone</div>
 		<div class="ombrelloniContainer">
 			<ng-container *ngFor="let ombrellone of ombrelloni">
 				<div class="column">
@@ -32,7 +38,8 @@
 					[ngClass]=
 					"{'selected': ombrelloneSelected === ombrellone.codice,
 						'libero': ombrellone.libero,
-						'occupato': !ombrellone.libero
+						'occupato': !ombrellone.libero && ombrellone.codice !== occupatoDaMe,
+						'occupatoDaMe': !ombrellone.libero && ombrellone.codice === occupatoDaMe
 					}"
 					[disabled]="!ombrellone.libero"
 					(click)="changeOmbrellone(ombrellone)"></button>
@@ -40,7 +47,8 @@
 					[ngClass]=
 					"{'selected': ombrelloneSelected === ombrellone.codice,
 						'libero': ombrellone.libero,
-						'occupato': !ombrellone.libero
+						'occupato': !ombrellone.libero && ombrellone.codice !== occupatoDaMe,
+						'occupatoDaMe': !ombrellone.libero && ombrellone.codice === occupatoDaMe
 					}" [attr.disabled]="!ombrellone.libero">{{ombrellone.codice}}</span>
 				</div>
 			</ng-container>

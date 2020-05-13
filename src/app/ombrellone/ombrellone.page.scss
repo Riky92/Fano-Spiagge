@@ -48,20 +48,20 @@
 
 .labelWeekContainer{
 	display: flex;
-	margin-top: 30px;
+	margin: 10px 0;
 	width: 100%;
 	justify-content: center;
 }
 
 .spiaggiaContainer{
-	margin: 20px 0;
+	margin: 10px 0;
 	position: relative;
 	.ombrelloniContainer{
 		position: absolute;
     z-index: 1;
     overflow-x: scroll;
     height: 168px;
-    width: 750px;
+    width: 760px;
     bottom: 0;
     padding: 20px;
     display: inline-flex;
@@ -97,12 +97,15 @@
 		background-color: red;
 	}
 	&.selected{
-		background-color: yellow;
+		background-color: rgb(237, 237, 0);
+	}
+	&.occupatoDaMe{
+		background-color: orange;
 	}
 }
 
 .ombrellone{
-	font-size: 8px;
+	font-size: 11px;
 	font-weight: bold;
 	&.libero{
 		color:  green;
@@ -111,7 +114,10 @@
 		color: red;
 	}
 	&.selected{
-		color: yellow;
+		color: rgb(237, 237, 0);
+	}
+	&.occupatoDaMe{
+		color: orange;
 	}
 }
 
@@ -185,4 +191,24 @@
 	display: flex;
 	justify-content: center;
 
+}
+
+.containerLegenda{
+	margin: 10px 0;
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+	align-items: center;
+}
+
+.flex1{
+	flex: 1;
+}
+
+.flex3{
+	flex: 3;
+}
+
+.item{
+	margin: 0 5px;
 }

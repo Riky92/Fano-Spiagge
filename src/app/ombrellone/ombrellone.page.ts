@@ -33,12 +33,18 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 	countLettini = 0;
 	countSdraie = 0;
 
+	occupatoDaMe = '';
+
 	tariffa;
 
 	subscription;
 
-	disabledMattino = false;
-	disabledPomeriggio = false;
+	legenda = [
+		{desc: 'Libero', cssClass: 'libero', color: 'green'},
+		{desc: 'Occupato', cssClass: 'occupato', color: 'red'},
+		{desc: 'Occupato da me', cssClass: 'occupatoDaMe', color: 'orange'},
+		{desc: 'Selezionato', cssClass: 'selected', color: 'yellow'}
+	];
 
   constructor(
 		private route: ActivatedRoute,
@@ -60,14 +66,16 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 				this.spiaggiaService.getOmbrelloni().subscribe( response => {
 					this.ombrelloni = response;
 					this.subscription = this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
-						// this.prenotazioni = this.prenotazioniProvider.getPrenotazioniList();
-						console.log('prenotazioni: ', this.prenotazioni);
 						this.prenotazioni = responsePrenotazioni;
 						this.disegnaOmbrelloniOccupati(this.getOmbrelloniOccupatiGiornalieri());
 					});
 				});
       }
     });
+	}
+
+	isPrenotazioneGiornalieraGiàFatta(){
+		return this.prenotazioni.find( prenot => prenot.dataPrenotazione === this.activeDay.labelPrenotazione && prenot.user === 'mencuccir');
 	}
 
 	comeBack(){
@@ -83,18 +91,25 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 	getOmbrelloniOccupatiGiornalieri(){
 		const prenotazioni = this.prenotazioni.filter( prenotazione => prenotazione.codSpiaggia === this.spiaggia.id &&
 												prenotazione.dataPrenotazione === this.activeDay.labelPrenotazione);
-		return prenotazioni.map(prenot=> prenot.ombrellone);
+		return prenotazioni.map(prenot => {
+			return {
+				codice: prenot.ombrellone,
+				user: prenot.user
+			};
+		});
 	}
 
 	disegnaOmbrelloniOccupati(ombrelloniOccupati){
 		this.ombrelloni.forEach( ombrellone => {
 			ombrellone.libero = true;
-			// tslint:disable-next-line:prefer-for-of
-			for( let i = 0; i < ombrelloniOccupati.length; i++){
-				if(ombrellone.codice ===  ombrelloniOccupati[i]){
+			ombrelloniOccupati.forEach(ombrell => {
+				if( ombrellone.codice === ombrell.codice){
 					ombrellone.libero = false;
+					if(ombrell.user === 'mencuccir'){
+						this.occupatoDaMe = ombrell.codice;
+					}
 				}
-			}
+			});
 		});
 	}
 
@@ -240,20 +255,22 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 			width: '400px'
 		}).afterClosed().subscribe( response => {
 			if( response){
-				this.subscription = this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
-					if(this.checkPrenotazione(responsePrenotazioni, prenotazione)){
-						this.presentAlertOmbrellone();
-					} else {
-						this.doPrenotazione(prenotazione);
-					}
-				});
+				if( this.isPrenotazioneGiornalieraGiàFatta()){
+					this.presentAlertOmbrellone(1);
+				} else if(this.checkPrenotazione(this.prenotazioni, prenotazione)){
+					this.presentAlertOmbrellone(2);
+				} else {
+					this.doPrenotazione(prenotazione);
+				}
 			}
 		});
 	}
 
-	async presentAlertOmbrellone() {
+	async presentAlertOmbrellone(type) {
     const alert = await this.alertCtrl.create({
-      header: 'Errore prenotazione! L\'ombrellone selezionato è stato appena occupato!',
+			header: 'Errore prenotazione',
+			message: type === 1 ? 'Per questa data hai già effettuato una prenotazione presso ' + this.spiaggia.title:
+			 'L\'ombrellone selezionato è stato appena occupato!',
       buttons: [
          {
           text: 'Riprova',
