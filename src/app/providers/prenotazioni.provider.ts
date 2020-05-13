@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Prenotazione } from '../model/prenotazione';
 import { PrenotazioniService } from '../services/prenotazioni2.service';
@@ -7,9 +7,13 @@ import { of} from 'rxjs'
 @Injectable({
   providedIn: 'root'
 })
-export class PrenotazioniProvider {
+export class PrenotazioniProvider implements OnDestroy{
 
 	prenotazioni = new BehaviorSubject([]);
+
+	prenotazioniList;
+
+	subscription;
 
 	constructor(
 		private prenotazioniService: PrenotazioniService
@@ -18,7 +22,7 @@ export class PrenotazioniProvider {
 	}
 
 	loadPrenotazioni(){
-		this.prenotazioniService.getPrenotazioni().subscribe( response => {
+		this.subscription = this.prenotazioniService.getPrenotazioni().subscribe( response => {
 			const prenotazioniData : Prenotazione[] = response.map(e => {
         return {
 					id: e.payload.doc.id,
@@ -40,6 +44,10 @@ export class PrenotazioniProvider {
     return this.prenotazioni.asObservable();
 	}
 
+	getPrenotazioniList(){
+		return this.prenotazioniList;
+	}
+
 	getPrenotazioniBySpiaggiaDate(spiaggia, data){
 		this.prenotazioni.subscribe( response => {
 			const prenotazioneList: Prenotazione[] =
@@ -49,9 +57,7 @@ export class PrenotazioniProvider {
 	}
 
 	addPrenotazione(prenotazione){
-		this.prenotazioniService.addPrenotazione(prenotazione).then(responsePrenotazione => {
-			this.loadPrenotazioni();
-		});
+		this.prenotazioniService.addPrenotazione(prenotazione);
 	}
 
 	updatePrenotazione(prenotazione) {
@@ -69,5 +75,9 @@ export class PrenotazioniProvider {
 
 	removePrenoazione(id) {
     this.prenotazioniService.deletePrenotazione(id)
-  }
+	}
+
+	ngOnDestroy(){
+		this.prenotazioni.unsubscribe();
+	}
 }

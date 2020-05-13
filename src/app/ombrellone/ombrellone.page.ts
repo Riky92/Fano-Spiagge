@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, AlertController, ModalController } from '@ionic/angular';
 import { Ombrellone } from '../model/ombrellone';
@@ -19,7 +19,7 @@ import { PrenotazioniProvider } from '../providers/prenotazioni.provider';
   templateUrl: './ombrellone.page.html',
   styleUrls: ['./ombrellone.page.scss'],
 })
-export class OmbrellonePage implements OnInit {
+export class OmbrellonePage implements OnInit, OnDestroy {
 
 
 	calendarOneWeek = [];
@@ -35,12 +35,15 @@ export class OmbrellonePage implements OnInit {
 
 	tariffa;
 
+	subscription;
+
 	disabledMattino = false;
 	disabledPomeriggio = false;
 
   constructor(
 		private route: ActivatedRoute,
 		private router: Router,
+		private alertCtrl: AlertController,
 		private spiaggiaService: SpiaggeService,
 		private prenotazioniService: PrenotazioniService,
 		private prenotazioniProvider: PrenotazioniProvider,
@@ -56,9 +59,11 @@ export class OmbrellonePage implements OnInit {
 				this.initCalendar();
 				this.spiaggiaService.getOmbrelloni().subscribe( response => {
 					this.ombrelloni = response;
-					this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
+					this.subscription = this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
+						// this.prenotazioni = this.prenotazioniProvider.getPrenotazioniList();
+						console.log('prenotazioni: ', this.prenotazioni);
 						this.prenotazioni = responsePrenotazioni;
-						this.disegnaOmbrelloniOccupati(this.getOmbrelloniOccupatiGiornalieri())
+						this.disegnaOmbrelloniOccupati(this.getOmbrelloniOccupatiGiornalieri());
 					});
 				});
       }
@@ -71,6 +76,7 @@ export class OmbrellonePage implements OnInit {
 
 	changeDay(day){
 		this.activeDay = day;
+		this.ombrelloneSelected = '';
 		this.disegnaOmbrelloniOccupati(this.getOmbrelloniOccupatiGiornalieri())
 	}
 
@@ -234,9 +240,40 @@ export class OmbrellonePage implements OnInit {
 			width: '400px'
 		}).afterClosed().subscribe( response => {
 			if( response){
-				this.doPrenotazione(prenotazione);
+				this.subscription = this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
+					if(this.checkPrenotazione(responsePrenotazioni, prenotazione)){
+						this.presentAlertOmbrellone();
+					} else {
+						this.doPrenotazione(prenotazione);
+					}
+				});
 			}
 		});
+	}
+
+	async presentAlertOmbrellone() {
+    const alert = await this.alertCtrl.create({
+      header: 'Errore prenotazione! L\'ombrellone selezionato è stato appena occupato!',
+      buttons: [
+         {
+          text: 'Riprova',
+          handler: () => {
+						this.ombrelloneSelected = '';
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+	}
+
+	checkPrenotazione(prenotazioniList, prenotazione){
+		console.log('exist: ', prenotazioniList.find( prenot => prenot.codSpiaggia === prenotazione.codSpiaggia &&
+			prenot.ombrellone === prenotazione.ombrellone &&
+			prenot.dataPrenotazione === prenotazione.dataPrenotazione));
+		return prenotazioniList.find( prenot => prenot.codSpiaggia === prenotazione.codSpiaggia &&
+																	prenot.ombrellone === prenotazione.ombrellone &&
+																	prenot.dataPrenotazione === prenotazione.dataPrenotazione);
 	}
 
 	doPrenotazione(prenotazione){
@@ -245,6 +282,10 @@ export class OmbrellonePage implements OnInit {
 			});
 
 	}
+
+	ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
 }
 

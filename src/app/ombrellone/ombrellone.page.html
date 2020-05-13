@@ -28,19 +28,20 @@
 		<div class="ombrelloniContainer">
 			<ng-container *ngFor="let ombrellone of ombrelloni">
 				<div class="column">
-					<span class="circle"
+					<button class="circle"
 					[ngClass]=
 					"{'selected': ombrelloneSelected === ombrellone.codice,
 						'libero': ombrellone.libero,
 						'occupato': !ombrellone.libero
 					}"
-					(click)="changeOmbrellone(ombrellone)"></span>
+					[disabled]="!ombrellone.libero"
+					(click)="changeOmbrellone(ombrellone)"></button>
 					<span class="ombrellone"
 					[ngClass]=
 					"{'selected': ombrelloneSelected === ombrellone.codice,
 						'libero': ombrellone.libero,
 						'occupato': !ombrellone.libero
-					}">{{ombrellone.codice}}</span>
+					}" [attr.disabled]="!ombrellone.libero">{{ombrellone.codice}}</span>
 				</div>
 			</ng-container>
 		</div>
