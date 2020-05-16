@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { SpiaggeService } from '../services/spiagge.service';
+// import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 
 @NgModule({
   imports: [
@@ -16,6 +17,9 @@ import { SpiaggeService } from '../services/spiagge.service';
     RouterModule.forChild([{ path: '', component: Tab1Page }])
   ],
 	declarations: [Tab1Page],
-	providers: [SpiaggeService]
+	providers: [
+		SpiaggeService,
+		// UniqueDeviceID,
+		Storage]
 })
 export class Tab1PageModule {}

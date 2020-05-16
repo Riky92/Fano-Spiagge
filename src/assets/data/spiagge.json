@@ -5,7 +5,7 @@
 		"tipo": "sabbia dorata",
 		"via":"Via del Moletto, 3",
 		"descrizione": "Bella spiaggia di sabbia dorata bagnata da un mare cristallino e con fondali che digradano dolcemente verso il largo, ideale per il bagno",
-		"servizi":
+		"serviziOfferti":
 		[
 			{"cod": "bar", "descrizione": "Bar"},
 			{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
@@ -24,8 +24,118 @@
 				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
 				{"cod": "lettino2_sdraio1", "desc": "2 lettini e 1 sdraio", "prezzo": "27"},
 				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
+			],
+		"serviziBar":
+			[
+				{"codSection": "caffetteria",
+				"descSection": "Caffetteria",
+				"active": false,
+				"items":
+					[
+						{"cod": "caffè", "desc": "Caffè", "selected": false,"nSelected": 0,"prezzo": 1},
+						{"cod": "deca", "desc": "Deca",  "selected": false,"nSelected": 0,"prezzo": 1.1},
+						{"cod": "caffe_macchiato", "desc": "Caffè Macchiato", "selected": false,"nSelected": 0, "prezzo": 1.1},
+						{"cod": "macchiatone", "desc": "Macchiatone","selected": false,  "nSelected": 0, "prezzo": 1.3},
+						{"cod": "cappuccino", "desc": "Cappuccino", "selected": false,"nSelected": 0, "prezzo": 1.4},
+						{"cod": "cappuccino_soia", "desc": "Cappuccino di soia", "selected": false,"nSelected": 0, "prezzo": 1.6},
+						{"cod": "cappuccino_orzo", "desc": "Cappuccino d'orzo", "selected": false,"nSelected": 0, "prezzo": 1.7},
+						{"cod": "caffe_corretto", "desc": "Caffè correto",  "selected": false,"nSelected": 0,"prezzo": 1.5},
+						{"cod": "moretta", "desc": "Moretta", "selected": false, "nSelected": 0,"prezzo": 2},
+						{"cod": "latte_bianco", "desc": "Latte Bianco", "selected": false, "nSelected": 0,"prezzo": 1.2},
+						{"cod": "latte_macchiato", "desc": "Latte macchiato", "selected": false,"nSelected": 0, "prezzo": 1.6},
+						{"cod": "latte_macchiato_soia", "desc": "Latte macchiato soia", "selected": false, "nSelected": 0,"prezzo": 1.8},
+						{"cod": "orzo", "desc": "Orzo piccolo/grande", "selected": false, "nSelected": 0,"prezzo": 1.5},
+						{"cod": "ginseng", "desc": "GinSeng", "selected": false, "nSelected": 0,"prezzo": 1.5},
+						{"cod": "the", "desc": "Thè Caldo", "selected": false, "nSelected": 0,"prezzo": 2},
+						{"cod": "brioches", "desc": "Brioches", "selected": false, "nSelected": 0,"prezzo": 1.3},
+						{"cod": "torta", "desc": "Torta a fette", "selected": false, "nSelected": 0,"prezzo": 3},
+						{"cod": "muffin", "desc": "Muffin", "selected": false, "nSelected": 0,"prezzo": 2},
+						{"cod": "ciambella_piccola", "desc": "Ciambella piccola","selected": false, "nSelected": 0, "prezzo": 1},
+						{"cod": "ciambella_grande", "desc": "Ciambella grande", "selected": false,"nSelected": 0, "prezzo": 2},
+						{"cod": "biscotto", "desc": "Biscotto Farcito",  "selected": false,"nSelected": 0,"prezzo": 0.5},
+						{"cod": "salato", "desc": "Salato", "selected": false, "nSelected": 0,"prezzo": 1.5}
+					]
+				},
+				{"codSection": "birre",
+					"descSection": "Birre",
+					"active": false,
+					"items":
+						[
+							{"cod": "paulaner_piccola", "desc": "Paulaner piccola", "selected": false, "nSelected": 0, "prezzo": 2.5},
+							{"cod": "paulaner_grande", "desc": "Paulaner grande", "selected": false, "nSelected": 0, "prezzo": 4.5},
+							{"cod": "ipa_piccola", "desc": "Ipa piccola", "selected": false, "nSelected": 0, "prezzo": 3},
+							{"cod": "ipa_grande", "desc": "Ipa grande", "selected": false, "nSelected": 0, "prezzo": 5},
+							{"cod": "hoegarden_piccola", "desc": "Hoegarden piccola","selected": false, "nSelected": 0, "prezzo": 3},
+							{"cod": "hoegarden_grande", "desc": "Hoegarden grande", "selected": false, "nSelected": 0, "prezzo": 5},
+							{"cod": "peroncino", "desc": "Peroncino",  "selected": false, "nSelected": 0,"prezzo": 2.5},
+							{"cod": "birre_33", "desc": "Birre 33 cl", "selected": false, "nSelected": 0, "prezzo": 4},
+							{"cod": "menabrea", "desc": "Menabrea",  "selected": false, "nSelected": 0,"prezzo": 5},
+							{"cod": "bottiglia", "desc": "Bottiglia 50 cl", "selected": false, "nSelected": 0,"prezzo": 5},
+							{"cod": "san_miguel", "desc": "San Miguel", "selected": false, "nSelected": 0,"prezzo": 6},
+							{"cod": "birre_tedesche", "desc": "Birre tedesche", "selected": false, "nSelected": 0,"prezzo": 4}
+						]
+					},
+					{"codSection": "vini",
+						"descSection": "Vini",
+						"active": false,
+						"items":
+							[
+								{"cod": "calice", "desc": "Calice","selected": false, "nSelected": 0, "prezzo": 5},
+								{"cod": "bottiglia", "desc": "Bottiglia","selected": false, "nSelected": 0,"prezzo": 14},
+								{"cod": "calice_franciacorta", "desc": "Calice Franciacorta","selected": false, "nSelected": 0, "prezzo": 6},
+								{"cod": "bottiglia_franciacorta", "desc": "Bottiglia Franciacorta","selected": false, "nSelected": 0, "prezzo": 29}
+							]
+					},
+					{"codSection": "bevande",
+						"descSection": "Bevande",
+						"active": false,
+						"items":
+							[
+								{"cod": "acqua", "desc": "Acqua 50 cl","selected": false, "nSelected": 0, "prezzo": 1},
+								{"cod": "acqua_1.5", "desc": "Acqua 1.5 l", "selected": false, "nSelected": 0,"prezzo": 2},
+								{"cod": "succo", "desc": "Succo di frutta", "selected": false, "nSelected": 0,"prezzo": 3},
+								{"cod": "coca_lattina", "desc": "Coca cola lattina","selected": false, "nSelected": 0, "prezzo": 2.5},
+								{"cod": "coca_spina_vetro", "desc": "Coca cola alla spina in vetro","selected": false, "nSelected": 0, "prezzo": 2.5},
+								{"cod": "coca_vetro", "desc": "Coca cola in vetro", "selected": false, "nSelected": 0,"prezzo": 3},
+								{"cod": "coca_bio", "desc": "Coca cola Bio","selected": false, "nSelected": 0, "prezzo": 4},
+								{"cod": "estathe_bottiglia", "desc": "Estathe Bottiglia","selected": false, "nSelected": 0, "prezzo": 3},
+								{"cod": "estathe_brick", "desc": "Estathe Brick","selected": false, "nSelected": 0, "prezzo": 1.5},
+								{"cod": "gatorade", "desc": "Gatorade",  "selected": false,"nSelected": 0,"prezzo": 3},
+								{"cod": "red_bull", "desc": "Red Bull", "selected": false, "nSelected": 0, "prezzo": 4},
+								{"cod": "bitter", "desc": "Bitter",  "nSelected": 0, "selected": false,"prezzo": 3.5}
+							]
+					},
+					{"codSection": "drink",
+						"descSection": "Drink",
+						"active": false,
+						"items":
+							[
+								{"cod": "americano", "desc": "Americano","selected": false,  "nSelected": 0,"prezzo": 6},
+								{"cod": "analcolico", "desc": "Analcolico", "selected": false, "nSelected": 0,"prezzo": 6},
+								{"cod": "digestivo", "desc": "Digestivo", "selected": false, "nSelected": 0,"prezzo": 3},
+								{"cod": "campari_soda", "desc": "Campari Soda", "selected": false, "nSelected": 0,"prezzo": 4},
+								{"cod": "moscow_mule", "desc": "Moscow Mule", "selected": false, "nSelected": 0,"prezzo": 8},
+								{"cod": "spritz", "desc": "Spritz", "selected": false, "nSelected": 0,"prezzo": 6},
+								{"cod": "gin_tonic", "desc": "Gin Tonic", "selected": false, "nSelected": 0,"prezzo": 8},
+								{"cod": "gin_lemon", "desc": "Gin Lemon", "selected": false, "nSelected": 0,"prezzo": 6},
+								{"cod": "vodka_lemon", "desc": "Vodka Lemon", "selected": false, "nSelected": 0,"prezzo": 8},
+								{"cod": "coca_rum", "desc": "Coca Rum", "selected": false, "nSelected": 0,"prezzo": 6}
+							]
+					},
+					{"codSection": "pizzeria",
+						"descSection": "Pizzeria",
+						"active": false,
+						"items":
+							[
+								{"cod": "pizza_bianca", "desc": "Pizza Bianca", "selected": false, "nSelected": 0, "prezzo": 1.5},
+								{"cod": "pizza_margherita", "desc": "Pizza Margherita", "selected": false,"nSelected": 0, "prezzo": 1.8},
+								{"cod": "pizza_funghi", "desc": "Pizza Farcita", "selected": false, "nSelected": 0,"prezzo": 2},
+								{"cod": "pizza_salsiccia", "desc": "Pizza Farcita", "selected": false, "nSelected": 0,"prezzo": 2},
+								{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Farcita", "selected": false, "nSelected": 0,"prezzo": 2.7},
+								{"cod": "pizza_bianca_nutella", "desc": "Pizza bianca con la nutella", "selected": false,"nSelected": 0, "prezzo": 2}
+							]
+					}
 			]
-
 	},
 	{
 		"id": "bagni-carlo",
@@ -33,7 +143,7 @@
 		"tipo": "sassonia",
 		"via":"Viale Adriatico, 14",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
-		"servizi":
+		"serviziOfferti":
 			[
 				{"cod": "bar", "descrizione": "Bar"},
 				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
@@ -51,7 +161,118 @@
 			{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
 			{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
 			{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
-		]
+		],
+		"serviziBar":
+			[
+				{"codSection": "caffetteria",
+				"descSection": "Caffetteria",
+				"active": false,
+				"items":
+					[
+						{"cod": "caffè", "desc": "Caffè", "nSelected": 0,"prezzo": 1},
+						{"cod": "deca", "desc": "Deca","nSelected": 0, "prezzo": 1.1},
+						{"cod": "caffe_macchiato", "desc": "Caffè Macchiato", "nSelected": 0,"prezzo": 1.1},
+						{"cod": "macchiatone", "desc": "Macchiatone", "nSelected": 0,"prezzo": 1.3},
+						{"cod": "cappuccino", "desc": "Cappuccino", "nSelected": 0,"prezzo": 1.4},
+						{"cod": "cappuccino_soia", "desc": "Cappuccino di soia", "nSelected": 0,"prezzo": 1.6},
+						{"cod": "cappuccino_orzo", "desc": "Cappuccino d'orzo","nSelected": 0,"prezzo": 1.7},
+						{"cod": "caffe_corretto", "desc": "Caffè correto", "nSelected": 0,"prezzo": 1.5},
+						{"cod": "moretta", "desc": "Moretta","nSelected": 0, "prezzo": 2},
+						{"cod": "latte_bianco", "desc": "Latte Bianco", "nSelected": 0,"prezzo": 1.2},
+						{"cod": "latte_macchiato", "desc": "Latte macchiato", "nSelected": 0,"prezzo": 1.6},
+						{"cod": "latte_macchiato_soia", "desc": "Latte macchiato soia", "nSelected": 0,"prezzo": 1.8},
+						{"cod": "orzo", "desc": "Orzo piccolo/grande", "nSelected": 0,"prezzo": 1.5},
+						{"cod": "ginseng", "desc": "GinSeng", "nSelected": 0,"prezzo": 1.5},
+						{"cod": "the", "desc": "Thè Caldo", "nSelected": 0,"prezzo": 2},
+						{"cod": "brioches", "desc": "Brioches", "nSelected": 0,"prezzo": 1.3},
+						{"cod": "torta", "desc": "Torta a fette", "nSelected": 0,"prezzo": 3},
+						{"cod": "muffin", "desc": "Muffin", "nSelected": 0,"prezzo": 2},
+						{"cod": "ciambella_piccola", "desc": "Ciambella piccola", "nSelected": 0,"prezzo": 1},
+						{"cod": "ciambella_grande", "desc": "Ciambella grande", "nSelected": 0,"prezzo": 2},
+						{"cod": "biscotto", "desc": "Biscotto Farcito", "nSelected": 0,"prezzo": 0.5},
+						{"cod": "salato", "desc": "Salato", "nSelected": 0,"prezzo": 1.5}
+					]
+				},
+				{"codSection": "birre",
+					"descSection": "Birre",
+					"active": false,
+					"items":
+						[
+							{"cod": "paulaner_piccola", "desc": "Paulaner piccola", "nSelected": 0,"prezzo": 2.5},
+							{"cod": "paulaner_grande", "desc": "Paulaner grande", "nSelected": 0,"prezzo": 4.5},
+							{"cod": "ipa_piccola", "desc": "Ipa piccola", "nSelected": 0,"prezzo": 3},
+							{"cod": "ipa_grande", "desc": "Ipa grande", "nSelected": 0,"prezzo": 5},
+							{"cod": "hoegarden_piccola", "desc": "Hoegarden piccola", "nSelected": 0,"prezzo": 3},
+							{"cod": "hoegarden_grande", "desc": "Hoegarden grande","nSelected": 0, "prezzo": 5},
+							{"cod": "peroncino", "desc": "Peroncino", "nSelected": 0,"prezzo": 2.5},
+							{"cod": "birre_33", "desc": "Birre 33 cl","nSelected": 0, "prezzo": 4},
+							{"cod": "menabrea", "desc": "Menabrea","nSelected": 0, "prezzo": 5},
+							{"cod": "bottiglia", "desc": "Bottiglia 50 cl","nSelected": 0, "prezzo": 5},
+							{"cod": "san_miguel", "desc": "San Miguel", "nSelected": 0,"prezzo": 6},
+							{"cod": "birre_tedesche", "desc": "Birre tedesche", "nSelected": 0,"prezzo": 4}
+						]
+					},
+					{"codSection": "vini",
+						"descSection": "Vini",
+						"active": false,
+						"items":
+							[
+								{"cod": "calice", "desc": "Calice", "nSelected": 0,"prezzo": 5},
+								{"cod": "bottiglia", "desc": "Bottiglia", "nSelected": 0,"prezzo": 14},
+								{"cod": "calice_franciacorta", "desc": "Calice Franciacorta", "nSelected": 0,"prezzo": 6},
+								{"cod": "bottiglia_franciacorta", "desc": "Bottiglia Franciacorta","nSelected": 0, "prezzo": 29}
+							]
+					},
+					{"codSection": "bevande",
+						"descSection": "Bevande",
+						"active": false,
+						"items":
+							[
+								{"cod": "acqua", "desc": "Acqua 50 cl", "nSelected": 0, "prezzo": 1},
+								{"cod": "acqua_1.5", "desc": "Acqua 1.5 l", "nSelected": 0,"prezzo": 2},
+								{"cod": "succo", "desc": "Succo di frutta", "nSelected": 0,"prezzo": 3},
+								{"cod": "coca_lattina", "desc": "Coca cola lattina", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "coca_spina_vetro", "desc": "Coca cola alla spina in vetro", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "coca_vetro", "desc": "Coca cola in vetro", "nSelected": 0,"prezzo": 3},
+								{"cod": "coca_bio", "desc": "Coca cola Bio", "nSelected": 0,"prezzo": 4},
+								{"cod": "estathe_bottiglia", "desc": "Estathe Bottiglia", "nSelected": 0,"prezzo": 3},
+								{"cod": "estathe_brick", "desc": "Estathe Brick", "nSelected": 0,"prezzo": 1.5},
+								{"cod": "gatorade", "desc": "Gatorade", "nSelected": 0,"prezzo": 3},
+								{"cod": "red_bull", "desc": "Red Bull", "nSelected": 0,"prezzo": 4},
+								{"cod": "bitter", "desc": "Bitter", "nSelected": 0,"prezzo": 3.5}
+							]
+					},
+					{"codSection": "drink",
+						"descSection": "Drink",
+						"active": false,
+						"items":
+							[
+								{"cod": "americano", "desc": "Americano", "nSelected": 0,"prezzo": 6},
+								{"cod": "analcolico", "desc": "Analcolico", "nSelected": 0,"prezzo": 6},
+								{"cod": "digestivo", "desc": "Digestivo", "nSelected": 0,"prezzo": 3},
+								{"cod": "campari_soda", "desc": "Campari Soda", "nSelected": 0,"prezzo": 4},
+								{"cod": "moscow_mule", "desc": "Moscow Mule", "nSelected": 0,"prezzo": 8},
+								{"cod": "spritz", "desc": "Spritz","nSelected": 0, "prezzo": 6},
+								{"cod": "gin_tonic", "desc": "Gin Tonic", "nSelected": 0,"prezzo": 8},
+								{"cod": "gin_lemon", "desc": "Gin Lemon","nSelected": 0, "prezzo": 6},
+								{"cod": "vodka_lemon", "desc": "Vodka Lemon","nSelected": 0, "prezzo": 8},
+								{"cod": "coca_rum", "desc": "Coca Rum", "nSelected": 0,"prezzo": 6}
+							]
+					},
+					{"codSection": "pizzeria",
+						"descSection": "Pizzeria",
+						"active": false,
+						"items":
+							[
+								{"cod": "pizza_bianca", "desc": "Pizza Bianca", "nSelected": 0,"prezzo": 1.5},
+								{"cod": "pizza_margherita", "desc": "Pizza Margherita", "nSelected": 0,"prezzo": 1.8},
+								{"cod": "pizza_funghi", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+								{"cod": "pizza_salsiccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+								{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2.7},
+								{"cod": "pizza_bianca_nutella", "desc": "Pizza bianca con la nutella", "nSelected": 0,"prezzo": 2}
+							]
+					}
+			]
 	},
 	{
 		"id": "bagni-gabriele",
@@ -59,7 +280,7 @@
 		"tipo": "sassonia",
 		"via":"Viale Adriatico, 16",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
-		"servizi":
+		"serviziOfferti":
 			[
 				{"cod": "bar", "descrizione": "Bar"},
 				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
@@ -77,7 +298,118 @@
 				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
 				{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
 				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
-			]
+			],
+			"serviziBar":
+				[
+					{"codSection": "caffetteria",
+					"descSection": "Caffetteria",
+					"active": false,
+					"items":
+						[
+							{"cod": "caffè", "desc": "Caffè", "nSelected": 0,"prezzo": 1},
+							{"cod": "deca", "desc": "Deca", "nSelected": 0,"prezzo": 1.1},
+							{"cod": "caffe_macchiato", "desc": "Caffè Macchiato", "nSelected": 0,"prezzo": 1.1},
+							{"cod": "macchiatone", "desc": "Macchiatone", "nSelected": 0,"prezzo": 1.3},
+							{"cod": "cappuccino", "desc": "Cappuccino", "nSelected": 0,"prezzo": 1.4},
+							{"cod": "cappuccino_soia", "desc": "Cappuccino di soia", "nSelected": 0,"prezzo": 1.6},
+							{"cod": "cappuccino_orzo", "desc": "Cappuccino d'orzo", "nSelected": 0,"prezzo": 1.7},
+							{"cod": "caffe_corretto", "desc": "Caffè correto", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "moretta", "desc": "Moretta", "nSelected": 0,"prezzo": 2},
+							{"cod": "latte_bianco", "desc": "Latte Bianco", "nSelected": 0,"prezzo": 1.2},
+							{"cod": "latte_macchiato", "desc": "Latte macchiato", "nSelected": 0,"prezzo": 1.6},
+							{"cod": "latte_macchiato_soia", "desc": "Latte macchiato soia","nSelected": 0, "prezzo": 1.8},
+							{"cod": "orzo", "desc": "Orzo piccolo/grande", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "ginseng", "desc": "GinSeng", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "the", "desc": "Thè Caldo", "nSelected": 0,"prezzo": 2},
+							{"cod": "brioches", "desc": "Brioches", "nSelected": 0,"prezzo": 1.3},
+							{"cod": "torta", "desc": "Torta a fette", "nSelected": 0,"prezzo": 3},
+							{"cod": "muffin", "desc": "Muffin", "nSelected": 0,"prezzo": 2},
+							{"cod": "ciambella_piccola", "desc": "Ciambella piccola", "nSelected": 0,"prezzo": 1},
+							{"cod": "ciambella_grande", "desc": "Ciambella grande","nSelected": 0, "prezzo": 2},
+							{"cod": "biscotto", "desc": "Biscotto Farcito", "nSelected": 0,"prezzo": 0.5},
+							{"cod": "salato", "desc": "Salato", "nSelected": 0,"prezzo": 1.5}
+						]
+					},
+					{"codSection": "birre",
+						"descSection": "Birre",
+						"active": false,
+						"items":
+							[
+								{"cod": "paulaner_piccola", "desc": "Paulaner piccola", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "paulaner_grande", "desc": "Paulaner grande", "nSelected": 0,"prezzo": 4.5},
+								{"cod": "ipa_piccola", "desc": "Ipa piccola", "nSelected": 0,"prezzo": 3},
+								{"cod": "ipa_grande", "desc": "Ipa grande", "nSelected": 0,"prezzo": 5},
+								{"cod": "hoegarden_piccola", "desc": "Hoegarden piccola", "nSelected": 0,"prezzo": 3},
+								{"cod": "hoegarden_grande", "desc": "Hoegarden grande", "nSelected": 0,"prezzo": 5},
+								{"cod": "peroncino", "desc": "Peroncino", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "birre_33", "desc": "Birre 33 cl", "nSelected": 0,"prezzo": 4},
+								{"cod": "menabrea", "desc": "Menabrea", "nSelected": 0,"prezzo": 5},
+								{"cod": "bottiglia", "desc": "Bottiglia 50 cl", "nSelected": 0,"prezzo": 5},
+								{"cod": "san_miguel", "desc": "San Miguel", "nSelected": 0,"prezzo": 6},
+								{"cod": "birre_tedesche", "desc": "Birre tedesche", "nSelected": 0,"prezzo": 4}
+							]
+						},
+						{"codSection": "vini",
+							"descSection": "Vini",
+							"active": false,
+							"items":
+								[
+									{"cod": "calice", "desc": "Calice", "nSelected": 0,"prezzo": 5},
+									{"cod": "bottiglia", "desc": "Bottiglia", "nSelected": 0,"prezzo": 14},
+									{"cod": "calice_franciacorta", "desc": "Calice Franciacorta", "nSelected": 0,"prezzo": 6},
+									{"cod": "bottiglia_franciacorta", "desc": "Bottiglia Franciacorta", "nSelected": 0,"prezzo": 29}
+								]
+						},
+						{"codSection": "bevande",
+							"descSection": "Bevande",
+							"active": false,
+							"items":
+								[
+									{"cod": "acqua", "desc": "Acqua 50 cl", "nSelected": 0,"prezzo": 1},
+									{"cod": "acqua_1.5", "desc": "Acqua 1.5 l","nSelected": 0, "prezzo": 2},
+									{"cod": "succo", "desc": "Succo di frutta", "nSelected": 0,"prezzo": 3},
+									{"cod": "coca_lattina", "desc": "Coca cola lattina", "nSelected": 0,"prezzo": 2.5},
+									{"cod": "coca_spina_vetro", "desc": "Coca cola alla spina in vetro", "nSelected": 0,"prezzo": 2.5},
+									{"cod": "coca_vetro", "desc": "Coca cola in vetro","nSelected": 0, "prezzo": 3},
+									{"cod": "coca_bio", "desc": "Coca cola Bio", "nSelected": 0,"prezzo": 4},
+									{"cod": "estathe_bottiglia", "desc": "Estathe Bottiglia","nSelected": 0, "prezzo": 3},
+									{"cod": "estathe_brick", "desc": "Estathe Brick", "nSelected": 0,"prezzo": 1.5},
+									{"cod": "gatorade", "desc": "Gatorade","nSelected": 0, "prezzo": 3},
+									{"cod": "red_bull", "desc": "Red Bull","nSelected": 0, "prezzo": 4},
+									{"cod": "bitter", "desc": "Bitter", "nSelected": 0,"prezzo": 3.5}
+								]
+						},
+						{"codSection": "drink",
+							"descSection": "Drink",
+							"active": false,
+							"items":
+								[
+									{"cod": "americano", "desc": "Americano", "nSelected": 0,"prezzo": 6},
+									{"cod": "analcolico", "desc": "Analcolico", "nSelected": 0,"prezzo": 6},
+									{"cod": "digestivo", "desc": "Digestivo", "nSelected": 0,"prezzo": 3},
+									{"cod": "campari_soda", "desc": "Campari Soda", "nSelected": 0,"prezzo": 4},
+									{"cod": "moscow_mule", "desc": "Moscow Mule","nSelected": 0, "prezzo": 8},
+									{"cod": "spritz", "desc": "Spritz", "nSelected": 0,"prezzo": 6},
+									{"cod": "gin_tonic", "desc": "Gin Tonic", "nSelected": 0,"prezzo": 8},
+									{"cod": "gin_lemon", "desc": "Gin Lemon", "nSelected": 0,"prezzo": 6},
+									{"cod": "vodka_lemon", "desc": "Vodka Lemon","nSelected": 0, "prezzo": 8},
+									{"cod": "coca_rum", "desc": "Coca Rum", "nSelected": 0,"prezzo": 6}
+								]
+						},
+						{"codSection": "pizzeria",
+							"descSection": "Pizzeria",
+							"active": false,
+							"items":
+								[
+									{"cod": "pizza_bianca", "desc": "Pizza Bianca", "nSelected": 0,"prezzo": 1.5},
+									{"cod": "pizza_margherita", "desc": "Pizza Margherita", "nSelected": 0,"prezzo": 1.8},
+									{"cod": "pizza_funghi", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+									{"cod": "pizza_salsiccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+									{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2.7},
+									{"cod": "pizza_bianca_nutella", "desc": "Pizza bianca con la nutella", "nSelected": 0,"prezzo": 2}
+								]
+						}
+				]
 	},
 	{
 		"id": "bagni-maurizio",
@@ -85,7 +417,7 @@
 		"tipo": "sassonia",
 		"via":"Viale Adriatico, 18",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
-		"servizi":
+		"serviziOfferti":
 			[
 				{"cod": "bar", "descrizione": "Bar"},
 				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
@@ -103,7 +435,118 @@
 				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
 				{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
 				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
-			]
+			],
+			"serviziBar":
+				[
+					{"codSection": "caffetteria",
+					"descSection": "Caffetteria",
+					"active": false,
+					"items":
+						[
+							{"cod": "caffè", "desc": "Caffè", "nSelected": 0,"prezzo": 1},
+							{"cod": "deca", "desc": "Deca","nSelected": 0, "prezzo": 1.1},
+							{"cod": "caffe_macchiato", "desc": "Caffè Macchiato", "nSelected": 0,"prezzo": 1.1},
+							{"cod": "macchiatone", "desc": "Macchiatone", "nSelected": 0, "prezzo": 1.3},
+							{"cod": "cappuccino", "desc": "Cappuccino", "nSelected": 0, "prezzo": 1.4},
+							{"cod": "cappuccino_soia", "desc": "Cappuccino di soia", "nSelected": 0,"prezzo": 1.6},
+							{"cod": "cappuccino_orzo", "desc": "Cappuccino d'orzo", "nSelected": 0,"prezzo": 1.7},
+							{"cod": "caffe_corretto", "desc": "Caffè correto", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "moretta", "desc": "Moretta","nSelected": 0, "prezzo": 2},
+							{"cod": "latte_bianco", "desc": "Latte Bianco","nSelected": 0, "prezzo": 1.2},
+							{"cod": "latte_macchiato", "desc": "Latte macchiato", "nSelected": 0,"prezzo": 1.6},
+							{"cod": "latte_macchiato_soia", "desc": "Latte macchiato soia", "nSelected": 0,"prezzo": 1.8},
+							{"cod": "orzo", "desc": "Orzo piccolo/grande","nSelected": 0, "prezzo": 1.5},
+							{"cod": "ginseng", "desc": "GinSeng", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "the", "desc": "Thè Caldo", "nSelected": 0,"prezzo": 2},
+							{"cod": "brioches", "desc": "Brioches", "nSelected": 0,"prezzo": 1.3},
+							{"cod": "torta", "desc": "Torta a fette", "nSelected": 0,"prezzo": 3},
+							{"cod": "muffin", "desc": "Muffin", "nSelected": 0,"prezzo": 2},
+							{"cod": "ciambella_piccola", "desc": "Ciambella piccola", "nSelected": 0,"prezzo": 1},
+							{"cod": "ciambella_grande", "desc": "Ciambella grande", "nSelected": 0,"prezzo": 2},
+							{"cod": "biscotto", "desc": "Biscotto Farcito", "nSelected": 0,"prezzo": 0.5},
+							{"cod": "salato", "desc": "Salato","nSelected": 0, "prezzo": 1.5}
+						]
+					},
+					{"codSection": "birre",
+						"descSection": "Birre",
+						"active": false,
+						"items":
+							[
+								{"cod": "paulaner_piccola", "desc": "Paulaner piccola", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "paulaner_grande", "desc": "Paulaner grande","nSelected": 0, "prezzo": 4.5},
+								{"cod": "ipa_piccola", "desc": "Ipa piccola", "nSelected": 0,"prezzo": 3},
+								{"cod": "ipa_grande", "desc": "Ipa grande", "nSelected": 0,"prezzo": 5},
+								{"cod": "hoegarden_piccola", "desc": "Hoegarden piccola", "nSelected": 0,"prezzo": 3},
+								{"cod": "hoegarden_grande", "desc": "Hoegarden grande", "nSelected": 0,"prezzo": 5},
+								{"cod": "peroncino", "desc": "Peroncino","nSelected": 0, "prezzo": 2.5},
+								{"cod": "birre_33", "desc": "Birre 33 cl", "nSelected": 0,"prezzo": 4},
+								{"cod": "menabrea", "desc": "Menabrea", "nSelected": 0,"prezzo": 5},
+								{"cod": "bottiglia", "desc": "Bottiglia 50 cl", "nSelected": 0,"prezzo": 5},
+								{"cod": "san_miguel", "desc": "San Miguel", "nSelected": 0,"prezzo": 6},
+								{"cod": "birre_tedesche", "desc": "Birre tedesche", "nSelected": 0,"prezzo": 4}
+							]
+						},
+						{"codSection": "vini",
+							"descSection": "Vini",
+							"active": false,
+							"items":
+								[
+									{"cod": "calice", "desc": "Calice", "nSelected": 0,"prezzo": 5},
+									{"cod": "bottiglia", "desc": "Bottiglia", "nSelected": 0,"prezzo": 14},
+									{"cod": "calice_franciacorta", "desc": "Calice Franciacorta","nSelected": 0, "prezzo": 6},
+									{"cod": "bottiglia_franciacorta", "desc": "Bottiglia Franciacorta", "nSelected": 0,"prezzo": 29}
+								]
+						},
+						{"codSection": "bevande",
+							"descSection": "Bevande",
+							"active": false,
+							"items":
+								[
+									{"cod": "acqua", "desc": "Acqua 50 cl", "nSelected": 0,"prezzo": 1},
+									{"cod": "acqua_1.5", "desc": "Acqua 1.5 l", "nSelected": 0,"prezzo": 2},
+									{"cod": "succo", "desc": "Succo di frutta", "nSelected": 0,"prezzo": 3},
+									{"cod": "coca_lattina", "desc": "Coca cola lattina", "nSelected": 0,"prezzo": 2.5},
+									{"cod": "coca_spina_vetro", "desc": "Coca cola alla spina in vetro", "nSelected": 0,"prezzo": 2.5},
+									{"cod": "coca_vetro", "desc": "Coca cola in vetro", "nSelected": 0,"prezzo": 3},
+									{"cod": "coca_bio", "desc": "Coca cola Bio","nSelected": 0, "prezzo": 4},
+									{"cod": "estathe_bottiglia", "desc": "Estathe Bottiglia", "nSelected": 0,"prezzo": 3},
+									{"cod": "estathe_brick", "desc": "Estathe Brick", "nSelected": 0,"prezzo": 1.5},
+									{"cod": "gatorade", "desc": "Gatorade", "nSelected": 0,"prezzo": 3},
+									{"cod": "red_bull", "desc": "Red Bull", "nSelected": 0,"prezzo": 4},
+									{"cod": "bitter", "desc": "Bitter", "nSelected": 0,"prezzo": 3.5}
+								]
+						},
+						{"codSection": "drink",
+							"descSection": "Drink",
+							"active": false,
+							"items":
+								[
+									{"cod": "americano", "desc": "Americano", "nSelected": 0,"prezzo": 6},
+									{"cod": "analcolico", "desc": "Analcolico","nSelected": 0, "prezzo": 6},
+									{"cod": "digestivo", "desc": "Digestivo", "nSelected": 0,"prezzo": 3},
+									{"cod": "campari_soda", "desc": "Campari Soda","nSelected": 0, "prezzo": 4},
+									{"cod": "moscow_mule", "desc": "Moscow Mule", "nSelected": 0,"prezzo": 8},
+									{"cod": "spritz", "desc": "Spritz", "nSelected": 0,"prezzo": 6},
+									{"cod": "gin_tonic", "desc": "Gin Tonic", "nSelected": 0,"prezzo": 8},
+									{"cod": "gin_lemon", "desc": "Gin Lemon","nSelected": 0, "prezzo": 6},
+									{"cod": "vodka_lemon", "desc": "Vodka Lemon", "nSelected": 0,"prezzo": 8},
+									{"cod": "coca_rum", "desc": "Coca Rum", "nSelected": 0,"prezzo": 6}
+								]
+						},
+						{"codSection": "pizzeria",
+							"descSection": "Pizzeria",
+							"active": false,
+							"items":
+								[
+									{"cod": "pizza_bianca", "desc": "Pizza Bianca", "nSelected": 0,"prezzo": 1.5},
+									{"cod": "pizza_margherita", "desc": "Pizza Margherita", "nSelected": 0,"prezzo": 1.8},
+									{"cod": "pizza_funghi", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+									{"cod": "pizza_salsiccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+									{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2.7},
+									{"cod": "pizza_bianca_nutella", "desc": "Pizza bianca con la nutella", "nSelected": 0,"prezzo": 2}
+								]
+						}
+				]
 	},
 	{
 		"id": "bagni-peppe",
@@ -111,7 +554,7 @@
 		"tipo": "sassonia",
 		"via":"Viale Adriatico, 20",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
-		"servizi":
+		"serviziOfferti":
 			[
 				{"cod": "bar", "descrizione": "Bar"},
 				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
@@ -129,7 +572,118 @@
 				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
 				{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
 				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
-			]
+			],
+			"serviziBar":
+				[
+					{"codSection": "caffetteria",
+					"descSection": "Caffetteria",
+					"active": false,
+					"items":
+						[
+							{"cod": "caffè", "desc": "Caffè", "nSelected": 0,"prezzo": 1},
+							{"cod": "deca", "desc": "Deca", "nSelected": 0,"prezzo": 1.1},
+							{"cod": "caffe_macchiato", "desc": "Caffè Macchiato", "nSelected": 0,"prezzo": 1.1},
+							{"cod": "macchiatone", "desc": "Macchiatone", "nSelected": 0,"prezzo": 1.3},
+							{"cod": "cappuccino", "desc": "Cappuccino", "nSelected": 0,"prezzo": 1.4},
+							{"cod": "cappuccino_soia", "desc": "Cappuccino di soia", "nSelected": 0,"prezzo": 1.6},
+							{"cod": "cappuccino_orzo", "desc": "Cappuccino d'orzo", "nSelected": 0,"prezzo": 1.7},
+							{"cod": "caffe_corretto", "desc": "Caffè correto", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "moretta", "desc": "Moretta", "nSelected": 0,"prezzo": 2},
+							{"cod": "latte_bianco", "desc": "Latte Bianco", "nSelected": 0,"prezzo": 1.2},
+							{"cod": "latte_macchiato", "desc": "Latte macchiato", "nSelected": 0,"prezzo": 1.6},
+							{"cod": "latte_macchiato_soia", "desc": "Latte macchiato soia", "nSelected": 0,"prezzo": 1.8},
+							{"cod": "orzo", "desc": "Orzo piccolo/grande", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "ginseng", "desc": "GinSeng", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "the", "desc": "Thè Caldo", "nSelected": 0,"prezzo": 2},
+							{"cod": "brioches", "desc": "Brioches", "nSelected": 0,"prezzo": 1.3},
+							{"cod": "torta", "desc": "Torta a fette", "nSelected": 0,"prezzo": 3},
+							{"cod": "muffin", "desc": "Muffin", "nSelected": 0,"prezzo": 2},
+							{"cod": "ciambella_piccola", "desc": "Ciambella piccola", "nSelected": 0,"prezzo": 1},
+							{"cod": "ciambella_grande", "desc": "Ciambella grande", "nSelected": 0,"prezzo": 2},
+							{"cod": "biscotto", "desc": "Biscotto Farcito","nSelected": 0, "prezzo": 0.5},
+							{"cod": "salato", "desc": "Salato","nSelected": 0, "prezzo": 1.5}
+						]
+					},
+					{"codSection": "birre",
+						"descSection": "Birre",
+						"active": false,
+						"items":
+							[
+								{"cod": "paulaner_piccola", "desc": "Paulaner piccola", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "paulaner_grande", "desc": "Paulaner grande", "nSelected": 0,"prezzo": 4.5},
+								{"cod": "ipa_piccola", "desc": "Ipa piccola", "nSelected": 0,"prezzo": 3},
+								{"cod": "ipa_grande", "desc": "Ipa grande", "nSelected": 0,"prezzo": 5},
+								{"cod": "hoegarden_piccola", "desc": "Hoegarden piccola", "nSelected": 0,"prezzo": 3},
+								{"cod": "hoegarden_grande", "desc": "Hoegarden grande", "nSelected": 0,"prezzo": 5},
+								{"cod": "peroncino", "desc": "Peroncino", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "birre_33", "desc": "Birre 33 cl", "nSelected": 0, "prezzo": 4},
+								{"cod": "menabrea", "desc": "Menabrea", "nSelected": 0,"prezzo": 5},
+								{"cod": "bottiglia", "desc": "Bottiglia 50 cl", "nSelected": 0,"prezzo": 5},
+								{"cod": "san_miguel", "desc": "San Miguel", "nSelected": 0,"prezzo": 6},
+								{"cod": "birre_tedesche", "desc": "Birre tedesche", "nSelected": 0,"prezzo": 4}
+							]
+						},
+						{"codSection": "vini",
+							"descSection": "Vini",
+							"active": false,
+							"items":
+								[
+									{"cod": "calice", "desc": "Calice", "nSelected": 0,"prezzo": 5},
+									{"cod": "bottiglia", "desc": "Bottiglia", "nSelected": 0,"prezzo": 14},
+									{"cod": "calice_franciacorta", "desc": "Calice Franciacorta", "nSelected": 0,"prezzo": 6},
+									{"cod": "bottiglia_franciacorta", "desc": "Bottiglia Franciacorta", "nSelected": 0,"prezzo": 29}
+								]
+						},
+						{"codSection": "bevande",
+							"descSection": "Bevande",
+							"active": false,
+							"items":
+								[
+									{"cod": "acqua", "desc": "Acqua 50 cl", "nSelected": 0,"prezzo": 1},
+									{"cod": "acqua_1.5", "desc": "Acqua 1.5 l", "nSelected": 0,"prezzo": 2},
+									{"cod": "succo", "desc": "Succo di frutta", "nSelected": 0,"prezzo": 3},
+									{"cod": "coca_lattina", "desc": "Coca cola lattina", "nSelected": 0,"prezzo": 2.5},
+									{"cod": "coca_spina_vetro", "desc": "Coca cola alla spina in vetro", "nSelected": 0,"prezzo": 2.5},
+									{"cod": "coca_vetro", "desc": "Coca cola in vetro", "nSelected": 0,"prezzo": 3},
+									{"cod": "coca_bio", "desc": "Coca cola Bio", "nSelected": 0,"prezzo": 4},
+									{"cod": "estathe_bottiglia", "desc": "Estathe Bottiglia", "nSelected": 0,"prezzo": 3},
+									{"cod": "estathe_brick", "desc": "Estathe Brick", "nSelected": 0,"prezzo": 1.5},
+									{"cod": "gatorade", "desc": "Gatorade", "nSelected": 0,"prezzo": 3},
+									{"cod": "red_bull", "desc": "Red Bull", "nSelected": 0,"prezzo": 4},
+									{"cod": "bitter", "desc": "Bitter", "nSelected": 0,"prezzo": 3.5}
+								]
+						},
+						{"codSection": "drink",
+							"descSection": "Drink",
+							"active": false,
+							"items":
+								[
+									{"cod": "americano", "desc": "Americano", "nSelected": 0,"prezzo": 6},
+									{"cod": "analcolico", "desc": "Analcolico", "nSelected": 0,"prezzo": 6},
+									{"cod": "digestivo", "desc": "Digestivo", "nSelected": 0,"prezzo": 3},
+									{"cod": "campari_soda", "desc": "Campari Soda", "nSelected": 0,"prezzo": 4},
+									{"cod": "moscow_mule", "desc": "Moscow Mule", "nSelected": 0,"prezzo": 8},
+									{"cod": "spritz", "desc": "Spritz", "nSelected": 0,"prezzo": 6},
+									{"cod": "gin_tonic", "desc": "Gin Tonic", "nSelected": 0,"prezzo": 8},
+									{"cod": "gin_lemon", "desc": "Gin Lemon", "nSelected": 0,"prezzo": 6},
+									{"cod": "vodka_lemon", "desc": "Vodka Lemon", "nSelected": 0,"prezzo": 8},
+									{"cod": "coca_rum", "desc": "Coca Rum", "nSelected": 0,"prezzo": 6}
+								]
+						},
+						{"codSection": "pizzeria",
+							"descSection": "Pizzeria",
+							"active": false,
+							"items":
+								[
+									{"cod": "pizza_bianca", "desc": "Pizza Bianca", "nSelected": 0,"prezzo": 1.5},
+									{"cod": "pizza_margherita", "desc": "Pizza Margherita", "nSelected": 0,"prezzo": 1.8},
+									{"cod": "pizza_funghi", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+									{"cod": "pizza_salsiccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+									{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2.7},
+									{"cod": "pizza_bianca_nutella", "desc": "Pizza bianca con la nutella", "nSelected": 0,"prezzo": 2}
+								]
+						}
+				]
 	},
 	{
 		"id": "bagni-sergio",
@@ -137,7 +691,7 @@
 		"tipo": "sassonia",
 		"via":"Viale Adriatico, 22",
 		"descrizione": "Spiaggia ben attrezzata di servizi adatta per ragazzi e famiglie",
-		"servizi":
+		"serviziOfferti":
 			[
 				{"cod": "bar", "descrizione": "Bar"},
 				{"cod": "beach", "descrizione": "Campi da Beach", "value": "8"},
@@ -155,6 +709,117 @@
 				{"cod": "lettino1_sdraio2", "desc": "1 lettino e 2 sdraie", "prezzo": "25"},
 				{"cod": "lettino2_sdraio1", "desc": "2 lettino e 1 sdraio", "prezzo": "27"},
 				{"cod": "lettino2_sdraio2", "desc": "2 lettini e 2 sdraie", "prezzo": "30"}
-			]
+			],
+			"serviziBar":
+				[
+					{"codSection": "caffetteria",
+					"descSection": "Caffetteria",
+					"active": false,
+					"items":
+						[
+							{"cod": "caffè", "desc": "Caffè", "nSelected": 0,"prezzo": 1},
+							{"cod": "deca", "desc": "Deca", "nSelected": 0,"prezzo": 1.1},
+							{"cod": "caffe_macchiato", "desc": "Caffè Macchiato","nSelected": 0, "prezzo": 1.1},
+							{"cod": "macchiatone", "desc": "Macchiatone", "nSelected": 0,"prezzo": 1.3},
+							{"cod": "cappuccino", "desc": "Cappuccino", "nSelected": 0,"prezzo": 1.4},
+							{"cod": "cappuccino_soia", "desc": "Cappuccino di soia", "nSelected": 0,"prezzo": 1.6},
+							{"cod": "cappuccino_orzo", "desc": "Cappuccino d'orzo", "nSelected": 0,"prezzo": 1.7},
+							{"cod": "caffe_corretto", "desc": "Caffè correto", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "moretta", "desc": "Moretta", "nSelected": 0,"prezzo": 2},
+							{"cod": "latte_bianco", "desc": "Latte Bianco", "nSelected": 0,"prezzo": 1.2},
+							{"cod": "latte_macchiato", "desc": "Latte macchiato","nSelected": 0, "prezzo": 1.6},
+							{"cod": "latte_macchiato_soia", "desc": "Latte macchiato soia", "nSelected": 0,"prezzo": 1.8},
+							{"cod": "orzo", "desc": "Orzo piccolo/grande", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "ginseng", "desc": "GinSeng", "nSelected": 0,"prezzo": 1.5},
+							{"cod": "the", "desc": "Thè Caldo", "nSelected": 0,"prezzo": 2},
+							{"cod": "brioches", "desc": "Brioches", "nSelected": 0,"prezzo": 1.3},
+							{"cod": "torta", "desc": "Torta a fette", "nSelected": 0,"prezzo": 3},
+							{"cod": "muffin", "desc": "Muffin", "nSelected": 0, "prezzo": 2},
+							{"cod": "ciambella_piccola", "desc": "Ciambella piccola", "nSelected": 0,"prezzo": 1},
+							{"cod": "ciambella_grande", "desc": "Ciambella grande", "nSelected": 0,"prezzo": 2},
+							{"cod": "biscotto", "desc": "Biscotto Farcito", "nSelected": 0,"prezzo": 0.5},
+							{"cod": "salato", "desc": "Salato", "nSelected": 0,"prezzo": 1.5}
+						]
+					},
+					{"codSection": "birre",
+						"descSection": "Birre",
+						"active": false,
+						"items":
+							[
+								{"cod": "paulaner_piccola", "desc": "Paulaner piccola", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "paulaner_grande", "desc": "Paulaner grande", "nSelected": 0,"prezzo": 4.5},
+								{"cod": "ipa_piccola", "desc": "Ipa piccola", "nSelected": 0,"prezzo": 3},
+								{"cod": "ipa_grande", "desc": "Ipa grande", "nSelected": 0,"prezzo": 5},
+								{"cod": "hoegarden_piccola", "desc": "Hoegarden piccola", "nSelected": 0, "prezzo": 3},
+								{"cod": "hoegarden_grande", "desc": "Hoegarden grande", "nSelected": 0,"prezzo": 5},
+								{"cod": "peroncino", "desc": "Peroncino", "nSelected": 0,"prezzo": 2.5},
+								{"cod": "birre_33", "desc": "Birre 33 cl", "nSelected": 0,"prezzo": 4},
+								{"cod": "menabrea", "desc": "Menabrea", "nSelected": 0,"prezzo": 5},
+								{"cod": "bottiglia", "desc": "Bottiglia 50 cl", "nSelected": 0,"prezzo": 5},
+								{"cod": "san_miguel", "desc": "San Miguel", "nSelected": 0,"prezzo": 6},
+								{"cod": "birre_tedesche", "desc": "Birre tedesche", "nSelected": 0,"prezzo": 4}
+							]
+						},
+						{"codSection": "vini",
+							"descSection": "Vini",
+							"active": false,
+							"items":
+								[
+									{"cod": "calice", "desc": "Calice", "nSelected": 0,"prezzo": 5},
+									{"cod": "bottiglia", "desc": "Bottiglia", "nSelected": 0,"prezzo": 14},
+									{"cod": "calice_franciacorta", "desc": "Calice Franciacorta","nSelected": 0, "prezzo": 6},
+									{"cod": "bottiglia_franciacorta", "desc": "Bottiglia Franciacorta","nSelected": 0, "prezzo": 29}
+								]
+						},
+						{"codSection": "bevande",
+							"descSection": "Bevande",
+							"active": false,
+							"items":
+								[
+									{"cod": "acqua", "desc": "Acqua 50 cl", "nSelected": 0,"prezzo": 1},
+									{"cod": "acqua_1.5", "desc": "Acqua 1.5 l", "nSelected": 0,"prezzo": 2},
+									{"cod": "succo", "desc": "Succo di frutta", "nSelected": 0,"prezzo": 3},
+									{"cod": "coca_lattina", "desc": "Coca cola lattina","nSelected": 0, "prezzo": 2.5},
+									{"cod": "coca_spina_vetro", "desc": "Coca cola alla spina in vetro", "nSelected": 0, "prezzo": 2.5},
+									{"cod": "coca_vetro", "desc": "Coca cola in vetro", "nSelected": 0,"prezzo": 3},
+									{"cod": "coca_bio", "desc": "Coca cola Bio", "nSelected": 0,"prezzo": 4},
+									{"cod": "estathe_bottiglia", "desc": "Estathe Bottiglia","nSelected": 0, "prezzo": 3},
+									{"cod": "estathe_brick", "desc": "Estathe Brick", "nSelected": 0,"prezzo": 1.5},
+									{"cod": "gatorade", "desc": "Gatorade", "nSelected": 0,"prezzo": 3},
+									{"cod": "red_bull", "desc": "Red Bull", "nSelected": 0,"prezzo": 4},
+									{"cod": "bitter", "desc": "Bitter", "nSelected": 0,"prezzo": 3.5}
+								]
+						},
+						{"codSection": "drink",
+							"descSection": "Drink",
+							"active": false,
+							"items":
+								[
+									{"cod": "americano", "desc": "Americano", "nSelected": 0,"prezzo": 6},
+									{"cod": "analcolico", "desc": "Analcolico", "nSelected": 0,"prezzo": 6},
+									{"cod": "digestivo", "desc": "Digestivo", "nSelected": 0,"prezzo": 3},
+									{"cod": "campari_soda", "desc": "Campari Soda", "nSelected": 0,"prezzo": 4},
+									{"cod": "moscow_mule", "desc": "Moscow Mule", "nSelected": 0,"prezzo": 8},
+									{"cod": "spritz", "desc": "Spritz", "nSelected": 0,"prezzo": 6},
+									{"cod": "gin_tonic", "desc": "Gin Tonic", "nSelected": 0,"prezzo": 8},
+									{"cod": "gin_lemon", "desc": "Gin Lemon", "nSelected": 0,"prezzo": 6},
+									{"cod": "vodka_lemon", "desc": "Vodka Lemon", "nSelected": 0,"prezzo": 8},
+									{"cod": "coca_rum", "desc": "Coca Rum", "nSelected": 0,"prezzo": 6}
+								]
+						},
+						{"codSection": "pizzeria",
+							"descSection": "Pizzeria",
+							"active": false,
+							"items":
+								[
+									{"cod": "pizza_bianca", "desc": "Pizza Bianca", "nSelected": 0, "prezzo": 1.5},
+									{"cod": "pizza_margherita", "desc": "Pizza Margherita", "nSelected": 0,"prezzo": 1.8},
+									{"cod": "pizza_funghi", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+									{"cod": "pizza_salsiccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
+									{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2.7},
+									{"cod": "pizza_bianca_nutella", "desc": "Pizza bianca con la nutella", "nSelected": 0,"prezzo": 2}
+								]
+						}
+				]
 	}
 ]

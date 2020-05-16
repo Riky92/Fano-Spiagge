@@ -1,0 +1,171 @@
+.section{
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	padding: 15px;
+	background-color: #63a4ff;
+	color: white;
+	font-weight: bold;
+}
+
+.containerSection{
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	.containerDescription{
+		position: absolute;
+    z-index: 1;
+    vertical-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    bottom: 0;
+    align-items: center;
+		color: white;
+		.row{
+			display: inline-flex;
+			justify-content: space-between;
+			width: 90%;
+			align-items: center;
+			.item{
+				font-size: 25px;
+				font-weight: bold;
+				padding: 10px;
+				vertical-align: center;
+			}
+		}
+
+
+	}
+}
+
+.imageSection{
+	width: 100%;
+	height: 110px;
+}
+
+.sizeIcon{
+	width: 25px;
+	height: 25px;
+}
+
+.containerBoxButtons{
+	display: inline-flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+.boxButton{
+	height: 40px;
+  width: 40px;
+	&.segno{
+		background-color:#8080803d;
+		border-radius: 5px;
+	}
+	&.value{
+		font-size: 16px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+	}
+}
+
+.sizeSign{
+	height: 20px;
+	width: 20px;
+	font-weight: bold;
+}
+
+
+.itemContainer{
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.center{
+	justify-content: center;
+	display: flex;
+	width: 100%;
+}
+
+.flex1{
+	flex: 1;
+}
+
+
+
+.prezzo{
+	color: grey;
+	font-weight: bold;
+}
+
+.itemsContainer{
+	padding: 10px;
+  height: 200px;
+	overflow: auto;
+}
+
+.title{
+	display: flex;
+	font-size: 22px;
+	font-weight: bold;
+	justify-content: center;
+	padding: 10px;
+	width: 100%;
+	color: black;
+}
+
+.subTitle{
+	display: flex;
+	font-size: 16px;
+	justify-content: center;
+	padding: 10px;
+	width: 100%;
+}
+
+.disabled{
+	opacity: 0.5;
+}
+
+.padd-5{
+	padding: 5px;
+}
+
+.subTitleContainer{
+	padding: 10px;
+	font-size: 10px;
+}
+
+.carrello{
+	padding: 10px;
+	display: flex;
+	width: 100%;
+	font-size: 20px;
+	align-items: center;
+}
+
+.column{
+	display: flex;
+	flex-direction: column;
+	flex: 4;
+}
+
+.sizeCart{
+	height: 30px;
+	width: 30px;
+}
+
+.padd-5{
+	padding: 5px;
+}
+
+.totale{
+	font-weight: bold;
+	padding: 5px;
+	font-size: 25px;
+}

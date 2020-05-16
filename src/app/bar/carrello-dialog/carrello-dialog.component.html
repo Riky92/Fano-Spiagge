@@ -1,0 +1,25 @@
+<div class="dialogContainer">
+	<div class="closeContainer">
+		<img src="/assets/icon/close.svg" (click)="close()">
+	</div>
+	<div class="carrelloTitle">Carrello</div>
+	<ng-container *ngFor="let carrelloItem of data">
+		<div class="containerCarrello">
+			<div class="row">
+				<div class="flex1 center">
+					{{carrelloItem.nSelected}}
+				</div>
+				<div class="flex1 center">
+					{{carrelloItem.desc}}
+				</div>
+				<div class="flex1 center prezzo">
+					{{getRowPrezzoCarrello(carrelloItem)}} €
+				</div>
+			</div>
+		</div>
+	</ng-container>
+	<div class="rowTotal">
+		<span>Totale</span>
+		<span class="total">{{getTotale()}} €</span>
+	</div>
+</div>

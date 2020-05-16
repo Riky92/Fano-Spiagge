@@ -4,6 +4,7 @@ export interface Spiaggia{
 	descrizione: string;
 	tipo: string;
 	via: string;
-	servizi: Array<any>;
+	serviziOfferti: Array<any>;
+	serviziBar: Array<any>;
 	tariffe: Array<any>;
 }

@@ -33,6 +33,7 @@ export class SpiaggiaPage implements OnInit {
 		this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
 				this.spiaggia = this.router.getCurrentNavigation().extras.state.spiaggia;
+				console.log('spiaggia: ', this.spiaggia);
 				this.spiaggiaService.getOmbrelloni().subscribe( response => {
 					this.ombrelloni = response;
 					this.initCalendar();
@@ -139,6 +140,15 @@ export class SpiaggiaPage implements OnInit {
     }
     this.router.navigate(['/ombrellone'], spiaggiaData);
 
+	}
+
+	goToBar(){
+		const spiaggiaData: NavigationExtras = {
+      state : {
+        spiaggia: this.spiaggia
+      }
+    }
+    this.router.navigate(['/bar'], spiaggiaData);
 	}
 
 }

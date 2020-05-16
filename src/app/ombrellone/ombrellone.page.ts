@@ -39,6 +39,8 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 
 	subscription;
 
+	user
+
 	legenda = [
 		{desc: 'Libero', cssClass: 'libero', color: 'green'},
 		{desc: 'Occupato', cssClass: 'occupato', color: 'red'},
@@ -54,11 +56,14 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 		private prenotazioniService: PrenotazioniService,
 		private prenotazioniProvider: PrenotazioniProvider,
 		private navController: NavController,
-		private dialog: MatDialog
+		private dialog: MatDialog,
+		// private storage: Storage
 
 	) { }
 
   ngOnInit() {
+		// this.user = this.storage.get('user');
+		console.log('user: ', this.user);
 		this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
 				this.spiaggia = this.router.getCurrentNavigation().extras.state.spiaggia;
@@ -75,7 +80,13 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 	}
 
 	isPrenotazioneGiornalieraGiàFatta(){
-		return this.prenotazioni.find( prenot => prenot.dataPrenotazione === this.activeDay.labelPrenotazione && prenot.user === 'mencuccir');
+		const prenotazione = this.prenotazioni.find( prenot => prenot.dataPrenotazione === this.activeDay.labelPrenotazione && prenot.user === 'mencuccir');
+		if( prenotazione){
+			return prenotazione.descSpiaggia;
+		} else {
+			return '';
+		}
+
 	}
 
 	comeBack(){
@@ -255,8 +266,10 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 			width: '400px'
 		}).afterClosed().subscribe( response => {
 			if( response){
+				console.log('exist: ', this.isPrenotazioneGiornalieraGiàFatta());
 				if( this.isPrenotazioneGiornalieraGiàFatta()){
-					this.presentAlertOmbrellone(1);
+					const descSpiaggia = this.isPrenotazioneGiornalieraGiàFatta();
+					this.presentAlertOmbrellone(1, descSpiaggia);
 				} else if(this.checkPrenotazione(this.prenotazioni, prenotazione)){
 					this.presentAlertOmbrellone(2);
 				} else {
@@ -266,10 +279,10 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 		});
 	}
 
-	async presentAlertOmbrellone(type) {
+	async presentAlertOmbrellone(type, descSpiaggia?) {
     const alert = await this.alertCtrl.create({
 			header: 'Errore prenotazione',
-			message: type === 1 ? 'Per questa data hai già effettuato una prenotazione presso ' + this.spiaggia.title:
+			message: type === 1 ? 'Per questa data hai già effettuato una prenotazione presso ' + descSpiaggia:
 			 'L\'ombrellone selezionato è stato appena occupato!',
       buttons: [
          {
@@ -285,9 +298,6 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 	}
 
 	checkPrenotazione(prenotazioniList, prenotazione){
-		console.log('exist: ', prenotazioniList.find( prenot => prenot.codSpiaggia === prenotazione.codSpiaggia &&
-			prenot.ombrellone === prenotazione.ombrellone &&
-			prenot.dataPrenotazione === prenotazione.dataPrenotazione));
 		return prenotazioniList.find( prenot => prenot.codSpiaggia === prenotazione.codSpiaggia &&
 																	prenot.ombrellone === prenotazione.ombrellone &&
 																	prenot.dataPrenotazione === prenotazione.dataPrenotazione);

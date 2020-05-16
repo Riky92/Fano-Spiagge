@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary" class="central">
+		<ion-title>Bar {{spiaggia.title}}</ion-title>
+		<ion-buttons slot="start">
+      <ion-button  (click)="comeBack()">
+				<ion-icon name="arrow-back" mode="ios"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ng-container *ngFor="let section of spiaggia.serviziBar">
+		<div class="containerSection" (click)="openSection(section)">
+			<img src="/assets/bar/{{section.codSection}}.jpeg" class="imageSection">
+			<div class="containerDescription">
+				<div class="row">
+					<span class="item">{{section.descSection}}</span>
+					<ion-icon *ngIf="!section.active" name="chevron-up-outline" class="sizeIcon"></ion-icon>
+					<ion-icon *ngIf="section.active" name="chevron-down-outline" class="sizeIcon"></ion-icon>
+				</div>
+			</div>
+		</div>
+		<ion-list *ngIf="section.active" class="itemsContainer">
+			<ion-item *ngFor="let item of section.items" (click)="item.selected = !item.selected">
+				<div class="itemContainer">
+					<div class="flex1" style="font-style: italic">
+						{{item.desc}}
+					</div>
+					<div class="flex1 center">
+						<span class="prezzo">{{item.prezzo | number: '1.0-2'}} €</span>
+					</div>
+					<div class="flex1">
+						<div class="containerBoxButtons" *ngIf="item.selected">
+							<button [disabled]="isNSelectedZero(item)" class="boxButton segno" [ngClass]="{'disabled': isNSelectedZero(item)}"
+							 (click)="$event.stopPropagation();removeItem(item)">
+								<ion-icon color="danger" class="sizeSign" name="remove-outline"></ion-icon>
+							</button>
+							<div class="boxButton value">
+								<span>{{item.nSelected}}</span>
+							</div>
+							<button color="transparent" class="boxButton segno" (click)="$event.stopPropagation();addItem(item)">
+								<ion-icon class="flex1" color="success" class="sizeSign" name="add-outline"></ion-icon>
+							</button>
+						</div>
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+	</ng-container>
+</ion-content>
+
+<ion-footer *ngIf="carrello.length > 0" style="height: 85px">
+	<ion-toolbar color="primary" class="central">
+		<div class="carrello" [attr.disabled]="ordineDisabled()" [ngClass]="{'disabled': ordineDisabled()}" (click)="goToOrdine()">
+			<div class="flex1">
+				<ion-icon name="cart-outline" class="sizeCart"></ion-icon>
+			</div>
+			<div class="column">
+				<span class="totale">{{getTotale() | number: '1.0-2'}} €</span>
+				<span class="padd-5 labelCarrello">
+					{{getLabelCarrello()}}
+				</span>
+			</div>
+		</div>
+	</ion-toolbar>
+</ion-footer>

@@ -20,7 +20,7 @@
 			<div class="descSpiaggia">{{spiaggia.descrizione}}</div>
 			<div class="title">Servizi offerti</div>
 			<div class="containerServices">
-				<ng-container *ngFor="let service of spiaggia.servizi">
+				<ng-container *ngFor="let service of spiaggia.serviziOfferti">
 					<div class="boxService">
 						<img src="/assets/services/{{service.cod}}.svg" class="iconService">
 					</div>
@@ -39,7 +39,10 @@
 	</ion-card>
 </ion-content>
 <ion-footer>
-	<div class="padd-10">
+	<div class="padd-2">
+		<ion-button type="submit" color="primary" expand="block" (click)="goToBar()">Serizio Bar</ion-button>
+	</div>
+	<div class="padd-2">
 		<ion-button type="submit" color="primary" expand="block" (click)="goToOmbrellone()">Prenota ombrellone</ion-button>
 	</div>
 </ion-footer>

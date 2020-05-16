@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 import { Storage} from '@ionic/storage';
 import { NavController } from '@ionic/angular';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 const { SplashScreen } = Plugins;
 
 
@@ -13,9 +14,11 @@ const { SplashScreen } = Plugins;
 export class AppComponent {
   constructor(
 		private storage: Storage,
-		private navController: NavController) {
+		private navController: NavController,
+		// private uniqueDeviceID: UniqueDeviceID
+		){
+			this.initializeApp();
 			this.checkData();
-		this.initializeApp();
   }
 
   initializeApp() {

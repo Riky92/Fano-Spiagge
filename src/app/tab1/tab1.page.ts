@@ -3,7 +3,6 @@ import { HttpService } from '../services/http.service';
 import { SpiaggeService } from '../services/spiagge.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { Spiaggia } from '../model/spiaggia';
-import { Storage} from '@ionic/storage';
 import { NavController } from '@ionic/angular';
 
 
@@ -19,11 +18,13 @@ export class Tab1Page implements OnInit{
 	constructor(
 		private spiaggeService: SpiaggeService,
 		private router: Router,
+		// private storage: Storage,
 		private navController: NavController
 		) {}
 
 
 	ngOnInit(){
+		// this.storage.clear()
 		this.getSpiagge();
 
 	}
