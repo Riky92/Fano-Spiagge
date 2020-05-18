@@ -53,4 +53,8 @@ export class Tab1Page implements OnInit{
 		this.navController.navigateRoot('/prenotazioni');
 	}
 
+	navigateToOrdini(){
+		this.navController.navigateRoot('/ordini');
+	}
+
 }

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="primary" class="central">
+		<ion-title>Il tuo ordine</ion-title>
+		<ion-buttons slot="start">
+      <ion-button  (click)="comeBack()">
+				<ion-icon name="arrow-back" mode="ios"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<img src="/assets/services/ordine.jpeg" class="fullWidth">
+	<ion-card>
+		<ion-card-header>
+			<ion-card-title class="central">Carrello</ion-card-title>
+		</ion-card-header>
+		<ion-card-content style="padding: 0">
+			<ng-container *ngFor="let carrelloItem of carrello">
+				<div class="containerCarrello">
+					<div class="row">
+						<div *ngIf="!ordineInEdit"class="flex1">
+							{{carrelloItem.nSelected}}x{{carrelloItem.desc}}
+						</div>
+						<div *ngIf="ordineInEdit" class="flex1">
+							<div class="containerBoxButtons">
+								<button [disabled]="isNSelectedZero(carrelloItem)" class="boxButton segno" [ngClass]="{'disabled': isNSelectedZero(carrelloItem)}"
+								 (click)="removeItem(carrelloItem)">
+									<ion-icon color="danger" class="sizeSign" name="remove-outline"></ion-icon>
+								</button>
+								<div class="boxButton value">
+									<span>{{carrelloItem.nSelected}}</span>
+								</div>
+								<button color="transparent" class="boxButton segno" (click)="addItem(carrelloItem)">
+									<ion-icon class="flex1" color="success" class="sizeSign" name="add-outline"></ion-icon>
+								</button>
+							</div>
+
+						</div>
+						<div *ngIf="ordineInEdit" class="flex1">
+							{{carrelloItem.desc}}
+						</div>
+						<div class="flex1 prezzo">
+							{{getRowPrezzoCarrello(carrelloItem) | number: '1.0-2'}} €
+						</div>
+					</div>
+				</div>
+			</ng-container>
+			<div class="rowTotal">
+				<span>Totale</span>
+				<span class="total">{{getTotale() | number: '1.0-2'}} €</span>
+			</div>
+			<div *ngIf="ordineDisabled()" class="row">
+				<span class="ordineWarning">Attenzione hai modificato l'ordine. Per poter ordinare mancano {{getMancante()}} €</span>
+			</div>
+			<div class="containerFooterButtons">
+				<ion-button *ngIf="!ordineInEdit" shape="round" color="secondary" size="small" (click)="ordineInEdit = !ordineInEdit">
+					<ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+				</ion-button>
+				<ion-button *ngIf="ordineInEdit" shape="round" color="success" size="small" (click)="ordineInEdit = !ordineInEdit">
+						<ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+					</ion-button>
+				<!-- <ion-button shape="round" color="danger" size="small" (click)="svuotaCarrello()">
+					<ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
+				</ion-button> -->
+			</div>
+		</ion-card-content>
+	</ion-card>
+
+</ion-content>
+
+<ion-footer>
+	<div class="padd-2">
+		<ion-button type="submit" color="primary" [disabled]="ordineDisabled()" [ngClass]="{'disabled': ordineDisabled()}" expand="block" (click)="ordina()">Ordina</ion-button>
+	</div>
+</ion-footer>

@@ -56,6 +56,10 @@ export class PrenotazioniProvider implements OnDestroy{
 		});
 	}
 
+	getOmbrelloneByPrenotazioneDate(){
+
+	}
+
 	addPrenotazione(prenotazione){
 		this.prenotazioniService.addPrenotazione(prenotazione);
 	}

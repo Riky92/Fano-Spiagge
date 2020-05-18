@@ -56,14 +56,12 @@ export class OmbrellonePage implements OnInit, OnDestroy {
 		private prenotazioniService: PrenotazioniService,
 		private prenotazioniProvider: PrenotazioniProvider,
 		private navController: NavController,
-		private dialog: MatDialog,
-		// private storage: Storage
+		private dialog: MatDialog
 
 	) { }
 
   ngOnInit() {
-		// this.user = this.storage.get('user');
-		console.log('user: ', this.user);
+
 		this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
 				this.spiaggia = this.router.getCurrentNavigation().extras.state.spiaggia;

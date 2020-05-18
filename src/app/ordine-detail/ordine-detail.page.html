@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary" class="central">
+		<ion-title>Ordine</ion-title>
+		<ion-buttons slot="start">
+      <ion-button  (click)="comeBack()">
+				<ion-icon name="arrow-back" mode="ios"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<ion-card-header>
+			<ion-card-title class="central">{{ordine.descSpiaggia}}</ion-card-title>
+		</ion-card-header>
+		<ion-card-content style="padding: 0">
+			<ng-container *ngFor="let carrelloItem of ordine.carrello">
+				<div class="containerCarrello">
+					<div class="row">
+						<div *ngIf="!ordineInEdit"class="flex1">
+							{{carrelloItem.nSelected}}x{{carrelloItem.desc}}
+						</div>
+						<div *ngIf="ordineInEdit" class="flex1">
+							<div class="containerBoxButtons">
+								<button [disabled]="isNSelectedZero(carrelloItem)" class="boxButton segno" [ngClass]="{'disabled': isNSelectedZero(carrelloItem)}"
+								 (click)="removeItem(carrelloItem)">
+									<ion-icon color="danger" class="sizeSign" name="remove-outline"></ion-icon>
+								</button>
+								<div class="boxButton value">
+									<span>{{carrelloItem.nSelected}}</span>
+								</div>
+								<button color="transparent" class="boxButton segno" (click)="addItem(carrelloItem)">
+									<ion-icon class="flex1" color="success" class="sizeSign" name="add-outline"></ion-icon>
+								</button>
+							</div>
+
+						</div>
+						<div *ngIf="ordineInEdit" class="flex1">
+							{{carrelloItem.desc}}
+						</div>
+						<div class="flex1 prezzo">
+							{{getRowPrezzoCarrello(carrelloItem) | number: '1.0-2'}} €
+						</div>
+					</div>
+				</div>
+			</ng-container>
+			<div class="rowTotal">
+				<span>Totale</span>
+				<span class="total">{{getTotale() | number: '1.0-2'}} €</span>
+			</div>
+		</ion-card-content>
+	</ion-card>
+		<ion-button type="submit" color="primary" expand="block" (click)="ordina()">Ripeti l'ordine</ion-button>
+</ion-content>

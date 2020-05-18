@@ -33,6 +33,18 @@ const routes: Routes = [
   {
     path: 'bar',
     loadChildren: () => import('./bar/bar.module').then( m => m.BarPageModule)
+  },
+  {
+    path: 'ordine',
+    loadChildren: () => import('./ordine/ordine.module').then( m => m.OrdinePageModule)
+  },
+  {
+    path: 'ordini',
+    loadChildren: () => import('./ordini/ordini.module').then( m => m.OrdiniPageModule)
+  },
+  {
+    path: 'ordine-detail',
+    loadChildren: () => import('./ordine-detail/ordine-detail.module').then( m => m.OrdineDetailPageModule)
   }
 ];
 @NgModule({

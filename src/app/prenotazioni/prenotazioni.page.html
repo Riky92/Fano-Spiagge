@@ -59,19 +59,26 @@
 		<ion-buttons>
 			<ion-grid>
 				<ion-row size="12" class="text-center">
-					<ion-col class="item disabled" size="6">
+					<ion-col class="item disabled" size="4">
 						<ion-button (click)="navigateToSpiagge()">
 							<img src="/assets/services/spiagge.svg">
 						</ion-button>
 						<br>
 						<span class="menuItem">Spiagge</span>
 					</ion-col>
-					<ion-col size="6" class="item active" (click)="navigateToPrenotazioni()">
+					<ion-col size="4" class="item active" (click)="navigateToPrenotazioni()">
 						<ion-button>
 							<ion-icon name="book-outline"></ion-icon>
 						</ion-button>
 						<br>
 						<span class="menuItem">Prenotazioni</span>
+					</ion-col>
+					<ion-col size="4" class="item disabled" (click)="navigateToOrdini()">
+						<ion-button>
+							<img src="/assets/icon/cart.svg">
+						</ion-button>
+						<br>
+						<span class="menuItem">Ordini</span>
 					</ion-col>
 				</ion-row>
 		</ion-grid>

@@ -27,6 +27,7 @@ export class BarPage implements OnInit {
 		private route: ActivatedRoute,
 		private router: Router,
 		private dialog: MatDialog,
+		private alertCtrl: AlertController,
 		private navController: NavController
 	) { }
 
@@ -34,19 +35,13 @@ export class BarPage implements OnInit {
 		this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
 				this.spiaggia = this.router.getCurrentNavigation().extras.state.spiaggia;
+				this.carrello = [];
 			}
 		});
 	}
 
 	openSection(section){
 		section.active = !section.active;
-		// this.spiaggia.serviziBar.forEach( sectionBar => {
-		// 	if(sectionBar.cod === section.cod){
-		// 		sectionBar.active = true;
-		// 	} else {
-		// 		sectionBar.active = false;
-		// 	}
-		// });
 	}
 
 	comeBack(){
@@ -80,7 +75,54 @@ export class BarPage implements OnInit {
 	}
 
 	goToOrdine(){
+		const carrelloData: NavigationExtras = {
+      state : {
+				carrello: this.carrello,
+				spiaggia: this.spiaggia
+      }
+    }
+    this.router.navigate(['/ordine'], carrelloData);
+	}
 
+	isInCarrello(item){
+		return item.nSelected > 0;
+	}
+
+	svuotaCarrello(){
+		this.presentAlertConfirm();
+	}
+
+	async presentAlertConfirm() {
+    const alert = await this.alertCtrl.create({
+      header: 'Desideri svuotare il carrello ?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Si',
+          handler: () => {
+						this.carrello = [];
+						this.cleanOrdine();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+	}
+
+	cleanOrdine(){
+		this.spiaggia.serviziBar.forEach( sectionBar => {
+			sectionBar.items.forEach( item => {
+				item.nSelected = 0;
+				item.selected = false;
+			});
+		});
 	}
 
 	getTotale(){

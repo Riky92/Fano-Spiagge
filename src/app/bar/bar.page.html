@@ -6,6 +6,9 @@
 				<ion-icon name="arrow-back" mode="ios"></ion-icon>
 			</ion-button>
 		</ion-buttons>
+		<ion-buttons *ngIf="carrello.length > 0" slot="end">
+			<ion-icon name="trash" mode="ios" class="sizeIcon" (click)="svuotaCarrello()"></ion-icon>
+		</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -22,13 +25,13 @@
 			</div>
 		</div>
 		<ion-list *ngIf="section.active" class="itemsContainer">
-			<ion-item *ngFor="let item of section.items" (click)="item.selected = !item.selected">
-				<div class="itemContainer">
-					<div class="flex1" style="font-style: italic">
+			<ion-item *ngFor="let item of section.items"(click)="item.selected = !item.selected">
+				<div class="itemContainer" [ngClass]="{'inCarrello': isInCarrello(item)}">
+					<div class="flex1 descItem">
 						{{item.desc}}
 					</div>
 					<div class="flex1 center">
-						<span class="prezzo">{{item.prezzo | number: '1.0-2'}} €</span>
+						<span class="prezzo" [ngClass]="{'inCarrello': isInCarrello(item)}">{{item.prezzo | number: '1.0-2'}} €</span>
 					</div>
 					<div class="flex1">
 						<div class="containerBoxButtons" *ngIf="item.selected">
@@ -52,7 +55,7 @@
 
 <ion-footer *ngIf="carrello.length > 0" style="height: 85px">
 	<ion-toolbar color="primary" class="central">
-		<div class="carrello" [attr.disabled]="ordineDisabled()" [ngClass]="{'disabled': ordineDisabled()}" (click)="goToOrdine()">
+		<button class="carrello" [disabled]="ordineDisabled()" [ngClass]="{'disabled': ordineDisabled()}" (click)="goToOrdine()">
 			<div class="flex1">
 				<ion-icon name="cart-outline" class="sizeCart"></ion-icon>
 			</div>
@@ -62,6 +65,6 @@
 					{{getLabelCarrello()}}
 				</span>
 			</div>
-		</div>
+		</button>
 	</ion-toolbar>
 </ion-footer>

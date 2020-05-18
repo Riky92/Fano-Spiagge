@@ -1,30 +1,25 @@
 <ion-header>
   <ion-toolbar color="primary" class="central">
-    <ion-title>
-      Fano Spiagge
-    </ion-title>
+    <ion-title>I miei ordini</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ng-container *ngFor="let spiaggia of spiagge">
-		<div class="containerSpiaggia" (click)="goToSpiaggia(spiaggia)">
-			<img src="/assets/spiagge/{{spiaggia.id}}.jpg" class="fullWidth">
-			<div class="containerDescription">
-				<div class="row title">
-					{{spiaggia.title}}
+	<ion-list *ngFor="let ordine of ordini">
+		<ion-item detail="true" (click)="goToOrdineDetail(ordine)">
+			<div class="containerOrder">
+				<div class="flex1">
+					<img src="/assets/spiagge/{{ordine.codSpiaggia}}.jpg" class="imageOrder">
 				</div>
-				<div class="row via">
-					<ion-icon name="location-outline" color="white"></ion-icon>
-					{{spiaggia.via}}
+				<div class="column">
+					<span class="spiaggia">{{ordine.descSpiaggia}}</span>
+					<span class="ombrellone">{{ordine.ombrellone}}</span>
+					<span class="totale">{{ordine.totale}} €</span>
+					<span class="timestamp">{{ordine.timestamp.toDate() |  date:'dd/MM/yyyy     h:mm:ss a' }}</span>
 				</div>
 			</div>
-			<div class="containerTipologia">
-				<img src="/assets/icon/waves.svg">
-				<span class="padd-l-2">{{spiaggia.tipo}}</span>
-			</div>
-		</div>
-	</ng-container>
+		</ion-item>
+	</ion-list>
 </ion-content>
 
 <ion-footer class="footer">
@@ -32,7 +27,7 @@
 		<ion-buttons>
 			<ion-grid>
 				<ion-row size="12" class="text-center">
-					<ion-col class="item active" size="4">
+					<ion-col class="item disabled" size="4">
 						<ion-button (click)="navigateToSpiagge()">
 							<img src="/assets/services/spiagge.svg">
 						</ion-button>
@@ -46,7 +41,7 @@
 						<br>
 						<span class="menuItem">Prenotazioni</span>
 					</ion-col>
-					<ion-col size="4" class="item disabled" (click)="navigateToOrdini()">
+					<ion-col size="4" class="item active" (click)="navigateToOrdini()">
 						<ion-button>
 							<img src="/assets/icon/cart.svg">
 						</ion-button>

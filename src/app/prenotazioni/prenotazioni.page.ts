@@ -126,12 +126,17 @@ export class PrenotazioniPage implements OnInit {
 		}
 	}
 
+
 	navigateToSpiagge(){
 		this.navController.navigateRoot('/tab1');
 	}
 
 	navigateToPrenotazioni(){
 		this.navController.navigateRoot('/prenotazioni');
+	}
+
+	navigateToOrdini(){
+		this.navController.navigateRoot('/ordini');
 	}
 
 

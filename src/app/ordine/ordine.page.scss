@@ -1,0 +1,93 @@
+.carrelloTitle{
+	background-color:#ffffffe8;
+	display: flex;
+	width: 100%;
+	font-weight: bold;
+	padding: 10px;
+	justify-content: center;
+}
+
+.containerCarrello{
+	min-height: 30px;
+	padding: 10px;
+	background-color: #fff;
+	display: flex;
+	width: 100%;
+	font-size: 18px;
+	border: none;
+	justify-content: space-between;
+}
+
+.row{
+	display: inline-flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.rowTotal{
+	display: inline-flex;
+	width: 100%;
+	min-height: 30px;
+	align-items: center;
+	padding: 10px;
+	font-size: 20px;
+	justify-content: space-around;
+	background-color: white;
+}
+
+.total{
+	font-weight: bold;
+}
+
+.flex1{
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}
+
+
+.sizeIcon{
+	width: 25px;
+	height: 25px;
+}
+
+.containerBoxButtons{
+	display: inline-flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+.boxButton{
+	height: 40px;
+  width: 40px;
+	&.segno{
+		background-color:#8080803d;
+		border-radius: 5px;
+	}
+	&.value{
+		font-size: 16px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+	}
+}
+
+.sizeSign{
+	height: 20px;
+	width: 20px;
+	font-weight: bold;
+}
+
+.containerFooterButtons{
+	display: flex;
+	padding: 20px;
+	width: 100%;
+	justify-content: center;
+}
+
+.ordineWarning{
+	color: red;
+	font-style: italic;
+}

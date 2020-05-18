@@ -1,0 +1,47 @@
+.carrelloTitle{
+	background-color:#ffffffe8;
+	display: flex;
+	width: 100%;
+	font-weight: bold;
+	padding: 10px;
+	justify-content: center;
+}
+
+.containerCarrello{
+	min-height: 30px;
+	padding: 10px;
+	background-color: #fff;
+	display: flex;
+	width: 100%;
+	font-size: 18px;
+	border: none;
+	justify-content: space-between;
+}
+
+.row{
+	display: inline-flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.rowTotal{
+	display: inline-flex;
+	width: 100%;
+	min-height: 30px;
+	align-items: center;
+	padding: 10px;
+	font-size: 20px;
+	justify-content: space-around;
+	background-color: white;
+}
+
+.total{
+	font-weight: bold;
+}
+
+.flex1{
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}

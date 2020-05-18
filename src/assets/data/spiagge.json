@@ -129,9 +129,9 @@
 							[
 								{"cod": "pizza_bianca", "desc": "Pizza Bianca", "selected": false, "nSelected": 0, "prezzo": 1.5},
 								{"cod": "pizza_margherita", "desc": "Pizza Margherita", "selected": false,"nSelected": 0, "prezzo": 1.8},
-								{"cod": "pizza_funghi", "desc": "Pizza Farcita", "selected": false, "nSelected": 0,"prezzo": 2},
-								{"cod": "pizza_salsiccia", "desc": "Pizza Farcita", "selected": false, "nSelected": 0,"prezzo": 2},
-								{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Farcita", "selected": false, "nSelected": 0,"prezzo": 2.7},
+								{"cod": "pizza_funghi", "desc": "Pizza Funghi", "selected": false, "nSelected": 0,"prezzo": 2},
+								{"cod": "pizza_salsiccia", "desc": "Pizza Salsiccia", "selected": false, "nSelected": 0,"prezzo": 2},
+								{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Funghi e Salsiccia", "selected": false, "nSelected": 0,"prezzo": 2.7},
 								{"cod": "pizza_bianca_nutella", "desc": "Pizza bianca con la nutella", "selected": false,"nSelected": 0, "prezzo": 2}
 							]
 					}
@@ -266,9 +266,9 @@
 							[
 								{"cod": "pizza_bianca", "desc": "Pizza Bianca", "nSelected": 0,"prezzo": 1.5},
 								{"cod": "pizza_margherita", "desc": "Pizza Margherita", "nSelected": 0,"prezzo": 1.8},
-								{"cod": "pizza_funghi", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
-								{"cod": "pizza_salsiccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2},
-								{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Farcita", "nSelected": 0,"prezzo": 2.7},
+								{"cod": "pizza_funghi", "desc": "Pizza Salsiccia", "nSelected": 0,"prezzo": 2},
+								{"cod": "pizza_salsiccia", "desc": "Pizza Funghi", "nSelected": 0,"prezzo": 2},
+								{"cod": "pizza_funghi_salsisccia", "desc": "Pizza Funghi e Salsiccia", "nSelected": 0,"prezzo": 2.7},
 								{"cod": "pizza_bianca_nutella", "desc": "Pizza bianca con la nutella", "nSelected": 0,"prezzo": 2}
 							]
 					}

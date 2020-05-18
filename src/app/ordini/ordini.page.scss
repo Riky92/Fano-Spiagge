@@ -1,0 +1,50 @@
+.row{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.imageOrder{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	margin: 10px;
+}
+
+.containerOrder{
+	display: flex;
+	width: 100%;
+	.flex1{
+		flex:1
+	}
+	.column{
+		flex: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+
+.spiaggia{
+	font-size: 22px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.ombrellone{
+	color: grey;
+	font-size: 16px;
+	padding: 5px;
+}
+
+.totale{
+	font-size: 16px;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.timestamp{
+	font-size: 16px;
+	padding: 5px;
+}
