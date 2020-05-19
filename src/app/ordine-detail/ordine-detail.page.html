@@ -22,14 +22,14 @@
 							{{carrelloItem.nSelected}}x{{carrelloItem.desc}}
 						</div>
 						<div class="flex1 prezzo">
-							{{getRowPrezzoCarrello(carrelloItem) | number: '1.0-2'}} €
+							{{carrelloItem.prezzo | number: '1.0-2'}} €
 						</div>
 					</div>
 				</div>
 			</ng-container>
 			<div class="rowTotal">
 				<span>Totale</span>
-				<span class="total">{{getTotale() | number: '1.0-2'}} €</span>
+				<span class="total">{{ordine.totale | number: '1.0-2'}} €</span>
 			</div>
 		</ion-card-content>
 	</ion-card>

@@ -34,6 +34,7 @@ export class OrdineDetailPage implements OnInit {
 		this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
 				this.ordine = this.router.getCurrentNavigation().extras.state.ordine;
+				console.log('ordine: ', this.ordine);
 				this.subscription = this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
 					this.prenotazioni = responsePrenotazioni;
 				});
