@@ -18,26 +18,8 @@
 			<ng-container *ngFor="let carrelloItem of ordine.carrello">
 				<div class="containerCarrello">
 					<div class="row">
-						<div *ngIf="!ordineInEdit"class="flex1">
+						<div class="flex1">
 							{{carrelloItem.nSelected}}x{{carrelloItem.desc}}
-						</div>
-						<div *ngIf="ordineInEdit" class="flex1">
-							<div class="containerBoxButtons">
-								<button [disabled]="isNSelectedZero(carrelloItem)" class="boxButton segno" [ngClass]="{'disabled': isNSelectedZero(carrelloItem)}"
-								 (click)="removeItem(carrelloItem)">
-									<ion-icon color="danger" class="sizeSign" name="remove-outline"></ion-icon>
-								</button>
-								<div class="boxButton value">
-									<span>{{carrelloItem.nSelected}}</span>
-								</div>
-								<button color="transparent" class="boxButton segno" (click)="addItem(carrelloItem)">
-									<ion-icon class="flex1" color="success" class="sizeSign" name="add-outline"></ion-icon>
-								</button>
-							</div>
-
-						</div>
-						<div *ngIf="ordineInEdit" class="flex1">
-							{{carrelloItem.desc}}
 						</div>
 						<div class="flex1 prezzo">
 							{{getRowPrezzoCarrello(carrelloItem) | number: '1.0-2'}} €
