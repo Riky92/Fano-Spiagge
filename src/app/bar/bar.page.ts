@@ -23,6 +23,8 @@ export class BarPage implements OnInit {
 
 	minOrdineValue = 10
 
+	sectionActive = 'caffetteria';
+
   constructor(
 		private route: ActivatedRoute,
 		private router: Router,

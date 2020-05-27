@@ -1,4 +1,5 @@
 import {CarrelloOrdine  } from './carrello';
+import { Stato } from './stato-ordine';
 
 export interface Ordine{
 	codPrenotazione: string;
@@ -6,6 +7,7 @@ export interface Ordine{
 	codSpiaggia: string;
 	descSpiaggia: string;
 	timestamp: Date;
+	stato: Stato;
 	carrello: Array<CarrelloOrdine>;
 	totale: number;
 	user: string;

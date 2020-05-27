@@ -25,6 +25,7 @@ export class OrdiniPage implements OnInit {
 	getOrdini(){
 		this.ordiniProvider.getOrdini().subscribe( responseOrdini => {
 			this.ordini = responseOrdini;
+			console.log('ordini: ', this.ordini);
 		});
 	}
 

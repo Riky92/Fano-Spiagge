@@ -13,44 +13,49 @@
 </ion-header>
 
 <ion-content>
-	<ng-container *ngFor="let section of spiaggia.serviziBar">
-		<div class="containerSection" (click)="openSection(section)">
-			<img src="/assets/bar/{{section.codSection}}.jpeg" class="imageSection">
-			<div class="containerDescription">
-				<div class="row">
-					<span class="item">{{section.descSection}}</span>
-					<ion-icon *ngIf="!section.active" name="chevron-up-outline" class="sizeIcon"></ion-icon>
-					<ion-icon *ngIf="section.active" name="chevron-down-outline" class="sizeIcon"></ion-icon>
-				</div>
+	<ion-card>
+		<ion-card-header class="central">
+			<ion-card-title>Listino prezzi</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+			<div class="containerServices">
+				<ng-container *ngFor="let section of spiaggia.serviziBar">
+					<div class="boxService" [ngClass]="{'selected': section.codSection === sectionActive}" (click)="sectionActive = section.codSection">
+						<img src="/assets/bar-icons/{{section.codSection}}.svg" class="iconService" >
+						<span class="descSection" [ngClass]="{'selected': section.codSection === sectionActive}">{{section.descSection}}</span>
+					</div>
+				</ng-container>
 			</div>
-		</div>
-		<ion-list *ngIf="section.active" class="itemsContainer">
-			<ion-item *ngFor="let item of section.items"(click)="item.selected = !item.selected">
-				<div class="itemContainer" [ngClass]="{'inCarrello': isInCarrello(item)}">
-					<div class="flex1 descItem">
-						{{item.desc}}
-					</div>
-					<div class="flex1 center">
-						<span class="prezzo" [ngClass]="{'inCarrello': isInCarrello(item)}">{{item.prezzo | number: '1.0-2'}} €</span>
-					</div>
-					<div class="flex1">
-						<div class="containerBoxButtons" *ngIf="item.selected">
-							<button [disabled]="isNSelectedZero(item)" class="boxButton segno" [ngClass]="{'disabled': isNSelectedZero(item)}"
-							 (click)="$event.stopPropagation();removeItem(item)">
-								<ion-icon color="danger" class="sizeSign" name="remove-outline"></ion-icon>
-							</button>
-							<div class="boxButton value">
-								<span>{{item.nSelected}}</span>
+			<ng-container *ngFor="let section of spiaggia.serviziBar">
+				<ion-list *ngIf="section.codSection === sectionActive" class="itemsContainer">
+					<ion-item *ngFor="let item of section.items"(click)="item.selected = !item.selected">
+						<div class="itemContainer" [ngClass]="{'inCarrello': isInCarrello(item)}">
+							<div class="flex1 descItem">
+								{{item.desc}}
 							</div>
-							<button color="transparent" class="boxButton segno" (click)="$event.stopPropagation();addItem(item)">
-								<ion-icon class="flex1" color="success" class="sizeSign" name="add-outline"></ion-icon>
-							</button>
+							<div class="flex1 center">
+								<span class="prezzo" [ngClass]="{'inCarrello': isInCarrello(item)}">{{item.prezzo | number: '1.0-2'}} €</span>
+							</div>
+							<div class="flex1">
+								<div class="containerBoxButtons" *ngIf="item.selected">
+									<button [disabled]="isNSelectedZero(item)" class="boxButton segno" [ngClass]="{'disabled': isNSelectedZero(item)}"
+									 (click)="$event.stopPropagation();removeItem(item)">
+										<ion-icon color="danger" class="sizeSign" name="remove-outline"></ion-icon>
+									</button>
+									<div class="boxButton value">
+										<span>{{item.nSelected}}</span>
+									</div>
+									<button color="transparent" class="boxButton segno" (click)="$event.stopPropagation();addItem(item)">
+										<ion-icon class="flex1" color="success" class="sizeSign" name="add-outline"></ion-icon>
+									</button>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</ion-item>
-		</ion-list>
-	</ng-container>
+					</ion-item>
+				</ion-list>
+			</ng-container>
+		</ion-card-content>
+	</ion-card>
 </ion-content>
 
 <ion-footer *ngIf="carrello.length > 0" style="height: 85px">

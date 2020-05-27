@@ -5,21 +5,37 @@
 </ion-header>
 
 <ion-content>
-	<ion-list *ngFor="let ordine of ordini">
-		<ion-item detail="true" (click)="goToOrdineDetail(ordine)">
-			<div class="containerOrder">
-				<div class="flex1">
-					<img src="/assets/spiagge/{{ordine.codSpiaggia}}.jpg" class="imageOrder">
+	<ng-container *ngIf="ordini.length === 0; else ordiniContainer">
+		<ion-card>
+			<ion-card-content>
+				<div class="noOrdini">Non hai ancora effettuato ordini. Ordina presso lo stabilimento balneare in cui ti trovi</div>
+			</ion-card-content>
+		</ion-card>
+	</ng-container>
+	<ng-template #ordiniContainer>
+		<ion-list *ngFor="let ordine of ordini">
+			<ion-item detail="true" (click)="goToOrdineDetail(ordine)">
+				<div class="containerOrder">
+					<div class="flex1">
+						<img src="/assets/spiagge/{{ordine.codSpiaggia}}.jpg" class="imageOrder">
+					</div>
+					<div class="column">
+						<span class="spiaggia">{{ordine.descSpiaggia}}</span>
+						<span class="ombrellone">{{ordine.ombrellone}}</span>
+						<span class="totale">{{ordine.totale}} €</span>
+						<span class="timestamp">{{ordine.timestamp.toDate() |  date:'dd/MM/yyyy     HH:mm:ss' }}</span>
+						<span class="stato"
+						[ngClass]=
+						"{
+							'nuovo': ordine.stato.cod === 'nuovo',
+							'preparazione': ordine.stato.cod === 'preparazione',
+							'consegnato': ordine.stato.cod === 'consegnato'
+						}">{{ordine.stato.descrizione}}</span>
+					</div>
 				</div>
-				<div class="column">
-					<span class="spiaggia">{{ordine.descSpiaggia}}</span>
-					<span class="ombrellone">{{ordine.ombrellone}}</span>
-					<span class="totale">{{ordine.totale}} €</span>
-					<span class="timestamp">{{ordine.timestamp.toDate() |  date:'dd/MM/yyyy     h:mm:ss a' }}</span>
-				</div>
-			</div>
-		</ion-item>
-	</ion-list>
+			</ion-item>
+		</ion-list>
+	</ng-template>
 </ion-content>
 
 <ion-footer class="footer">

@@ -187,6 +187,7 @@ export class OrdinePage implements OnInit, OnDestroy {
 				codSpiaggia: prenotazione.codSpiaggia,
 				descSpiaggia: prenotazione.descSpiaggia,
 				ombrellone: prenotazione.ombrellone,
+				stato: {cod: 'nuovo', descrizione: 'Spedito'},
 				timestamp: new Date(),
 				carrello: carrelloOrdine,
 				totale: this.getTotale(),

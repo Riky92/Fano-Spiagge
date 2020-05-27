@@ -48,3 +48,21 @@
 	font-size: 16px;
 	padding: 5px;
 }
+
+.stato{
+	font-size: 16px;
+	&.nuovo{
+		color: green;
+	}
+	&.preparazione{
+		color: orange;
+	}
+	&.consegnato{
+		color: red;
+	}
+}
+
+.noOrdini{
+	font-size: 18px;
+
+}

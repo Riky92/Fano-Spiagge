@@ -32,6 +32,7 @@ export class OrdiniProvider implements OnDestroy{
           descSpiaggia: e.payload.doc.data()['descSpiaggia'],
           ombrellone: e.payload.doc.data()['ombrellone'],
 					timestamp: e.payload.doc.data()['timestamp'],
+					stato:  e.payload.doc.data()['stato'],
 					carrello: e.payload.doc.data()['carrello'],
 					totale: e.payload.doc.data()['totale'],
 					user: e.payload.doc.data()['user'],
@@ -57,6 +58,7 @@ export class OrdiniProvider implements OnDestroy{
 		record['ombrellone'] = ordine.ombrellone;
 		record['timestamp'] = ordine.timestamp;
 		record['carrello'] = ordine.carrello;
+		record['stato'] =  ordine.stato;
 		record['totale'] = ordine.totale;
 		record['prezzo'] = ordine.prezzo;
 		record['user'] = ordine.user;

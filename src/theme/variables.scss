@@ -73,5 +73,13 @@
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
-  --ion-color-light-tint: #f5f6f9;
+	--ion-color-light-tint: #f5f6f9;
+
+	/** gradient **/
+  --ion-color-gradient: linear-gradient(rgb(28, 210, 242), rgb(68, 0, 204));
+  --ion-color-gradient-rgb: 28, 210, 242;
+  --ion-color-gradient-contrast: linear-gradient(rgb(28, 210, 242), rgb(68, 0, 204));
+  --ion-color-gradient-contrast-rgb: 68, 0, 204;
+  --ion-color-gradient-shade:linear-gradient(rgb(28, 210, 242), rgb(68, 0, 204));
+  --ion-color-gradient-tint: linear-gradient(rgb(28, 210, 242), rgb(68, 0, 204));
 }

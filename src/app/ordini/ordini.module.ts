@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { OrdiniPageRoutingModule } from './ordini-routing.module';
 
 import { OrdiniPage } from './ordini.page';
+// import { AngularFirestore } from '@angular/fire/firestore/firestore';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { OrdiniPage } from './ordini.page';
     IonicModule,
     OrdiniPageRoutingModule
   ],
-  declarations: [OrdiniPage]
+	declarations: [OrdiniPage]
 })
 export class OrdiniPageModule {}
