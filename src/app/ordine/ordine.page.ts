@@ -44,6 +44,8 @@ export class OrdinePage implements OnInit, OnDestroy {
 
 	numero;
 
+	typeOmbrellone;
+
 	prenotazioni: Prenotazione[] =  [];
 
 	showOmbrellone = false;
@@ -250,7 +252,7 @@ export class OrdinePage implements OnInit, OnDestroy {
 
 	changeType(event){
 		const typeOmbrellone = this.spiaggia.ombrelloni.find( ombrellone => ombrellone.cod === event.target.value);
-		this.type = typeOmbrellone;
+		this.typeOmbrellone = typeOmbrellone;
 		this.file = typeOmbrellone.file;
 		this.form.value.filaOmbrellone = null;
 		this.form.value.numberOmbrellone = null;
@@ -262,7 +264,8 @@ export class OrdinePage implements OnInit, OnDestroy {
 
 	changeFila(event){
 		this.numeri = [];
-		const typeOmbrellone = this.spiaggia.ombrelloni.find( ombrellone => ombrellone.cod === this.type.cod);
+		const typeOmbrellone = this.spiaggia.ombrelloni.find( ombrellone => ombrellone.cod === this.typeOmbrellone.cod);
+		this.form.value.numberOmbrellone = null;
 		const fila = typeOmbrellone.file.find( f => f.codFila === event.target.value);
 		for( let i = fila.valueMin; i <= fila.valueMax; i++){
 			this.numeri.push(i);
