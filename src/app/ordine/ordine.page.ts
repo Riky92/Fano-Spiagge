@@ -7,7 +7,9 @@ import { Ordine} from '../model/ordine';
 import { Prenotazione} from '../model/prenotazione';
 import { PrenotazioniProvider } from '../providers/prenotazioni.provider';
 import { Spiaggia } from '../model/spiaggia';
+import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { OrdiniProvider } from '../providers/ordini.provider';
+import { OmbrelloneEnum} from '../model/common-constants'
 
 @Component({
   selector: 'app-ordine',
@@ -24,19 +26,40 @@ export class OrdinePage implements OnInit, OnDestroy {
 
 	subscription;
 
+	form: FormGroup;
+
+	valueMin = 100;
+
+	valueMax = 800;
+
 	spiaggia: Spiaggia;
 
+	file;
+
+	numeri = [];
+
+	type;
+
+	fila;
+
+	numero;
+
 	prenotazioni: Prenotazione[] =  [];
+
+	showOmbrellone = false;
 
   constructor(
 		private route: ActivatedRoute,
 		private router: Router,
 		private navController: NavController,
 		private alertCtrl: AlertController,
+		private formBuilder: FormBuilder,
 		private prenotazioniProvider: PrenotazioniProvider,
 		private ordiniProvider: OrdiniProvider
 
-	) { }
+	) {
+		this.initializeForm();
+	}
 
   ngOnInit() {
 		this.route.queryParams.subscribe(params => {
@@ -50,6 +73,29 @@ export class OrdinePage implements OnInit, OnDestroy {
 		});
 	}
 
+	initializeForm(){
+		this.form = this.formBuilder.group({
+			typeOmbrellone: new FormControl('', Validators.required),
+			filaOmbrellone: new FormControl('', Validators.required),
+			numberOmbrellone: new FormControl('', Validators.required)}
+			,
+			{ validator: this.checkFormValidation('typeOmbrellone','filaOmbrellone', 'numberOmbrellone')}
+			);
+	}
+
+	public checkFormValidation(type: string, fila: string, num: string) {
+		return  (group: FormGroup):  {[key: string]: any} =>  {
+			const typeForm = group.controls[type].value;
+			const filaForm = group.controls[fila].value;
+			const numberForm = group.controls[num].value;
+			console.log('tipo: ' + typeForm , 'fila: '+  filaForm, 'numero: '+ numberForm);
+			if (typeForm && filaForm && numberForm) {
+				return {}
+			} else {
+				return {error:'Invalid form validation'};
+			}
+		};
+	}
 
 	getRowPrezzoCarrello(carrelloItem){
 		return carrelloItem.prezzo * carrelloItem.nSelected;
@@ -118,7 +164,15 @@ export class OrdinePage implements OnInit, OnDestroy {
 	}
 
 	ordineDisabled(){
-		return this.getTotale() < this.minOrdineValue;
+		 return  !this.showOmbrellone || ( this.getTotale() < this.minOrdineValue);
+	}
+
+	allValueInserted(){
+		return this.form.value.typeOmbrellone && this.form.value.filaOmbrellone && this.form.value.numberOmbrellone;
+	}
+
+	ordineMancante(){
+		return this.getTotale() < this.minOrdineValue
 	}
 
 	isPrenotazioneGiornalieraGiàFatta(today){
@@ -166,41 +220,75 @@ export class OrdinePage implements OnInit, OnDestroy {
 
 	ordina(){
 		const carrelloOrdine: CarrelloOrdine[] = [];
-		const today = new Date().toLocaleDateString();
-		const prenotazione = this.getSpiaggiaPrenotazione(today);
-		console.log('prenotazione: ', prenotazione);
-		if( !this.isPrenotazioneGiornalieraGiàFatta(today)){
-			this.presentAlertOrdine(1);
-		} else if(prenotazione.codSpiaggia !== this.spiaggia.id){
-			this.presentAlertOrdine(2);
-		} else {
-			this.carrello.forEach( item => {
-				carrelloOrdine.push({
-					cod: item.cod,
-					desc: item.desc,
-					nSelected: item.nSelected,
-					prezzo: this.getRowPrezzoCarrello(item)
-				});
+		this.carrello.forEach( item => {
+			carrelloOrdine.push({
+				cod: item.cod,
+				desc: item.desc,
+				nSelected: item.nSelected,
+				prezzo: this.getRowPrezzoCarrello(item)
 			});
-			const ordine : Ordine = {
-				codPrenotazione: prenotazione.id,
-				codSpiaggia: prenotazione.codSpiaggia,
-				descSpiaggia: prenotazione.descSpiaggia,
-				ombrellone: prenotazione.ombrellone,
-				stato: {cod: 'nuovo', descrizione: 'Spedito'},
-				timestamp: new Date(),
-				carrello: carrelloOrdine,
-				totale: this.getTotale(),
-				user: 'mencuccir'
-			};
-			this.ordiniProvider.addOrdine(ordine);
-			this.presentConfirmOrdine();
+		});
+		const ordine : Ordine = {
+			codSpiaggia: this.spiaggia.id,
+			descSpiaggia: this.spiaggia.title,
+			ombrellone: this.form.value.typeOmbrellone === OmbrelloneEnum.ombrellone? this.form.value.numberOmbrellone :
+			this.form.value.filaOmbrellone + '-' + this.form.value.numberOmbrellone,
+			stato: {cod: 'nuovo', descrizione: 'Spedito'},
+			timestamp: new Date(),
+			day: new Date().toLocaleDateString(),
+			carrello: carrelloOrdine,
+			totale: this.getTotale(),
+			user: 'mencuccir'
+		};
+		this.ordiniProvider.addOrdine(ordine);
+		this.presentConfirmOrdine();
+	}
+
+	isVisible(){
+		return this.form.value.typeOmbrellone;
+	}
+
+	changeType(event){
+		const typeOmbrellone = this.spiaggia.ombrelloni.find( ombrellone => ombrellone.cod === event.target.value);
+		this.type = typeOmbrellone;
+		this.file = typeOmbrellone.file;
+		this.form.value.filaOmbrellone = null;
+		this.form.value.numberOmbrellone = null;
+		console.log('form: ', this.form);
+		this.numeri = [];
+
+		// this.initializeForm();
+	}
+
+	changeFila(event){
+		this.numeri = [];
+		const typeOmbrellone = this.spiaggia.ombrelloni.find( ombrellone => ombrellone.cod === this.type.cod);
+		const fila = typeOmbrellone.file.find( f => f.codFila === event.target.value);
+		for( let i = fila.valueMin; i <= fila.valueMax; i++){
+			this.numeri.push(i);
 		}
+		console.log('numeri: ', this.numeri);
+
+	}
+
+	ordinaForm(form){
+
+	}
+
+	isGazebo(){
+		return this.type === OmbrelloneEnum.gazebo;
 	}
 
 	ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
+	}
+
+	setOmbrellone(){
+		this.type= this.form.value.typeOmbrellone;
+		this.fila = this.form.value.filaOmbrellone;
+		this.numero = this.form.value.numberOmbrellone;
+		this.showOmbrellone = true;
+	}
 
 
 

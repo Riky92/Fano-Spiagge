@@ -15,6 +15,11 @@ export enum TariffeEnum{
 	lettino2_sdraio2='lettino2_sdraio2'
 }
 
+export enum OmbrelloneEnum{
+	ombrellone= 'ombrellone',
+	gazebo= 'gazebo'
+}
+
 // {"cod": "1_lettino", "desc": "1 lettino", "prezzo": "15 €"},
 // {"cod": "1_lettino_sdraio", "desc": "1 lettino e 1 sdraio", "prezzo": "20 €"},
 // {"cod": "2_lettino", "desc": "2 lettini", "prezzo": "25 €"},

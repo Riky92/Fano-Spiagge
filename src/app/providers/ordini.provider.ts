@@ -27,11 +27,11 @@ export class OrdiniProvider implements OnDestroy{
 			const ordiniData : Ordine[] = response.map(e => {
         return {
 					id: e.payload.doc.id,
-					codPrenotazione: e.payload.doc.data()['codPrenotazione'],
 					codSpiaggia: e.payload.doc.data()['codSpiaggia'],
           descSpiaggia: e.payload.doc.data()['descSpiaggia'],
           ombrellone: e.payload.doc.data()['ombrellone'],
 					timestamp: e.payload.doc.data()['timestamp'],
+					day: e.payload.doc.data()['day'],
 					stato:  e.payload.doc.data()['stato'],
 					carrello: e.payload.doc.data()['carrello'],
 					totale: e.payload.doc.data()['totale'],
@@ -52,11 +52,11 @@ export class OrdiniProvider implements OnDestroy{
 
 	updateOrdine(ordine) {
 		const record = {};
-		record['codPrenotazione'] = ordine.codPrenotazione;
     record['codSpiaggia'] = ordine.codSpiaggia;
     record['descSpiaggia'] = ordine.descSpiaggia;
 		record['ombrellone'] = ordine.ombrellone;
 		record['timestamp'] = ordine.timestamp;
+		record['day'] = ordine.day;
 		record['carrello'] = ordine.carrello;
 		record['stato'] =  ordine.stato;
 		record['totale'] = ordine.totale;

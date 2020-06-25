@@ -13,6 +13,60 @@
 	<img src="/assets/services/ordine.jpeg" class="fullWidth">
 	<ion-card>
 		<ion-card-header>
+			<ion-card-title class="central">Ombrellone</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+			<ng-container *ngIf="showOmbrellone; else formDiv">
+				<div class="row ombrel">
+					<div class="flex1">
+						<img src="/assets/services/umbrella.svg" class="umbrellaIcon">
+					</div>
+					<div class="flex1">
+						<span class="tipo">{{type}}</span>
+					</div>
+					<div class="flex1">
+						<ng-container *ngIf="isGazebo()">
+							<span class="bold">{{fila}}</span>
+							<span class="bold">-</span>
+						</ng-container>
+						<span class="bold">{{numero}}</span>
+					</div>
+				</div>
+				<div class="containerFooterButtons">
+					<ion-button *ngIf="showOmbrellone" shape="round" color="secondary" size="small" (click)="showOmbrellone = !showOmbrellone">
+						<ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+					</ion-button>
+				</div>
+			</ng-container>
+			<ng-template #formDiv>
+				<form [formGroup]="form" (ngSubmit)="ordinaForm(form)">
+					<div class="row">
+						<span class="label">Inserisci il tipo di ombrellone</span>
+						<select class="formType" formControlName="typeOmbrellone" (change)="changeType($event)">
+							<option *ngFor="let ombrellone of spiaggia.ombrelloni" name="spiaggia" value="{{ombrellone.cod}}">{{ombrellone.descrizione}}</option>
+						</select>
+					</div>
+					<div class="row" *ngIf="isVisible()">
+							<span class="label">Fila</span>
+						<select class="formType fila" formControlName="filaOmbrellone" (change)="changeFila($event)">
+							<option *ngFor="let fila of file" type="text" name="fila" value="{{fila.codFila}}">{{fila.codFila}}</option>
+						</select>
+							<span class="label">Numero</span>
+							<select class="formType fila" formControlName="numberOmbrellone" (change)="setOmbrellone()">
+								<option *ngFor="let numero of numeri" type="number" name="numero" value="{{numero}}">{{numero}}</option>
+							</select>
+					</div>
+					<div class="containerFooterButtons">
+						<ion-button *ngIf="!showOmbrellone" shape="round" color="success" size="small" [disabled]="!allValueInserted()" (click)="showOmbrellone = !showOmbrellone">
+							<ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+						</ion-button>
+					</div>
+				</form>
+			</ng-template>
+		</ion-card-content>
+	</ion-card>
+	<ion-card>
+		<ion-card-header>
 			<ion-card-title class="central">Carrello</ion-card-title>
 		</ion-card-header>
 		<ion-card-content style="padding: 0">
@@ -50,7 +104,7 @@
 				<span>Totale</span>
 				<span class="total">{{getTotale() | number: '1.0-2'}} €</span>
 			</div>
-			<div *ngIf="ordineDisabled()" class="row">
+			<div *ngIf="ordineMancante()" class="row">
 				<span class="ordineWarning">Attenzione hai modificato l'ordine. Per poter ordinare mancano {{getMancante()}} €</span>
 			</div>
 			<div class="containerFooterButtons">
@@ -58,11 +112,8 @@
 					<ion-icon size="small" slot="icon-only" name="create"></ion-icon>
 				</ion-button>
 				<ion-button *ngIf="ordineInEdit" shape="round" color="success" size="small" (click)="ordineInEdit = !ordineInEdit">
-						<ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-					</ion-button>
-				<!-- <ion-button shape="round" color="danger" size="small" (click)="svuotaCarrello()">
-					<ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
-				</ion-button> -->
+					<ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+				</ion-button>
 			</div>
 		</ion-card-content>
 	</ion-card>

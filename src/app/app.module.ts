@@ -24,6 +24,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 
 import { environment } from '../environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,8 @@ import { environment } from '../environments/environment';
 		AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFireStorageModule,
+		AngularFireStorageModule,
+		FormsModule,
 		BrowserAnimationsModule,
 		HttpClientModule
 	],

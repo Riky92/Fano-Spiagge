@@ -3,6 +3,7 @@ export interface Spiaggia{
 	title: string;
 	descrizione: string;
 	tipo: string;
+	ombrelloni: Array<any>;
 	via: string;
 	serviziOfferti: Array<any>;
 	serviziBar: Array<any>;
