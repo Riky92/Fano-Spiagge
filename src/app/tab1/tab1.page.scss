@@ -11,7 +11,7 @@ ion-content ion-toolbar {
     z-index: 1;
     vertical-align: center;
     background: rgba(0, 0, 0, 0.5);
-    height: 60px;
+    height: 90px;
     bottom: 0;
     align-items: center;
 		color: white;
@@ -49,5 +49,10 @@ ion-content ion-toolbar {
 
 .padd-l-2{
 	padding-left: 2px;
+}
+
+.titleTab{
+	font-style: italic;
+	font-size: 20px;
 }
 

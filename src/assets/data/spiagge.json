@@ -3,7 +3,12 @@
 		"id": "bagni-arzilla",
 		"title": "Bagni Cafè Arzilla",
 		"tipo": "sabbia dorata",
-		"via":"Via del Moletto, 3",
+		"via":"Fano, Via del Moletto 3",
+		"address": {
+			"lat": 43.852460,
+			"lon": 13.006460
+		},
+		"distance": 0,
 		"descrizione": "Bella spiaggia di sabbia dorata bagnata da un mare cristallino e con fondali che digradano dolcemente verso il largo, ideale per il bagno",
 		"serviziOfferti":
 		[

@@ -290,7 +290,6 @@ export class OrdinePage implements OnInit, OnDestroy {
 		this.type= this.form.value.typeOmbrellone;
 		this.fila = this.form.value.filaOmbrellone;
 		this.numero = this.form.value.numberOmbrellone;
-		this.showOmbrellone = true;
 	}
 
 

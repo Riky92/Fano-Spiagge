@@ -1,13 +1,15 @@
 <ion-header>
   <ion-toolbar color="primary" class="central">
     <ion-title>
-      Fano Spiagge
+      <span class="titleTab">
+				Beachlivery
+			</span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ng-container *ngFor="let spiaggia of spiagge">
+	<ng-container *ngFor="let spiaggia of spiagge">
 		<div class="containerSpiaggia" (click)="goToSpiaggia(spiaggia)">
 			<img src="/assets/spiagge/{{spiaggia.id}}.jpg" class="fullWidth">
 			<div class="containerDescription">
@@ -17,6 +19,10 @@
 				<div class="row via">
 					<ion-icon name="location-outline" color="white"></ion-icon>
 					{{spiaggia.via}}
+				</div>
+				<div class="row via">
+					<ion-icon color="white" name="pin-outline"></ion-icon>
+					{{spiaggia.distance | number: '1.0-2'}} Km
 				</div>
 			</div>
 			<div class="containerTipologia">

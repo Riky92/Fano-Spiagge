@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { SQLite } from '@ionic-native/sqlite/ngx';
 
+import { Geolocation} from '@ionic-native/geolocation/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +46,7 @@ import { FormsModule } from '@angular/forms';
 		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 		 HttpService,
 		 SQLitePorter,
+		 Geolocation,
 		//  UniqueDeviceID,
 		 SQLite
 		],
