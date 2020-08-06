@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
 		private spiaggiaService: SpiaggeService,
 		private formBuilder: FormBuilder,
 		private storage: Storage,
-		// private uniqueDeviceID: UniqueDeviceID,
+		private uniqueDeviceID: UniqueDeviceID,
 		private navController: NavController
 		) {
 			this.form = this.formBuilder.group({
@@ -41,12 +41,12 @@ export class LoginPage implements OnInit {
 	}
 
 	init(){
-		// this.uniqueDeviceID.get()
-		// .then(( uuid: any) => {
-		// 	this.storage.set('user', uuid);
-			this.storage.set('user', 'mencuccir');
+		this.uniqueDeviceID.get()
+		.then(( uuid: any) => {
+			this.storage.set('user', uuid);
+		// this.storage.set('user', 'mencuccir');
 			this.navController.navigateRoot('tab1');
-		// }).catch((error: any) => console.log('error: ', error));
+		}).catch((error: any) => console.log('error: ', error));
 
 	}
 }

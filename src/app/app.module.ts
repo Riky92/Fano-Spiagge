@@ -22,7 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
-// import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
@@ -47,7 +47,7 @@ import { FormsModule } from '@angular/forms';
 		 HttpService,
 		 SQLitePorter,
 		 Geolocation,
-		//  UniqueDeviceID,
+		UniqueDeviceID,
 		 SQLite
 		],
   bootstrap: [AppComponent]

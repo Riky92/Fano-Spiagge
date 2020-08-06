@@ -46,6 +46,8 @@ export class OrdinePage implements OnInit, OnDestroy {
 
 	typeOmbrellone;
 
+	user;
+
 	prenotazioni: Prenotazione[] =  [];
 
 	showOmbrellone = false;
@@ -55,6 +57,7 @@ export class OrdinePage implements OnInit, OnDestroy {
 		private router: Router,
 		private navController: NavController,
 		private alertCtrl: AlertController,
+		private storage: Storage,
 		private formBuilder: FormBuilder,
 		private prenotazioniProvider: PrenotazioniProvider,
 		private ordiniProvider: OrdiniProvider
@@ -67,11 +70,22 @@ export class OrdinePage implements OnInit, OnDestroy {
 		this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
 				this.carrello = this.router.getCurrentNavigation().extras.state.carrello;
+				this.getUser();
 				this.spiaggia =  this.router.getCurrentNavigation().extras.state.spiaggia;
 				this.subscription = this.prenotazioniProvider.getPrenotazioni().subscribe( responsePrenotazioni => {
 					this.prenotazioni = responsePrenotazioni;
 				});
 			}
+		});
+	}
+
+	getUser(){
+		this.storage.get('user').then( result => {
+			if (result != null) {
+				this.user = result;
+			}
+			}).catch(e => {
+				console.log('error: '+ e);
 		});
 	}
 
