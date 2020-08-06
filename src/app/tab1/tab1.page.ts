@@ -81,7 +81,7 @@ export class Tab1Page implements OnInit{
         spiaggia
       }
     }
-    this.router.navigate(['/spiaggia'], spaggiaData);
+    this.router.navigate(['/bar'], spaggiaData);
 
   }
 

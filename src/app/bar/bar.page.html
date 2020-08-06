@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary" class="central">
-		<ion-title>Bar {{spiaggia.title}}</ion-title>
+		<ion-title>Servizio Bar</ion-title>
 		<ion-buttons slot="start">
       <ion-button  (click)="comeBack()">
 				<ion-icon name="arrow-back" mode="ios"></ion-icon>
@@ -13,11 +13,14 @@
 </ion-header>
 
 <ion-content>
+	<img src="/assets/spiagge/{{spiaggia.id}}.jpg" class="fullWidth">
 	<ion-card>
 		<ion-card-header class="central">
-			<ion-card-title>Listino prezzi</ion-card-title>
+			<ion-card-title>{{spiaggia.title}}</ion-card-title>
 		</ion-card-header>
 		<ion-card-content>
+			<div class="descSpiaggia">{{spiaggia.descrizione}}</div>
+			<div class="listinoTitle central">Listino prezzi</div>
 			<div class="containerServices">
 				<ng-container *ngFor="let section of spiaggia.serviziBar">
 					<div class="boxService" [ngClass]="{'selected': section.codSection === sectionActive}" (click)="sectionActive = section.codSection">

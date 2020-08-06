@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart } from '@angular/router';
 import { NavController, AlertController, ModalController } from '@ionic/angular';
 import { Ombrellone } from '../model/ombrellone';
 import { Router, NavigationExtras } from '@angular/router';
@@ -38,6 +38,7 @@ export class BarPage implements OnInit {
       if (this.router.getCurrentNavigation().extras.state) {
 				this.spiaggia = this.router.getCurrentNavigation().extras.state.spiaggia;
 				this.carrello = [];
+				this.cleanOrdine();
 			}
 		});
 	}
