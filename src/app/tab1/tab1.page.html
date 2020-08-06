@@ -20,7 +20,7 @@
 					<ion-icon name="location-outline" color="white"></ion-icon>
 					{{spiaggia.via}}
 				</div>
-				<div class="row via">
+				<div class="row via" *ngIf="spiaggia.distance">
 					<ion-icon color="white" name="pin-outline"></ion-icon>
 					{{spiaggia.distance | number: '1.0-2'}} Km
 				</div>

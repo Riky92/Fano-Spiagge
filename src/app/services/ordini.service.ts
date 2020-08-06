@@ -17,7 +17,7 @@ export class OrdiniService {
   }
 
   getOrdini() {
-    return this.firestore.collection(this.collectionName).snapshotChanges();
+    return this.firestore.collection(this.collectionName , ref => ref.orderBy('timestamp','desc').limit(10)).snapshotChanges();
   }
 
   updateOrdine(recordID, record) {
