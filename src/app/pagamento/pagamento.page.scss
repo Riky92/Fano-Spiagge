@@ -1,0 +1,14 @@
+.titleContainer{
+	display: flex;
+	width: 100%;
+	padding: 20px;
+	justify-content: center;
+	.title{
+		font-size: 20px;
+		font-weight: bold;
+	}
+}
+
+.sizeIcon{
+	width: 45px;
+}

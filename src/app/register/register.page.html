@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+		<ion-buttons slot="start">
+      <ion-button  (click)="comeBack()">
+				<ion-icon name="arrow-back" mode="ios"></ion-icon>
+			</ion-button>
+    </ion-buttons>
+    <ion-title>Registrati</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+	<ion-card>
+		<ion-card-header>
+			<ion-card-title>
+				Inserisci i dati
+			</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+			<form [formGroup]="form" (ngSubmit)="createAccount(form)">
+				<ion-item>
+					<ion-input name="cellulare" type="phone" placeholder="Numero cellulare" formControlName="cellulare"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-input name="password" type="password" placeholder="Password" formControlName="password"></ion-input>
+				</ion-item>
+				<div class="bottonContainer">
+					<ion-button type="submit" color="danger" [disabled]="form.invalid" expand="block">Crea account</ion-button>
+				</div>
+			</form>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

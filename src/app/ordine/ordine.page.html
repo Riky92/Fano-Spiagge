@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-	<img src="/assets/services/ordine.jpeg" class="fullWidth">
+	<img alt src="/assets/services/ordine.jpeg" class="fullWidth">
 	<ion-card>
 		<ion-card-header>
 			<ion-card-title class="central">Ombrellone</ion-card-title>
@@ -19,7 +19,7 @@
 			<ng-container *ngIf="showOmbrellone; else formDiv">
 				<div class="row ombrel">
 					<div class="flex1">
-						<img src="/assets/services/umbrella.svg" class="umbrellaIcon">
+						<img alt src="/assets/services/umbrella.svg" class="umbrellaIcon">
 					</div>
 					<div class="flex1">
 						<span class="tipo">{{type}}</span>
@@ -42,19 +42,19 @@
 				<form [formGroup]="form" (ngSubmit)="ordinaForm(form)">
 					<div class="row">
 						<span class="label">Inserisci il tipo di ombrellone</span>
-						<select class="formType" formControlName="typeOmbrellone" (change)="changeType($event)">
-							<option *ngFor="let ombrellone of spiaggia.ombrelloni" name="spiaggia" value="{{ombrellone.cod}}">{{ombrellone.descrizione}}</option>
-						</select>
+						<ion-select interface="popover" role="combobox" class="formType" formControlName="typeOmbrellone" (ionChange)="changeType($event)">
+							<ion-select-option *ngFor="let ombrellone of spiaggia.ombrelloni" name="spiaggia" value="{{ombrellone.cod}}">{{ombrellone.descrizione}}</ion-select-option>
+						</ion-select>
 					</div>
 					<div class="row" *ngIf="isVisible()">
-							<span class="label">Fila</span>
-						<select class="formType fila" formControlName="filaOmbrellone" (change)="changeFila($event)">
-							<option *ngFor="let fila of file" type="text" name="fila" value="{{fila.codFila}}">{{fila.codFila}}</option>
-						</select>
+						<span class="label">Fila</span>
+						<ion-select interface="popover" role="combobox" class="formType fila" formControlName="filaOmbrellone" (ionChange)="changeFila($event)">
+							<ion-select-option *ngFor="let fila of file" type="text" name="fila" value="{{fila.codFila}}">{{fila.codFila}}</ion-select-option>
+						</ion-select>
 							<span class="label">Numero</span>
-							<select class="formType fila" formControlName="numberOmbrellone" (change)="setOmbrellone()">
-								<option *ngFor="let numero of numeri" type="number" name="numero" value="{{numero}}">{{numero}}</option>
-							</select>
+							<ion-select interface="popover" role="combobox" class="formType fila" formControlName="numberOmbrellone" (ionChange)="setOmbrellone()">
+								<ion-select-option *ngFor="let numero of numeri" type="number" name="numero" value="{{numero}}">{{numero}}</ion-select-option>
+							</ion-select>
 					</div>
 					<div class="containerFooterButtons">
 						<ion-button *ngIf="!showOmbrellone" shape="round" color="success" size="small" [disabled]="!allValueInserted()" (click)="showOmbrellone = !showOmbrellone">
@@ -122,6 +122,6 @@
 
 <ion-footer>
 	<div class="padd-2">
-		<ion-button type="submit" color="primary" [disabled]="ordineDisabled()" [ngClass]="{'disabled': ordineDisabled()}" expand="block" (click)="ordina()">Ordina</ion-button>
+		<ion-button type="submit" color="primary" [disabled]="ordineDisabled()" [ngClass]="{'disabled': ordineDisabled()}" expand="block" (click)="vaiAlPagamento()">Vai al pagamento</ion-button>
 	</div>
 </ion-footer>

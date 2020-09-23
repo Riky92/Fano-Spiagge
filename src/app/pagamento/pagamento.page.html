@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary" class="central">
+		<ion-title>Pagamento</ion-title>
+		<ion-buttons slot="start">
+      <ion-button  (click)="comeBack()">
+				<ion-icon name="arrow-back" mode="ios"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<ion-card-header>
+			<ion-card-title>
+				Come desideri pagare?
+			</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+			<ion-radio-group [(ngModel)]="payment">
+				<ng-container *ngFor="let pagamento of pagamenti">
+					<ion-item>
+						<ion-label>
+							{{pagamento.descrizione}}
+						</ion-label>
+						<img alt src="/assets/services/{{pagamento.id}}.svg" class="sizeIcon">
+						<ion-radio slot="start" value="{{pagamento.id}}">
+						</ion-radio>
+					</ion-item>
+					<ng-container *ngIf="pagamento.id === payment">
+						<app-tipo-pagamento [tipoPagamento]="pagamento.id"></app-tipo-pagamento>
+					</ng-container>
+				</ng-container>
+			</ion-radio-group>
+		</ion-card-content>
+	</ion-card>
+	<app-ordine *ngIf="ordine" [carrello]="ordine.carrello"></app-ordine>
+</ion-content>

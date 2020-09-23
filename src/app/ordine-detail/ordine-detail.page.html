@@ -10,28 +10,6 @@
 </ion-header>
 
 <ion-content>
-	<ion-card>
-		<ion-card-header>
-			<ion-card-title class="central">{{ordine.descSpiaggia}}</ion-card-title>
-		</ion-card-header>
-		<ion-card-content style="padding: 0">
-			<ng-container *ngFor="let carrelloItem of ordine.carrello">
-				<div class="containerCarrello">
-					<div class="row">
-						<div class="flex1">
-							{{carrelloItem.nSelected}}x{{carrelloItem.desc}}
-						</div>
-						<div class="flex1 prezzo">
-							{{carrelloItem.prezzo | number: '1.0-2'}} €
-						</div>
-					</div>
-				</div>
-			</ng-container>
-			<div class="rowTotal">
-				<span>Totale</span>
-				<span class="total">{{ordine.totale | number: '1.0-2'}} €</span>
-			</div>
-		</ion-card-content>
-	</ion-card>
+		<app-ordine [carrello]="ordine.carrello"></app-ordine>
 		<ion-button type="submit" color="primary" expand="block" (click)="ordina()">Ripeti l'ordine</ion-button>
 </ion-content>

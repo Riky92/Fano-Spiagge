@@ -10,6 +10,7 @@ import { Spiaggia } from '../model/spiaggia';
 import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { OrdiniProvider } from '../providers/ordini.provider';
 import { OmbrelloneEnum} from '../model/common-constants'
+import { Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-ordine',
@@ -234,7 +235,7 @@ export class OrdinePage implements OnInit, OnDestroy {
     await alert.present();
 	}
 
-	ordina(){
+	vaiAlPagamento(){
 		const carrelloOrdine: CarrelloOrdine[] = [];
 		this.carrello.forEach( item => {
 			carrelloOrdine.push({
@@ -256,8 +257,15 @@ export class OrdinePage implements OnInit, OnDestroy {
 			totale: this.getTotale(),
 			user: 'mencuccir'
 		};
-		this.ordiniProvider.addOrdine(ordine);
-		this.presentConfirmOrdine();
+		const ordineData: NavigationExtras = {
+      state : {
+        ordine
+      }
+    }
+    this.router.navigate(['/pagamento'], ordineData);
+		// this.ordiniProvider.addOrdine(ordine);
+		// this.presentConfirmOrdine();
+
 	}
 
 	isVisible(){

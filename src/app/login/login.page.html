@@ -1,19 +1,28 @@
 <ion-content>
 	<div class="loginContainer">
-		<div class="boxForm">
-			<div class="row">
-				<span class="title">Benvenuto in BeachLivery</span>
+		<form [formGroup]="form" (ngSubmit)="login(form)">
+			<div class="boxForm">
+				<div class="row">
+					<span class="title">Benvenuto in BeachLivery</span>
+				</div>
+				<div class="row">
+					<span class="subtitle">L'ordine arriva direttamente sotto l'ombrellone</span>
+				</div>
+				<ion-item color="transparent">
+					<ion-input name="cellulare" class="white" type="phone" placeholder="Numero di telefono" formControlName="cellulare"></ion-input>
+				</ion-item>
+				<ion-item color="transparent">
+					<ion-input name="password" class="white" type="password" placeholder="Password" formControlName="password"></ion-input>
+				</ion-item>
+				<div class="buttonContainer">
+					<ion-button type="submit" color="transparent" class="trasparentButton" expand="block">Accedi</ion-button>
+					<div class="link">
+						<a [routerLink]="['/register']" class="small-text">Registrati</a>
+						<a [routerLink]="['/forgot-password']" class="small-text">Password dimeticata?</a>
+					</div>
+				</div>
 			</div>
-			<div class="row">
-				<span class="subtitle">L'ordine arriva direttamente sotto l'ombrellone</span>
-			</div>
-		</div>
-		<div class="buttonContainer">
-			<div class="row">
-				<ion-button type="submit" color="transparent" class="trasparentButton" expand="block" (click)="init()">Inizia</ion-button>
-			</div>
-		</div>
-		<img src="/assets/spiagge/fano.jpg" class="full">
+		</form>
+		<img alt src="/assets/spiagge/fano.jpg" class="full">
 	</div>
-
 </ion-content>

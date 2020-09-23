@@ -7,12 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { OrdineDetailPageRoutingModule } from './ordine-detail-routing.module';
 
 import { OrdineDetailPage } from './ordine-detail.page';
+import { AppcommonModule } from '../appcommon/appcommon.module';
+// import { OrdineComponent } from '../common/ordine/ordine.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
+		IonicModule,
+		AppcommonModule,
     OrdineDetailPageRoutingModule
   ],
   declarations: [OrdineDetailPage]

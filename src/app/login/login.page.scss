@@ -49,8 +49,19 @@
 }
 
 .buttonContainer{
-	position: absolute;
-  bottom: 30px;
+	// position: absolute;
+  // bottom: 30px;
   justify-content: center;
   width: 100%;
+}
+
+.link{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.small-text{
+	color: white;
+
 }

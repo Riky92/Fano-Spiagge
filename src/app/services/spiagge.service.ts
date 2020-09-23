@@ -20,4 +20,8 @@ export class SpiaggeService{
 	getPrenotazioni(){
 
 	}
+
+	getTipiPagamento(){
+		return this.http.get('/assets/data/pagamenti.json');
+	}
 }

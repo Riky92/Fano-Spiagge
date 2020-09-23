@@ -20,6 +20,12 @@ export enum OmbrelloneEnum{
 	gazebo= 'gazebo'
 }
 
+export enum PagamentoEnum{
+	visa='visa',
+	paypal='paypal',
+	contanti='contanti'
+}
+
 // {"cod": "1_lettino", "desc": "1 lettino", "prezzo": "15 €"},
 // {"cod": "1_lettino_sdraio", "desc": "1 lettino e 1 sdraio", "prezzo": "20 €"},
 // {"cod": "2_lettino", "desc": "2 lettini", "prezzo": "25 €"},

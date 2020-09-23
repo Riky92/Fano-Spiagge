@@ -34,6 +34,8 @@
     "@ionic/angular": "^5.0.7",
     "@ionic/pwa-elements": "^1.5.2",
     "@ionic/storage": "^2.2.0",
+    "card.io.cordova.mobilesdk": "^2.1.0",
+    "com.paypal.cordova.mobilesdk": "^3.5.0",
     "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.1.1",
@@ -100,7 +102,8 @@
       "cordova-plugin-geolocation": {},
       "cordova-plugin-nativegeocoder": {
         "LOCATION_WHEN_IN_USE_DESCRIPTION": "Use geocoder service"
-      }
+      },
+      "com.paypal.cordova.mobilesdk": {}
     },
     "platforms": [
       "browser",
