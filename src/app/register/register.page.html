@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="center">
+<ion-content class="central">
 	<ion-card>
 		<ion-card-header>
 			<ion-card-title>
@@ -19,7 +19,10 @@
 		<ion-card-content>
 			<form [formGroup]="form" (ngSubmit)="createAccount(form)">
 				<ion-item>
-					<ion-input name="cellulare" type="phone" placeholder="Numero cellulare" formControlName="cellulare"></ion-input>
+					<ion-input name="cellulare" type="tel" placeholder="Numero cellulare" formControlName="cellulare"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-input name="email" type="email" placeholder="Email" formControlName="email"></ion-input>
 				</ion-item>
 				<ion-item>
 					<ion-input name="password" type="password" placeholder="Password" formControlName="password"></ion-input>

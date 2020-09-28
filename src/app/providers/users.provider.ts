@@ -22,7 +22,9 @@ export class UsersProvider implements OnDestroy{
 				return {
 					id: e.payload.doc.id,
 					cellulare: e.payload.doc.data()['cellulare'],
+					email: e.payload.doc.data()['email'],
 					password: e.payload.doc.data()['password'],
+					loggedWithFb: e.payload.doc.data()['loggedWithFb'],
 				};
 			});
 			this.users.next(usersData);
@@ -40,7 +42,9 @@ export class UsersProvider implements OnDestroy{
 	updateUser(user: User){
 		const record = {};
 		record['cellulare']= user.cellulare;
+		record['email'] = user.email;
 		record['password'] = user.password;
+		record['loggedWithFb'] = user.loggedWithFb;
 		this.userService.updateUser(user.id, record);
 	}
 

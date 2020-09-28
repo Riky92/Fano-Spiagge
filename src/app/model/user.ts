@@ -1,5 +1,7 @@
 export interface User {
 	id?: string;
-	cellulare: string;
-	password: string;
+	email?:string;
+	cellulare?: string;
+	password?: string;
+	loggedWithFb: boolean;
 }

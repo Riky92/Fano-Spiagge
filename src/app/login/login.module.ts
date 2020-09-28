@@ -9,6 +9,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import { SpiaggeService } from '../services/spiagge.service';
 import { StorageService } from '../storage.service';
+import { Facebook } from '@ionic-native/facebook/ngx';
 
 @NgModule({
   imports: [
@@ -19,6 +20,10 @@ import { StorageService } from '../storage.service';
     LoginPageRoutingModule
   ],
 	declarations: [LoginPage],
-	providers: [SpiaggeService, StorageService]
+	providers: [
+		SpiaggeService,
+		StorageService,
+		Facebook
+	]
 })
 export class LoginPageModule {}

@@ -9,17 +9,30 @@
 					<span class="subtitle">L'ordine arriva direttamente sotto l'ombrellone</span>
 				</div>
 				<ion-item color="transparent">
-					<ion-input name="cellulare" class="white" type="phone" placeholder="Numero di telefono" formControlName="cellulare"></ion-input>
+					<ion-input name="username" class="white" type="text" placeholder="Numero di telefono o email" formControlName="username"></ion-input>
 				</ion-item>
 				<ion-item color="transparent">
-					<ion-input name="password" class="white" type="password" placeholder="Password" formControlName="password"></ion-input>
-				</ion-item>
+					<ion-input type="{{type}}" name="password" (ionBlur)="onFocusPassword = false" (ionFocus)="onFocusPassword = true" class="white" formControlName="password" placeholder="Password" style="width: 40px;" no-lines>
+					</ion-input>
+					<button *ngIf="!showPass && onFocusPassword" ion-button clear color="transparent" class="buttonImage" type="button" item-right (click)="showPassword()">
+						 <ion-icon name="eye" style="font-size:25px;"></ion-icon>
+					</button>
+					<button *ngIf="showPass && onFocusPassword" ion-button clear color="transparent" class="buttonImage" type="button" item-right (click)="showPassword()">
+						 <ion-icon name="eye-off" style="font-size:25px;"></ion-icon>
+					</button>
+			 </ion-item>
 				<div class="buttonContainer">
-					<ion-button type="submit" color="transparent" class="trasparentButton" expand="block">Accedi</ion-button>
+					<ion-button type="submit" [disabled]="form.invalid" color="transparent" class="trasparentButton" expand="block">Accedi</ion-button>
 					<div class="link">
 						<a [routerLink]="['/register']" class="small-text">Registrati</a>
 						<a [routerLink]="['/forgot-password']" class="small-text">Password dimeticata?</a>
 					</div>
+				</div>
+				<div class="buttonContainer">
+					<ion-button color="transparent" class="trasparentButton" (click)="facebookLogin()" expand="block">Login con Facebook</ion-button>
+				</div>
+				<div class="buttonContainer salta">
+					<ion-button type="submit" color="transparent" class="trasparentButton" (click)="salta()" expand="block">Salta</ion-button>
 				</div>
 			</div>
 		</form>

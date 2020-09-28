@@ -83,10 +83,11 @@ export class OrdinePage implements OnInit, OnDestroy {
 	getUser(){
 		this.storage.get('user').then( result => {
 			if (result != null) {
-				this.user = result;
+				this.user = JSON.parse(result);
 			}
 			}).catch(e => {
 				console.log('error: '+ e);
+				this.presentAlertUserNotConnected();
 		});
 	}
 
@@ -162,6 +163,29 @@ export class OrdinePage implements OnInit, OnDestroy {
           handler: () => {
 						this.carrello = [];
 						this.navController.back();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+	}
+
+	async presentAlertUserNotConnected() {
+    const alert = await this.alertCtrl.create({
+			header: 'Attenzione',
+			message: 'Utente non loggato. Loggati o crea un account per poter completare l\'ordine',
+      buttons: [
+        {
+          text: 'Non ora',
+          cssClass: 'secondary',
+          handler: () => {
+						this.navController.back();
+          }
+        }, {
+          text: 'Ok',
+          handler: () => {
+						this.navController.navigateRoot('/login');
           }
         }
       ]
@@ -255,7 +279,7 @@ export class OrdinePage implements OnInit, OnDestroy {
 			day: new Date().toLocaleDateString(),
 			carrello: carrelloOrdine,
 			totale: this.getTotale(),
-			user: 'mencuccir'
+			user: this.user
 		};
 		const ordineData: NavigationExtras = {
       state : {
@@ -313,8 +337,4 @@ export class OrdinePage implements OnInit, OnDestroy {
 		this.fila = this.form.value.filaOmbrellone;
 		this.numero = this.form.value.numberOmbrellone;
 	}
-
-
-
-
 }

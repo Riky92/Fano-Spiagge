@@ -1,5 +1,6 @@
 import {CarrelloOrdine  } from './carrello';
 import { Stato } from './stato-ordine';
+import { User } from './user';
 
 export interface Ordine{
 	ombrellone: string;
@@ -10,5 +11,5 @@ export interface Ordine{
 	stato: Stato;
 	carrello: Array<CarrelloOrdine>;
 	totale: number;
-	user: string;
+	user: User;
 }

@@ -52,7 +52,10 @@
 	// position: absolute;
   // bottom: 30px;
   justify-content: center;
-  width: 100%;
+	width: 100%;
+	&.salta{
+		margin-top: 60px;
+	}
 }
 
 .link{
@@ -64,4 +67,9 @@
 .small-text{
 	color: white;
 
+}
+
+.buttonImage{
+	background: transparent;
+	color: white;
 }

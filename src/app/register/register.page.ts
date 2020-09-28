@@ -22,6 +22,7 @@ export class RegisterPage implements OnInit {
 		private formBuilder: FormBuilder) {
 			this.form = this.formBuilder.group({
 				cellulare: new FormControl('', Validators.required),
+				email: new FormControl('', Validators.required),
 				password: new FormControl('', Validators.required)
 			});
 	}
@@ -35,7 +36,10 @@ export class RegisterPage implements OnInit {
 	createAccount(form){
 		const user: User = {
 			cellulare: form.value.cellulare,
-			password: form.value.password
+			email: form.value.email,
+			password: form.value.password,
+			loggedWithFb: null,
+
 		};
 		if(this.isRegisterYet(user)){
 			this.presentAlertConfirm();

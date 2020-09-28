@@ -35,4 +35,7 @@
 		</ion-card-content>
 	</ion-card>
 	<app-ordine *ngIf="ordine" [carrello]="ordine.carrello"></app-ordine>
+	<div class="padd-2">
+		<ion-button type="submit" color="primary" [disabled]="!payment" [ngClass]="{'disabled': !payment}" expand="block" (click)="effettuaOrdine()">Effetta l'ordine</ion-button>
+	</div>
 </ion-content>
