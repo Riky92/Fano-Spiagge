@@ -35,6 +35,24 @@ export class UsersProvider implements OnDestroy{
 		return this.users.asObservable();
 	}
 
+	getUserByEmailOrCellulare(username, type) {
+		if( type === 'text'){
+			return this.userService.getUserByEmail(username);
+		} else {
+			return this.userService.getUserByCellulare(username);
+		}
+	}
+
+	getUserData(userData) :User{
+		return {
+			id: userData.payload.doc.id,
+			cellulare: userData.payload.doc.data()['cellulare'],
+			email: userData.payload.doc.data()['email'],
+			password: userData.payload.doc.data()['password'],
+			loggedWithFb: userData.payload.doc.data()['loggedWithFb'],
+		};
+	}
+
 	addUser(user: User){
 		return this.userService.addUser(user);
 	}

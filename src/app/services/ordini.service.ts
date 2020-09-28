@@ -18,7 +18,15 @@ export class OrdiniService {
 
   getOrdini() {
     return this.firestore.collection(this.collectionName , ref => ref.orderBy('timestamp','desc').limit(10)).snapshotChanges();
-  }
+	}
+
+	getOrdiniByUserEmail(email) {
+		return this.firestore.collection(this.collectionName, ref => ref.where('user.email', '==', email)).snapshotChanges();
+	}
+
+	getOrdiniByUserCellulare(cellulare) {
+		return this.firestore.collection(this.collectionName, ref => ref.where('user.cellulare', '==', cellulare)).snapshotChanges();
+	}
 
   updateOrdine(recordID, record) {
     this.firestore.doc(this.collectionName + '/' + recordID).update(record);

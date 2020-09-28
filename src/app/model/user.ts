@@ -3,5 +3,5 @@ export interface User {
 	email?:string;
 	cellulare?: string;
 	password?: string;
-	loggedWithFb: boolean;
+	loggedWithFb?: boolean;
 }

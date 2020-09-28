@@ -30,7 +30,13 @@ export class OrdiniPage implements OnInit {
 			if (result != null) {
 				this.user = JSON.parse(result);
 				console.log('user: ', this.user);
-				this.getOrdini();
+				let type = '';
+				if( this.user.cellulare != null){
+					type = 'phone'
+				} else if( this.user.email != null){
+					type = 'text';
+				}
+				this.getOrdini(type);
 			}
 			}).catch(e => {
 				this.presentAlertUserNotConnected();
@@ -62,11 +68,29 @@ export class OrdiniPage implements OnInit {
     await alert.present();
 	}
 
-	getOrdini(){
-		this.ordiniProvider.getOrdini().subscribe( responseOrdini => {
+	getOrdini(type){
+		this.ordiniProvider.getOrdiniByUser(this.user, type).subscribe( responseOrdini => {
 			console.log('responseOrdini: ', responseOrdini);
-			this.ordini = responseOrdini.filter( ordine => ordine.user.cellulare === this.user.cellulare);
-			console.log('ordini: ', this.ordini);
+			// this.ordini = responseOrdini.filter( ordine => ordine.user.cellulare === this.user.cellulare);
+			// console.log('ordini: ', this.ordini);
+			this.ordini = this.getOrdiniData(responseOrdini);
+		});
+	}
+
+	getOrdiniData(ordiniData): Ordine[]{
+		return ordiniData.map(e => {
+			return {
+				id: e.payload.doc.id,
+				codSpiaggia: e.payload.doc.data()['codSpiaggia'],
+				descSpiaggia: e.payload.doc.data()['descSpiaggia'],
+				ombrellone: e.payload.doc.data()['ombrellone'],
+				timestamp: e.payload.doc.data()['timestamp'],
+				day: e.payload.doc.data()['day'],
+				stato:  e.payload.doc.data()['stato'],
+				carrello: e.payload.doc.data()['carrello'],
+				totale: e.payload.doc.data()['totale'],
+				user: e.payload.doc.data()['user'],
+			};
 		});
 	}
 

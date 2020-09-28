@@ -46,6 +46,15 @@ export class OrdiniProvider implements OnDestroy{
     return this.ordini.asObservable();
 	}
 
+	getOrdiniByUser(user, type) {
+		if( type === 'text') {
+			return this.ordiniService.getOrdiniByUserEmail(user.email);
+		} else {
+			return this.ordiniService.getOrdiniByUserCellulare(user.cellulare);
+		}
+
+	}
+
 	addOrdine(ordine){
 		this.ordiniService.addOrdine(ordine);
 	}
