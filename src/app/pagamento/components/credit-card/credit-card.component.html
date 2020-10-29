@@ -1,0 +1,30 @@
+<ion-list>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Numero carta</ion-label>
+    <ion-input type="text" placeholder="Inserisci le 16 cifre della carta"
+    [(ngModel)]="cardNumber"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Mese scadenza</ion-label>
+    <ion-input type="number" placeholder="Inserisci il mese di scadenza"
+    [(ngModel)]="cardMonth"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Anno Scadenza</ion-label>
+    <ion-input type="number" placeholder="Inserisci l'anno di scadenza"
+    [(ngModel)]="cardYear"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>CVV</ion-label>
+    <ion-input type="number" placeholder="Inserisi il CVV"
+    [(ngModel)]="cardCVV"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+
+  <ion-button block large (click)="validateCard()">Add Card</ion-button>

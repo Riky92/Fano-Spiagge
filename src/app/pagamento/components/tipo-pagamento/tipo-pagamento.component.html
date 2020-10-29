@@ -1,3 +1,31 @@
-<p>
-  tipo-pagamento works!
-</p>
+<ng-container *ngIf="tipoPagamento === 'visa'">
+	<div class="containerForm">
+		<form [formGroup]="form" (ngSubmit)="confermaDati(form)">
+			<div class="space">
+				<ion-input name="numero_carta" type="text" class="border" placeholder="Numero carta" formControlName="numero_carta"></ion-input>
+			</div>
+			<div class="space">
+				<ion-input name="numero_sicurezza" type="text" class="border" placeholder="Codice sicurezza" formControlName="numero_sicurezza"></ion-input>
+			</div>
+			<div class="space">
+				<ion-input name="nome" type="text" placeholder="Nome" class="border" formControlName="nome"></ion-input>
+			</div>
+			<div class="space">
+				<ion-input name="cognome" type="text" placeholder="Cognome" class="border" formControlName="cognome"></ion-input>
+			</div>
+			<div class="buttonContainer">
+				<ion-button color="primary" type="submit" [disabled]="form.invalid" class="trasparentButton" expand="block">Conferma ordine</ion-button>
+			</div>
+		</form>
+	</div>
+</ng-container>
+<ng-container *ngIf="tipoPagamento === 'paypal'">
+	<div class="containerForm">
+
+	</div>
+</ng-container>
+<ng-container *ngIf="tipoPagamento === 'contanti'">
+	<div class="containerForm">
+
+	</div>
+</ng-container>

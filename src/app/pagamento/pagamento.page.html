@@ -27,11 +27,22 @@
 						<ion-radio slot="start" value="{{pagamento.id}}">
 						</ion-radio>
 					</ion-item>
-					<ng-container *ngIf="pagamento.id === payment">
-						<app-tipo-pagamento [tipoPagamento]="pagamento.id"></app-tipo-pagamento>
+					<!-- <ng-container *ngIf="pagamento.id === payment">
+						<app-tipo-pagamento (pagamentoDati)="getDatiPagamento($event)"[tipoPagamento]="pagamento.id"></app-tipo-pagamento>
+					</ng-container> -->
+					<ng-container *ngIf="pagamento.id === payment && payment === 'visa'">
+						<!-- <app-visa></app-visa> -->
+						<app-credit-card></app-credit-card>
+					</ng-container>
+					<ng-container *ngIf="pagamento.id === payment && payment === 'paypal'">
+
+					</ng-container>
+					<ng-container *ngIf="pagamento.id === payment && payment  === 'contanti'">
+
 					</ng-container>
 				</ng-container>
 			</ion-radio-group>
+			<!-- <ion-button color="primary" [disabled]="!payment" [ngClass]="{'disabled': !payment}" expand="block" (click)="goToStripe()">Paga con Stripe</ion-button> -->
 		</ion-card-content>
 	</ion-card>
 	<app-ordine *ngIf="ordine" [carrello]="ordine.carrello"></app-ordine>
