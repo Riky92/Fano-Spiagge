@@ -13,7 +13,6 @@ import { CreditCardComponent} from './components/credit-card/credit-card.compone
 import { VisaComponent} from './components/visa/visa.component';
 import { AppcommonModule } from '../appcommon/appcommon.module';
 import { Stripe } from '@ionic-native/stripe/ngx';
-import { StripeJavaScriptPage } from '../stripe-java-script/stripe-java-script.page';
 
 
 @NgModule({
@@ -26,9 +25,6 @@ import { StripeJavaScriptPage } from '../stripe-java-script/stripe-java-script.p
     PagamentoPageRoutingModule
   ],
 	declarations: [PagamentoPage, TipoPagamentoComponent, VisaComponent, CreditCardComponent],
-	entryComponents: [
-		StripeJavaScriptPage
-	],
 	providers: [
 		SpiaggeService,
 		Stripe
