@@ -1,30 +1,26 @@
-<ion-list>
-
-  <ion-item>
-    <ion-label color="primary" stacked>Numero carta</ion-label>
-    <ion-input type="text" placeholder="Inserisci le 16 cifre della carta"
-    [(ngModel)]="cardNumber"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label color="primary" stacked>Mese scadenza</ion-label>
-    <ion-input type="number" placeholder="Inserisci il mese di scadenza"
-    [(ngModel)]="cardMonth"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label color="primary" stacked>Anno Scadenza</ion-label>
-    <ion-input type="number" placeholder="Inserisci l'anno di scadenza"
-    [(ngModel)]="cardYear"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label color="primary" stacked>CVV</ion-label>
-    <ion-input type="number" placeholder="Inserisi il CVV"
-    [(ngModel)]="cardCVV"></ion-input>
-  </ion-item>
-
-</ion-list>
-
-
-  <ion-button block large (click)="validateCard()">Add Card</ion-button>
+<form [formGroup]="form">
+	<ion-list>
+		<ion-item>
+			<ion-label color="primary" stacked>Numero carta</ion-label>
+			<ion-input type="tel" placeholder="Inserisci le 16 cifre della carta"
+			formControlName="cardNumberForm" maxlength="19" (ionChange)="cc_format($event.target.value)" [(ngModel)]="cardNumber">
+			</ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked>Mese scadenza</ion-label>
+			<ion-input type="tel" placeholder="Inserisci il mese di scadenza"
+			formControlName="cardMonthForm" maxlength="2" [(ngModel)]="cardMonth"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked>Anno Scadenza</ion-label>
+			<ion-input type="tel" placeholder="Inserisci l'anno di scadenza"
+			formControlName="cardYearForm" maxlength="2"  [(ngModel)]="cardYear"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked>CVC</ion-label>
+			<ion-input type="tel" placeholder="Inserisi il CVC"
+			formControlName="cardCVVForm" maxlength="3" [(ngModel)]="cardCVC"></ion-input>
+		</ion-item>
+	</ion-list>
+	<ion-button block large [disabled]="form.invalid" [ngClass]="{'disabled': form.invalid}" (click)="validateCard()">SALVA CARTA</ion-button>
+</form>

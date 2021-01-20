@@ -13,6 +13,9 @@ import { CreditCardComponent} from './components/credit-card/credit-card.compone
 import { VisaComponent} from './components/visa/visa.component';
 import { AppcommonModule } from '../appcommon/appcommon.module';
 import { Stripe } from '@ionic-native/stripe/ngx';
+import { CarteService } from '../services/carte.service';
+import { CarteProvider } from '../providers/carte.provider';
+import { CreditCardProvider } from '../providers/credit-card.provider';
 
 
 @NgModule({
@@ -27,6 +30,9 @@ import { Stripe } from '@ionic-native/stripe/ngx';
 	declarations: [PagamentoPage, TipoPagamentoComponent, VisaComponent, CreditCardComponent],
 	providers: [
 		SpiaggeService,
+		CarteService,
+		CarteProvider,
+		CreditCardProvider,
 		Stripe
 	]
 })

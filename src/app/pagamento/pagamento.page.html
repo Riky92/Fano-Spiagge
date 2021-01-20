@@ -30,13 +30,14 @@
 					<!-- <ng-container *ngIf="pagamento.id === payment">
 						<app-tipo-pagamento (pagamentoDati)="getDatiPagamento($event)"[tipoPagamento]="pagamento.id"></app-tipo-pagamento>
 					</ng-container> -->
-					<ng-container *ngIf="pagamento.id === payment && payment === 'visa'">
-						<!-- <app-visa></app-visa> -->
-						<app-credit-card></app-credit-card>
+					<ng-container *ngIf="isVisa(pagamento)">
+						<ion-container>
+							<app-credit-card [cartaSaved]="card" (cardEmitter)="getCard($event)"></app-credit-card>
+						</ion-container>
 					</ng-container>
-					<ng-container *ngIf="pagamento.id === payment && payment === 'paypal'">
+					<!-- <ng-container *ngIf="pagamento.id === payment && payment === 'paypal'">
 
-					</ng-container>
+					</ng-container> -->
 					<ng-container *ngIf="pagamento.id === payment && payment  === 'contanti'">
 
 					</ng-container>
@@ -47,6 +48,6 @@
 	</ion-card>
 	<app-ordine *ngIf="ordine" [carrello]="ordine.carrello"></app-ordine>
 	<div class="padd-2">
-		<ion-button type="submit" color="primary" [disabled]="!payment" [ngClass]="{'disabled': !payment}" expand="block" (click)="effettuaOrdine()">Effetta l'ordine</ion-button>
+		<ion-button type="submit" color="primary" [disabled]="enablePayment()" [ngClass]="{'disabled': enablePayment()}" expand="block" (click)="effettuaOrdine()">Effetta l'ordine</ion-button>
 	</div>
 </ion-content>

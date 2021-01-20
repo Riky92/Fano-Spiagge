@@ -266,7 +266,7 @@ export class OrdinePage implements OnInit, OnDestroy {
 				cod: item.cod,
 				desc: item.desc,
 				nSelected: item.nSelected,
-				prezzo: this.getRowPrezzoCarrello(item)
+				prezzo: item.prezzo
 			});
 		});
 		const ordine : Ordine = {

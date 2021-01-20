@@ -24,7 +24,7 @@ export class UsersProvider implements OnDestroy{
 					cellulare: e.payload.doc.data()['cellulare'],
 					email: e.payload.doc.data()['email'],
 					password: e.payload.doc.data()['password'],
-					loggedWithFb: e.payload.doc.data()['loggedWithFb'],
+					loggedWithFb: e.payload.doc.data()['loggedWithFb']
 				};
 			});
 			this.users.next(usersData);
@@ -49,7 +49,7 @@ export class UsersProvider implements OnDestroy{
 			cellulare: userData.payload.doc.data()['cellulare'],
 			email: userData.payload.doc.data()['email'],
 			password: userData.payload.doc.data()['password'],
-			loggedWithFb: userData.payload.doc.data()['loggedWithFb'],
+			loggedWithFb: userData.payload.doc.data()['loggedWithFb']
 		};
 	}
 

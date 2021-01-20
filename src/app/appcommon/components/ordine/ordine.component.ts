@@ -21,5 +21,9 @@ export class OrdineComponent implements OnInit {
 		return total;
 	}
 
+	getRowPrezzoCarrello(carrelloItem){
+		return carrelloItem.prezzo * carrelloItem.nSelected;
+	}
+
 
 }

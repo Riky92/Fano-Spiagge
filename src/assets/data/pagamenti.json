@@ -5,11 +5,6 @@
 		"opened": false
 	},
 	{
-		"id": "paypal",
-		"descrizione": "Paypal",
-		"opened": false
-	},
-	{
 		"id": "contanti",
 		"descrizione": "Contanti alla consegna",
 		"opened": false

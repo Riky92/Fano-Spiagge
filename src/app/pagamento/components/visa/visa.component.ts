@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , OnDestroy, Output, EventEmitter} from '@angular/core';
 
 declare var Stripe;
 
@@ -7,20 +7,24 @@ declare var Stripe;
   templateUrl: './visa.component.html',
   styleUrls: ['./visa.component.scss'],
 })
-export class VisaComponent implements OnInit {
-
-	stripe = Stripe('pk_test_51HZdpiG9JKzj23VPeBLCh3BmzwIa0HPyKpRDvEvW9OWSS1TWnDII4mRNHijlZbrGqERWPJIHOxaJDzMzKUr8K8av00sDnGkM0F');
+export class VisaComponent implements OnInit{
 	card: any;
+	stripe = Stripe('pk_test_51HZdpiG9JKzj23VPeBLCh3BmzwIa0HPyKpRDvEvW9OWSS1TWnDII4mRNHijlZbrGqERWPJIHOxaJDzMzKUr8K8av00sDnGkM0F');
+	cardSource;
 
+	@Output() cardEmitter = new EventEmitter();
 	form;
+	existingCard = false;
 
-  constructor() { }
+  constructor() {
+	}
 
 	ngOnInit() {
 		this.setupStripe();
 	}
 
 	setupStripe(){
+		debugger;
     const elements = this.stripe.elements();
     const style = {
       base: {
@@ -55,13 +59,17 @@ export class VisaComponent implements OnInit {
     this.form.addEventListener('submit', event => {
       event.preventDefault();
 			console.log('passo qui');
+			// this.stripe.createToken(this.card).then(result => {
       this.stripe.createSource(this.card).then(result => {
 			console.log('result: ', document.getElementById('card-element'));
         if (result.error) {
           const errorElement = document.getElementById('card-errors');
-          errorElement.textContent = result.error.message;
+					errorElement.textContent = result.error.message;
+					this.existingCard = false;
         } else {
-          console.log(result);
+					this.existingCard = true;
+					this.cardSource = result.card
+					console.log(result);
         }
       });
     });
@@ -69,7 +77,8 @@ export class VisaComponent implements OnInit {
 
 	aggiungiCarta(){
 		console.log('card:', this.card);
-		// 1234 5432 4323 1334    06/21    121
+		this.cardEmitter.emit(this.cardSource);
+		// 6709 9901 0997 5667   07/24  357
 	}
 
 }

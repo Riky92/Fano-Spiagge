@@ -10,7 +10,7 @@
 						{{carrelloItem.nSelected}}x{{carrelloItem.desc}}
 					</div>
 					<div class="flex1 prezzo">
-						{{carrelloItem.prezzo | number: '1.0-2'}} €
+						{{getRowPrezzoCarrello(carrelloItem) | number: '1.0-2'}} €
 					</div>
 				</div>
 			</div>
